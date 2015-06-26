@@ -2,14 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <title>Pinodex</title>
+    <meta name="description" content="Hi! I'm Raphael Marco, and I write codes." />
+    <meta property="og:title" content="Raphael Marco" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://raphaelmarco.me/" />
+    <meta property="og:description" content="Hi! I'm Raphael Marco, and I write codes." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,900" />
+    <title>Raphael Marco</title>
 </head>
 <body>
-    <p>Redirecting to <a href="http://pinodex.io">http://pinodex.io</a></p>
-    <script>
-        window.location = 'http://pinodex.io';
-    </script>
+    <div class="container">
+        <div class="codes">
+            <pre><code>var whoAmI = [
+    &#x22;I write codes&#x22;,
+    &#x22;I make websites&#x22;,
+    &#x22;I make Android applications&#x22;
+];
+
+document.getElementById(&#x27;about-me&#x27;).innerHTML = &#x22;Hi! I&#x27;m Raphael Marco&#x22;;</code></pre>
+        </div>
+        <div id="about-me">
+            Hi! I&rsquo;m  Raphael Marco,
+            <div id="what">and <span></span></div>
+        </div>
+        <div class="description">
+            My website is currently under construction.<br />
+            Check out my <a href="//github.com/pinodex">Github profile</a>.
+        </div>
+    </div>
+    <script src="/assets/js/app.js"></script>
 </body>
 </html>

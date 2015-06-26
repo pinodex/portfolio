@@ -1,0 +1,100 @@
+html, body {
+    margin: 0;
+    padding: 0;    
+}
+
+body {
+    background: #222;
+    font-size: 16px;
+}
+
+.container {
+    margin: 1em;
+}
+
+@media (min-width: 40em) {
+    .container {
+        margin: 1em auto;
+        padding-top: 3em;
+        width: 40em;
+    }
+}
+
+@media (min-width: 64em) {
+    .container {
+        margin: 1em auto;
+        padding-top: 3em;
+        width: 64em;
+    }
+}
+
+.codes {
+    font-size: 0.8em;
+    color: #555;
+    overflow: hidden;
+    cursor: default;
+    visibility: hidden;
+}
+
+@media (min-width: 40em) {
+    .codes {
+        visibility: visible;
+    }
+}
+
+.codes pre {
+    margin: 0;
+}
+
+#about-me {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 1.5em;
+    color: #fff;
+    margin-top: 1em;
+    text-align: center;
+}
+
+@media (min-width: 40em) {
+    #about-me {
+        font-size: 2em;
+        text-align: left;
+    }
+}
+
+@media (min-width: 64em) {
+    #about-me {
+        font-size: 2.5em;
+        text-align: left;
+    }
+}
+
+#what span {
+    display: inline-block;
+    background: #285C90;
+    padding: 0 0.2em;
+}
+
+#what span:empty:before {
+    content: '\0';
+}
+
+.description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    margin-top: 1em;
+    color: #ddd;
+    text-align: center;
+}
+
+@media (min-width: 40em) {
+    .description {
+        text-align: left;
+    }
+}
+
+.description a,
+.description a:visited {
+    color: #6DB6FF;
+    text-decoration: none;
+}

@@ -1,4 +1,4 @@
-//(function() {
+(function() {
 
     "use strict";
 
@@ -151,4 +151,4 @@
         setTimeout(reposWords, 20);
     }
 
-//})();
+})();

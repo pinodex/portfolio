@@ -112,7 +112,7 @@
             var elStyle = window.getComputedStyle(wordEl);
             var elFontSize = parseFloat(elStyle.fontSize);
 
-            if (elFontSize < 48 && wordEl.style.opacity < 0.2) {
+            if (elFontSize < 48 && wordEl.style.opacity < 0.25) {
                 continue;
             }
 
@@ -120,7 +120,7 @@
                 wordEl.style.fontSize = (elFontSize + 0.2) + 'px';
             }
 
-            if (elFontSize > 48) {
+            if (elFontSize >= 48) {
                 wordEl.style.opacity = parseFloat(wordEl.style.opacity) - 0.05;
             }
 
@@ -139,16 +139,59 @@
             var posTop = parseFloat(elStyle.top);
             var posLeft = parseFloat(elStyle.left);
 
-            if (i % 2 == 0) {
+            if (i % 1 == 0) {
                 wordEl.style.top = (posTop + 0.5) + 'px';
                 wordEl.style.left = (posLeft + 0.5) + 'px';
-            } else {
+            }
+
+            if (i % 2 == 0) {
                 wordEl.style.top = (posTop - 0.5) + 'px';
                 wordEl.style.left = (posLeft - 0.5) + 'px';
+            }
+
+            if (i % 3 == 0) {
+                wordEl.style.top = (posTop + 0.5) + 'px';
+                wordEl.style.left = (posLeft - 0.5) + 'px';
+            }
+
+            if (i % 4 == 0) {
+                wordEl.style.top = (posTop - 0.5) + 'px';
+                wordEl.style.left = (posLeft + 0.5) + 'px';
             }
         };
 
         setTimeout(reposWords, 20);
+    }
+
+    window.feed = function(data) {
+        var blogBox = document.querySelector('.content.blog');
+
+        if (data.responseStatus != 200) {
+            blogBox.innerHTML = '<div class="empty">No posts yet.</div>';
+            return;
+        }
+
+        var entries = data.responseData.feed.entries;
+
+        if (!entries.length) {
+            blogBox.innerHTML = '<div class="empty">No posts yet.</div>';
+            return;
+        }
+        
+        for (var i = entries.length - 1; i >= 0; i--) {
+            var pubDate = new Date(entries[i].publishedDate);
+            pubDate = pubDate.getMonth() + '/' + pubDate.getDay() + 
+                '/' + pubDate.getFullYear() + ' ' + (pubDate.getHours() % 12 || 12) + 
+                ':' + ('0' + pubDate.getMinutes()).substr(-2) + ' ' + (pubDate.getHours() >= 12 ? 'pm' : 'am');
+
+            blogBox.innerHTML = [
+                '<a class="entry" href="' + entries[i].link + '" target="_blank">',
+                    '<h3>' + entries[i].title + '</h3>',
+                    '<p>' + entries[i].contentSnippet + '</p>',
+                    '<small>' + pubDate + '</small>',
+                '</a>',
+            ].join('\n') + blogBox.innerHTML;
+        };
     }
 
 })();

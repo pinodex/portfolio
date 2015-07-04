@@ -5,7 +5,7 @@
     var whoAmI = [
         'I write codes',
         'I make websites',
-        'I make mobile applications'
+        'I make mobile apps'
     ];
 
     var sentence = 0;

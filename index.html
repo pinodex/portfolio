@@ -6,6 +6,7 @@
     <meta property="og:title" content="Raphael Marco" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://raphaelmarco.me/" />
+    <meta property="og:image" content="http://raphaelmarco.me/assets/img/og.png" />
     <meta property="og:description" content="Hi! I'm Raphael Marco, and I write codes." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
@@ -14,27 +15,32 @@
 </head>
 <body>
     <div class="container">
-        <div class="codes">
-            <pre><code>var whoAmI = [
+        <div class="grid">
+            <div class="grid-1">
+                <div class="codes">
+                    <pre><code>var whoAmI = [
     &#x22;I write codes&#x22;,
     &#x22;I make websites&#x22;,
     &#x22;I make mobile apps&#x22;
 ];
 
 document.getElementById(&#x27;about-me&#x27;).innerHTML = &#x22;Hi! I&#x27;m Raphael Marco&#x22;;</code></pre>
+                </div>
         </div>
-        <div id="about-me">
-            Hi! I&rsquo;m  Raphael Marco,
-            <div id="what">and <span></span></div>
         </div>
-        <div id="info">
-            I&rsquo;m 15 years old, 1st year BSIT student. I started practicing web development when I was 11 years old. 
-            I have 4 years of experience in HTML, CSS, JavaScript, 3 years experience in PHP, and 1 year experience in Java.
-        </div>
-        <div class="grid">
-            <div class="col-3">
+        <div class="grid grid-md about-grid">
+            <div class="col-2 about-col">
+                <div id="about-me">
+                    Hi! I&rsquo;m  Raphael Marco,
+                    <div id="what">and <span></span></div>
+                </div>
+                <div id="info">
+                    I&rsquo;m 15 years old, 1st year BSIT student. I started practicing web development when I was 11 years old. 
+                    I have 4 years of experience in HTML, CSS, JavaScript, 3 years experience in PHP, and 1 year experience in Java.
+                </div>
+            </div>
+            <div class="col-2 sm-head">
                 <div class="window">
-                    <h2>I do&hellip;</h2>
                     <div class="content no-pad">
                         <ul class="word-pool">
                             <li>web development</li>
@@ -52,11 +58,13 @@ document.getElementById(&#x27;about-me&#x27;).innerHTML = &#x22;Hi! I&#x27;m Rap
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+        </div>
+        <div class="grid grid-sm">
+            <div class="col-2">
                 <div class="window">
                     <h2>Latest Project</h2>
                     <div class="content no-pad">
-                        <div class="latest-project" style="background-image: url(/contents/images/sc-sweetfm.png)">
+                        <div class="project" style="background-image: url(/contents/images/sc-sweetfm.png)">
                             <div class="details">
                                 <h3>SweetFM</h3>
                                 <p>Online radio website</p>
@@ -65,13 +73,13 @@ document.getElementById(&#x27;about-me&#x27;).innerHTML = &#x22;Hi! I&#x27;m Rap
                             <div class="off-info">
                                 <h3>SweetFM</h3>
                                 <p>Backend: PHP, Silex Framework</p>
-                                <p>Frontend: HTML5, CSS3, JS/jQuery</p>
+                                <p>Frontend: HTML5, CSS3, JS/jQuery, Zurb Foundation</p>
                                 <div class="actions">
                                     <p>
                                         <a href="http://sweetfm.net" target="_blank">Visit site</a>
                                     </p>
                                     <p>
-                                        <a href="/projects.html">View other projects</a>
+                                        <a href="/projects/">View other projects</a>
                                     </p>
                                 </div>
                             </div>
@@ -79,7 +87,7 @@ document.getElementById(&#x27;about-me&#x27;).innerHTML = &#x22;Hi! I&#x27;m Rap
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <div class="window">
                     <h2>Blog</h2>
                     <div class="content blog no-pad">
@@ -92,7 +100,7 @@ document.getElementById(&#x27;about-me&#x27;).innerHTML = &#x22;Hi! I&#x27;m Rap
             </div>
         </div>
         <div id="info">
-            I only accept small project right now because of school.<br />
+            I only accept small projects right now because of school.<br />
             Ping me at <em data-e="Y29udGFjdEByYXBoYWVsbWFyY28ubWU="></em>.
         </div>
         <div class="footer">

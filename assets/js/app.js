@@ -65,7 +65,6 @@
 
     if (wordPool = document.querySelector('ul.word-pool')) {
         var wordCount = wordPool.childNodes.length;
-        var zIndex = 1;
 
         while (wordCount--) {
             if (wordPool.childNodes[wordCount].nodeType == 1) {
@@ -73,7 +72,6 @@
 
                 wordEl.style.marginTop = '-' + (wordEl.clientHeight / 2) + 'px';
                 wordEl.style.marginLeft = '-' + (wordEl.clientWidth / 2) + 'px';
-                wordEl.style.zIndex = zIndex++;
                 wordEl.style.opacity = '0';
 
                 words.unshift(wordPool.childNodes[wordCount]);

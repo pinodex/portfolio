@@ -59,10 +59,13 @@ a {
     margin: 0;
 }
 
+.about-grid  {
+    margin-top: 1em;
+}
+
 #about-me {
     font-weight: 900;
     font-size: 1.5em;
-    margin-top: 1em;
     margin-bottom: 0.5em;
     text-align: center;
 }
@@ -96,12 +99,6 @@ a {
     margin-bottom: 1.5em;
 }
 
-@media (min-width: 64em) {
-    #info {
-        width: 500px;
-    }
-}
-
 .grid {
     width: 100%;
     overflow: hidden;
@@ -121,6 +118,11 @@ a {
     padding-right: 0;
 }
 
+.grid.grid-md .col-2 {
+    padding: 0;
+    width: 100%;
+}
+
 @media (min-width: 40em) {
     .grid .col-2 {
         padding: 0.25em;
@@ -133,7 +135,8 @@ a {
         padding: 0.25em;
     }
 
-    .grid .col-2 {
+    .grid .col-2,
+    .grid.grid-md .col-2 {
         width: 50%;
     }
 
@@ -146,7 +149,7 @@ a {
     }
 }
 
-.window {
+.window:not(.transparent) {
     background: #1e1e1e;
 }
 
@@ -164,6 +167,45 @@ a {
 
 .window > .content.no-pad {
     padding: 0;
+}
+
+@media (max-width: 39.938em) {
+    .about-grid {
+        margin: 0;
+        height: 200px;
+    }
+
+    .about-col,
+    .sm-head {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+    }
+
+    .about-col {
+        padding: 1em !important;
+        text-align: center;
+    }
+
+    .about-col #about-me {
+        margin: 1em !important;
+    }
+
+    .sm-head {
+        opacity: 0.2;
+        z-index: -1;
+    }
+
+    .sm-head .window {
+        background: transparent;
+    }
+
+    .sm-head .word-pool {
+        height: 216px;
+    }
 }
 
 ul.word-pool,
@@ -188,16 +230,16 @@ ul.word-pool li {
     white-space: nowrap;
 }
 
-.latest-project {
+.project {
     position: relative;
-    background-size: 150%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 200px;
     overflow: hidden;
 }
 
-.latest-project .details {
+.project .details {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -213,25 +255,26 @@ ul.word-pool li {
     transition: all 0.5s;
 }
 
-.latest-project h3,
-.latest-project p {
+.project h3,
+.project p {
     font-weight: normal;
     margin: 0;
 }
 
-.latest-project .details h3 {
+.project .details h3 {
     text-shadow: 0 1px 1px #333;
+    font-weight: 300;
 }
 
-.latest-project .details p {
+.project .details p {
     font-size: 11px;
 }
 
-.latest-project .details .link {
+.project .details .link {
     margin-top: 5px;
 }
 
-.latest-project .off-info {
+.project .off-info {
     position: absolute;
     top: 200px;
     left: 0;
@@ -242,27 +285,27 @@ ul.word-pool li {
     transition: all 0.25s;
 }
 
-.latest-project .off-info h3 {
+.project .off-info h3 {
     margin-bottom: 10px;
 }
 
-.latest-project .off-info p {
+.project .off-info p {
     font-size: 12px;
 }
 
-.latest-project .off-info .actions {
+.project .off-info .actions {
     margin-top: 20px;
 }
 
-.latest-project .off-info .actions a {
+.project .off-info .actions a {
     line-height: 1.5
 }
 
-.latest-project:hover .details {
+.project:hover .details {
     bottom: -100px;
 }
 
-.latest-project:hover .off-info {
+.project:hover .off-info {
     top: 0;
 }
 

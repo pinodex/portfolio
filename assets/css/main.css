@@ -423,12 +423,21 @@ ul.word-pool li {
 .fnote {
     font-size: 12px;
     margin-bottom: 1em;
+    text-align: center;
+}
+
+.slinks {
+    text-align: center;
 }
 
 .slinks a {
     display: inline-block;
+    font-size: 28px;
     color: #fff;
-    font-size: 20px;
+}
+
+.slinks a:hover {
+    color: #3EC4FF;
 }
 
 .slinks a + a {
@@ -439,6 +448,22 @@ ul.word-pool li {
     font-size: 12px;
     font-weight: 300;
     margin-top: 20px;
-    border-top: 1px solid #333;
     padding-top: 5px;
+    text-align: center;
+}
+
+@media (min-width: 40em) {
+    .fnote,
+    .slinks,
+    .footer {
+        text-align: left;
+    }
+
+    .footer {
+        border-top: 1px solid #333;
+    }
+
+    .slinks a {
+        font-size: 20px;
+    }
 }

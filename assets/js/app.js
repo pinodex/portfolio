@@ -183,7 +183,7 @@
                 ':' + ('0' + pubDate.getMinutes()).substr(-2) + ' ' + (pubDate.getHours() >= 12 ? 'pm' : 'am');
 
             blogBox.innerHTML = [
-                '<a class="entry" href="' + entries[i].link + '" target="_blank">',
+                '<a class="entry" href="' + entries[i].link + '">',
                     '<h3>' + entries[i].title + '</h3>',
                     '<p>' + entries[i].contentSnippet + '</p>',
                     '<small>' + pubDate + '</small>',

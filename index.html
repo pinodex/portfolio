@@ -42,25 +42,7 @@ document.getElementById(&#x27;about-me&#x27;).innerHTML = &#x22;Hi! I&#x27;m Rap
             </div>
             <div class="col-2 sm-head">
                 <div class="window">
-                    <div class="content no-pad">
-                        <ul class="word-pool">
-                            <li>web development</li>
-                            <li>mobile app development</li>
-                            <li>PHP</li>
-                            <li>Java</li>
-                            <li>JavaScript</li>
-                            <li>jQuery</li>
-                            <li>CSS3</li>
-                            <li>HTML</li>
-                            <li>HTML5</li>
-                            <li>Node.js</li>
-                            <li>MySQL</li>
-                            <li>Symfony</li>
-                            <li>Silex</li>
-                            <li>Bootstrap</li>
-                            <li>Foundation</li>
-                        </ul>
-                    </div>
+                    <div class="content no-pad" id="wordPoolContainer" style="height: 200px;"></div>
                 </div>
             </div>
         </div>
@@ -129,6 +111,7 @@ document.getElementById(&#x27;about-me&#x27;).innerHTML = &#x22;Hi! I&#x27;m Rap
             &copy; 2015 Raphael Marco.
         </div>
     </div>
+    <script src="/assets/js/wordpool.js"></script>
     <script src="/assets/js/app.js"></script>
     <script src="//ajax.googleapis.com/ajax/services/feed/load?v=1.0&amp;num=5&amp;callback=feed&amp;q=http%3A%2F%2Fblog.raphaelmarco.me%2Frss%2F" async></script>
     <script>

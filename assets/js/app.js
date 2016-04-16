@@ -1,126 +1,127 @@
 (function() {
 
-    "use strict";
+  'use strict';
 
-    var whoAmI = [
-        'I write codes',
-        'I make websites',
-        'I make mobile apps'
-    ];
+  if (!String.prototype.format) {
+    String.prototype.format = function() {
+      var str = this.toString();
+      
+      if (!arguments.length) {
+        return str;
+      }
+      
+      var args = typeof arguments[0];
+      args = (('string' === args || 'number' === args) ? arguments : arguments[0]);
+      
+      for (var arg in args) {
+        str = str.replace(new RegExp('\\{' + arg + '\\}', 'gi'), args[arg]);
+      }
+      
+      return str;
+    };
+  }
 
-    var sentence = 0;
-    var currentChar = 0;
-    var target = document.querySelector('#what span');
-    var deleteInterval = null;
+  var typeTexts = function typeTexts(target, texts) {
+      var currentLine = 0;
+      var currentChar = 0;
+      var intervalDelete = null;
 
-    var email = document.querySelector('[data-e]');
-    var wordPoolContainer = document.getElementById('wordPoolContainer');
+      target.innerHTML = '';
 
-    function type() {
-        if (sentence >= whoAmI.length) {
-            sentence = 0;
+      var next = function next() {
+        if (currentLine >= texts.length) {
+          currentLine = 0;
         }
 
-        var chars = whoAmI[sentence].split('');
+        var lineChars = texts[currentLine].split('');
 
-        setTimeout(function() {
-            if (currentChar >= chars.length) {
-                setTimeout(function() {
-                    sentence++;
+        (function type() {
+          setTimeout(function() {
+            if (currentChar >= lineChars.length) {
+              currentLine++;
 
-                    deleteInterval = setInterval(function() {
-                        target.innerHTML = target.innerHTML.substr(0, currentChar - 1);
-                        currentChar--;
-
-                        if (currentChar == 0) {
-                            clearInterval(deleteInterval);
-                            type();
-                        }
-                    }, 30);
-                }, 1000);
-
-                return;
+              setTimeout(function() {
+                deleteLine();
+              }, 1000);
+                        
+              return;
             }
 
-            target.innerHTML += chars[currentChar];
-            currentChar++;
-
+            target.innerHTML += lineChars[currentChar++];
+            
             type();
-        }, 80);
+          }, 80);
+        })();
+      };
+
+      function deleteLine() {
+        intervalDelete = setInterval(function() {
+          target.innerHTML = target.innerHTML.substr(0, currentChar - 1);
+          currentChar--;
+
+          if (currentChar === 0) {
+            clearInterval(intervalDelete);
+
+            return next();
+          }
+        }, 30);
+      }
+
+      next();
+    };
+
+    var hiddenEmails = document.querySelectorAll('[data-ex]');
+    var typingElements = document.querySelectorAll('[data-type]');
+
+    for (var i = hiddenEmails.length - 1; i >= 0; i--) {
+      var b64String = hiddenEmails[i].getAttribute('data-ex');
+      var el = hiddenEmails[i];
+
+      el.parentNode.replaceChild(
+        document.createTextNode(atob(b64String)), el
+      );
     }
 
-    if (target) {
-        type();
-    }
-    
-    if (email) {
-        email.innerHTML = window.atob(email.getAttribute('data-e'));
+    for (var x = typingElements.length - 1; x >= 0; x--) {
+      var texts = JSON.parse(typingElements[x].getAttribute('data-type'));
+        
+      typeTexts(typingElements[x], texts);
     }
 
-    if (wordPoolContainer) {
-        var wordPool = new WordPool({
-            target: wordPoolContainer,
-            font: {
-                family: 'Roboto',
-                color: [255, 255, 255] // RGB
-            },
-            words: [
-                'web development',
-                'mobile app development',
-                'PHP',
-                'Java',
-                'JavaScript',
-                'jQuery',
-                'CSS3',
-                'HTML',
-                'HTML5',
-                'Node.js',
-                'MySQL',
-                'Symfony',
-                'Silex',
-                'Bootstrap',
-                'Foundation'
-            ]
+    window.loadPosts = function loadPosts(data) {
+      var target = document.getElementById('blogPosts');
+
+      if (data.responseStatus !== 200) {
+        target.innerHTML = '<div class="empty">Cannot retrieve blog posts.</div>';
+        return;
+      }
+
+      var entries = data.responseData.feed.entries;
+
+      if (!entries.length) {
+        target.innerHTML = '<div class="empty">No posts yet.</div>';
+        return;
+      }
+
+      target.innerHTML = '';
+
+      for (var i = 0; i < entries.length; i++) {
+        var publishedDate = new Date(entries[i].publishedDate);
+        publishedDate = '{m}/{d}/{y} {hh}:{mm} {t}'.format({
+          m:    publishedDate.getMonth(),
+          d:    publishedDate.getDay(),
+          y:    publishedDate.getFullYear(),
+          hh:   (publishedDate.getHours() % 12 || 12),
+          mm:   ('0' + publishedDate.getMinutes()).substr(-2),
+          t:    (publishedDate.getHours() >= 12 ? 'pm' : 'am')
         });
 
-        wordPool.init();
-
-        window.addEventListener('resize', function() {
-            var targetStyle = getComputedStyle(wordPoolContainer); 
-
-            wordPool.resize(parseInt(targetStyle.height), parseInt(targetStyle.width));
-        }, false);
-    }
-
-    window.feed = function(data) {
-        var blogBox = document.querySelector('.content.blog');
-
-        if (data.responseStatus != 200) {
-            blogBox.innerHTML = '<div class="empty">No posts yet.</div>';
-            return;
-        }
-
-        var entries = data.responseData.feed.entries;
-
-        if (!entries.length) {
-            blogBox.innerHTML = '<div class="empty">No posts yet.</div>';
-            return;
-        }
-        
-        for (var i = entries.length - 1; i >= 0; i--) {
-            var pubDate = new Date(entries[i].publishedDate);
-            pubDate = pubDate.getMonth() + '/' + pubDate.getDay() + 
-                '/' + pubDate.getFullYear() + ' ' + (pubDate.getHours() % 12 || 12) + 
-                ':' + ('0' + pubDate.getMinutes()).substr(-2) + ' ' + (pubDate.getHours() >= 12 ? 'pm' : 'am');
-
-            blogBox.innerHTML = [
-                '<a class="entry" href="' + entries[i].link + '">',
-                    '<h3>' + entries[i].title + '</h3>',
-                    '<p>' + entries[i].contentSnippet + '</p>',
-                    '<small>' + pubDate + '</small>',
-                '</a>',
-            ].join('\n') + blogBox.innerHTML;
-        };
-    }
-
+        target.innerHTML += document.getElementById('blog-post-template').innerHTML.format({
+          link: entries[i].link,
+          title: entries[i].title,
+          description: entries[i].contentSnippet,
+          date: publishedDate
+        });
+      }
+  };
 })();

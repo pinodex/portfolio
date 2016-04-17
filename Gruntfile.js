@@ -60,7 +60,8 @@ module.exports = function(grunt){
         'watch'
     ]);
 
-    grunt.registerTask('minify', [
+    grunt.registerTask('compile', [
+        'sass',
         'cssmin',
         'uglify'
     ]);

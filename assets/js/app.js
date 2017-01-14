@@ -21,107 +21,111 @@
     };
   }
 
-  var typeTexts = function typeTexts(target, texts) {
-      var currentLine = 0;
-      var currentChar = 0;
-      var intervalDelete = null;
+  (function loadBlog() {
+    var xhr = new XMLHttpRequest();
+    var template = document.getElementById('blog-post-template').innerHTML;
+    var target = document.getElementById('blogPosts');
 
-      target.innerHTML = '';
+    var maxDisplay = 3;
 
-      var next = function next() {
-        if (currentLine >= texts.length) {
-          currentLine = 0;
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+        var items = xhr.responseXML.getElementsByTagName('item');
+
+        if (items.length < maxDisplay) {
+          maxDisplay = items.length;
         }
 
-        var lineChars = texts[currentLine].split('');
+        target.innerHTML = '';
 
-        (function type() {
-          setTimeout(function() {
-            if (currentChar >= lineChars.length) {
-              currentLine++;
+        for (var i = 0; i < maxDisplay; i++) {
+          var publishedDate = new Date(items[i].getElementsByTagName('pubDate')[0].textContent);
 
-              setTimeout(function() {
-                deleteLine();
-              }, 1000);
-                        
-              return;
-            }
-
-            target.innerHTML += lineChars[currentChar++];
-            
-            type();
-          }, 80);
-        })();
-      };
-
-      function deleteLine() {
-        intervalDelete = setInterval(function() {
-          target.innerHTML = target.innerHTML.substr(0, currentChar - 1);
-          currentChar--;
-
-          if (currentChar === 0) {
-            clearInterval(intervalDelete);
-
-            return next();
-          }
-        }, 30);
+          target.innerHTML += document.getElementById('blog-post-template').innerHTML.format({
+            title: items[i].getElementsByTagName('title')[0].textContent,
+            link: items[i].getElementsByTagName('link')[0].textContent,
+            description: items[i].getElementsByTagName('description')[0].textContent.replace(/(<([^>]+)>)/ig, '') + '&hellip;',
+            date: '{m}/{d}/{y} {hh}:{mm} {t}'.format({
+              m:    publishedDate.getMonth(),
+              d:    publishedDate.getDay(),
+              y:    publishedDate.getFullYear(),
+              hh:   (publishedDate.getHours() % 12 || 12),
+              mm:   ('0' + publishedDate.getMinutes()).substr(-2),
+              t:    (publishedDate.getHours() >= 12 ? 'pm' : 'am')
+            })
+          });
+        }
       }
-
-      next();
     };
 
-    var hiddenEmails = document.querySelectorAll('[data-ex]');
-    var typingElements = document.querySelectorAll('[data-type]');
+    xhr.open('GET', BLOG_FEED_URL, true);
+    xhr.send();
+  }());
 
-    for (var i = hiddenEmails.length - 1; i >= 0; i--) {
-      var b64String = hiddenEmails[i].getAttribute('data-ex');
-      var el = hiddenEmails[i];
+  var typeTexts = function typeTexts(target, texts) {
+    var currentLine = 0;
+    var currentChar = 0;
+    var intervalDelete = null;
 
-      el.parentNode.replaceChild(
-        document.createTextNode(atob(b64String)), el
-      );
+    target.innerHTML = '';
+
+    var next = function next() {
+      if (currentLine >= texts.length) {
+        currentLine = 0;
+      }
+
+      var lineChars = texts[currentLine].split('');
+
+      (function type() {
+        setTimeout(function() {
+          if (currentChar >= lineChars.length) {
+            currentLine++;
+
+            setTimeout(function() {
+              deleteLine();
+            }, 1000);
+                        
+            return;
+          }
+
+          target.innerHTML += lineChars[currentChar++];
+            
+          type();
+        }, 80);
+      })();
+    };
+
+    function deleteLine() {
+      intervalDelete = setInterval(function() {
+        target.innerHTML = target.innerHTML.substr(0, currentChar - 1);
+        currentChar--;
+
+        if (currentChar === 0) {
+          clearInterval(intervalDelete);
+
+          return next();
+        }
+      }, 30);
     }
 
-    for (var x = typingElements.length - 1; x >= 0; x--) {
-      var texts = JSON.parse(typingElements[x].getAttribute('data-type'));
-        
-      typeTexts(typingElements[x], texts);
-    }
-
-    window.loadPosts = function loadPosts(data) {
-      var target = document.getElementById('blogPosts');
-
-      if (data.responseStatus !== 200) {
-        target.innerHTML = '<div class="empty">Cannot retrieve blog posts.</div>';
-        return;
-      }
-
-      var entries = data.responseData.feed.entries;
-
-      if (!entries.length) {
-        target.innerHTML = '<div class="empty">No posts yet.</div>';
-        return;
-      }
-
-      target.innerHTML = '';
-
-      for (var i = 0; i < entries.length; i++) {
-        var publishedDate = new Date(entries[i].publishedDate);
-        publishedDate = '{m}/{d}/{y} {hh}:{mm} {t}'.format({
-          m:    publishedDate.getMonth(),
-          d:    publishedDate.getDay(),
-          y:    publishedDate.getFullYear(),
-          hh:   (publishedDate.getHours() % 12 || 12),
-          mm:   ('0' + publishedDate.getMinutes()).substr(-2),
-          t:    (publishedDate.getHours() >= 12 ? 'pm' : 'am')
-        });
-
-        target.innerHTML += document.getElementById('blog-post-template').innerHTML.format({
-          link: entries[i].link,
-          title: entries[i].title,
-          description: entries[i].contentSnippet,
-          date: publishedDate
-        });
-      }
+    next();
   };
+
+  var hiddenEmails = document.querySelectorAll('[data-ex]');
+  var typingElements = document.querySelectorAll('[data-type]');
+
+  for (var i = hiddenEmails.length - 1; i >= 0; i--) {
+    var b64String = hiddenEmails[i].getAttribute('data-ex');
+    var el = hiddenEmails[i];
+
+    el.parentNode.replaceChild(
+      document.createTextNode(atob(b64String)), el
+    );
+  }
+
+  for (var x = typingElements.length - 1; x >= 0; x--) {
+    var texts = JSON.parse(typingElements[x].getAttribute('data-type'));
+        
+    typeTexts(typingElements[x], texts);
+  }
 })();

@@ -1,6 +1,6 @@
 <template>
   <div v-if="work">
-    <div class="hero" :style="headerStyle">
+    <div class="hero is-medium" :style="headerStyle">
       <div class="hero-body">
         <div class="container">
           <div class="work-text-container">
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+  import works from '@/works'
   import Navbar from '@/components/Navbar'
 
   export default {
@@ -50,8 +51,7 @@
     },
 
     mounted () {
-      import(`@/works/${this.$route.params.slug}.json`)
-        .then(data => this.work = data)
+      this.work = works.find(item => item.slug == this.$route.params.slug)
 
       import(`@/works/${this.$route.params.slug}.md`)
         .then(data => this.post = data.default)
@@ -87,9 +87,5 @@
     display: inline-block;
     background: #fff;
     padding: 0 0.5rem;
-  }
-
-  .image.work {
-    width: 500px;
   }
 </style>

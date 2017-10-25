@@ -1,6 +1,9 @@
 <template>
   <div id="app" :class="{ 'has-navbar-offset': $route.name != 'index' }">
-    <Navbar :fixed="true" :transparent="$route.name == 'index'"></Navbar>
+    <Navbar
+      :transparent="$route.name == 'index'"
+      :blue="scrolledPastHero"
+      :fixed="true"></Navbar>
 
     <router-view></router-view>
 
@@ -14,21 +17,16 @@
   export default {
     components: { Navbar },
 
+    data () {
+      return {
+        scrolledPastHero: false
+      }
+    },
+
     created () {
-      this.$Progress.start()
-
-      this.$router.beforeEach((to, from, next) => {
-        if (to.meta.progress !== undefined) {
-          let meta = to.meta.progress
-          this.$Progress.parseMeta(meta)
-        }
-
-        this.$Progress.start()
-        next()
-      })
-
-      this.$router.afterEach((to, from) => {
-        this.$Progress.finish()
+      window.addEventListener('scroll', () => {
+        this.scrolledPastHero = this.$route.name == 'index' &&
+          window.scrollY >= window.innerHeight - 60
       })
     }
   }
@@ -41,6 +39,10 @@
 
   .has-navbar-offset {
     margin-top: 52px;
+  }
+
+  .has-contents-below {
+    margin-bottom: 1rem;
   }
 
   .fade-enter-active,

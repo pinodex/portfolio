@@ -4,18 +4,20 @@ import Router from 'vue-router'
 const pages = {
   Index: () => import('@/pages/Index'),
   Works: () => import('@/pages/Works'),
-  Work: () => import('@/pages/Work')
+  Work: () => import('@/pages/Work'),
+  Post: () => import('@/pages/Post')
 }
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
 
   routes: [
     { path: '/', name: 'index', component: pages.Index },
     { path: '/works', name: 'works', component: pages.Works },
-    { path: '/works/:slug', name: 'work', component: pages.Work }
+    { path: '/works/:slug', name: 'work', component: pages.Work },
+    { path: '/posts/:slug', name: 'post', component: pages.Post }
   ],
 
   scrollBehavior (to, from, savedPosition) {
@@ -53,3 +55,20 @@ export default new Router({
     })
   }
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.progress !== undefined) {
+    let meta = to.meta.progress
+
+    router.app.$Progress.parseMeta(meta)
+  }
+
+  router.app.$Progress.start()
+  next()
+})
+
+router.afterEach((to, from) => {
+  router.app.$Progress.finish()
+})
+
+export default router

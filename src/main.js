@@ -5,7 +5,9 @@ import VueProgressBar from 'vue-progressbar'
 
 import App from './App'
 import Browser from './components/Browser'
+
 import router from './router'
+import services from './services'
 
 import 'bulma'
 
@@ -24,5 +26,7 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
+
+  provide: services,
 })

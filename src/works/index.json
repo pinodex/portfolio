@@ -1,9 +1,9 @@
 [
   {
-    "slug": "sti-novaliches-sis",
-    "name": "STI Novaliches SIS",
-    "description": "Student Information System for STI Novaliches",
-    "thumbnail": "/static/img/works/sis.png"
+    "slug": "sti-novaliches-secv",
+    "name": "STI Novaliches SEC Voting",
+    "description": "An automated voting system for STI Novaliches&lsquo; SEC Elections",
+    "thumbnail": "/static/img/works/secv.jpg"
   },
 
   {
@@ -18,40 +18,5 @@
     "name": "STI Novaliches SIS",
     "description": "Student Information System for STI Novaliches",
     "thumbnail": "/static/img/works/sis.png"
-  },
-
-  {
-    "slug": "sti-novaliches-mrmsv",
-    "name": "STI Novaliches Netizen&lsquo;s Choice",
-    "description": "An online voting website for STI Novaliches&lsquo; Mr. and Ms. STI",
-    "thumbnail": "/static/img/works/mrmsv.png"
-  },
-
-  {
-    "slug": "sti-novaliches-sis",
-    "name": "STI Novaliches SIS",
-    "description": "Student Information System for STI Novaliches",
-    "thumbnail": "/static/img/works/sis.png"
-  },
-
-  {
-    "slug": "sti-novaliches-mrmsv",
-    "name": "STI Novaliches Netizen&lsquo;s Choice",
-    "description": "An online voting website for STI Novaliches&lsquo; Mr. and Ms. STI",
-    "thumbnail": "/static/img/works/mrmsv.png"
-  },
-
-  {
-    "slug": "sti-novaliches-sis",
-    "name": "STI Novaliches SIS",
-    "description": "Student Information System for STI Novaliches",
-    "thumbnail": "/static/img/works/sis.png"
-  },
-
-  {
-    "slug": "sti-novaliches-mrmsv",
-    "name": "STI Novaliches Netizen&lsquo;s Choice",
-    "description": "An online voting website for STI Novaliches&lsquo; Mr. and Ms. STI",
-    "thumbnail": "/static/img/works/mrmsv.png"
   }
 ]

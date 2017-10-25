@@ -1,5 +1,9 @@
 <template>
-  <nav class="navbar has-shadow" :class="{ 'is-fixed': fixed, 'is-transparent': transparent }">
+  <nav class="navbar has-shadow" :class="{
+    'is-fixed': fixed,
+    'is-transparent': transparent,
+    'is-blue': blue
+  }">
     <div class="container">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item">
@@ -43,6 +47,11 @@
       transparent: {
         type: Boolean,
         default: false
+      },
+
+      blue: {
+        type: Boolean,
+        default: false
       }
     },
 
@@ -73,6 +82,15 @@
       left: 0;
       right: 0;
       z-index: 99;
+    }
+
+    &.is-blue {
+      background: #263238 !important;
+      box-shadow: none;
+
+      .navbar-item {
+        color: #f1f1f1;
+      }
     }
 
     &.is-transparent {

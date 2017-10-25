@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
   .browser {
     width: 100%;
     padding-bottom: 68.75%;
@@ -38,6 +38,10 @@
     width: 100%;
     padding-bottom: 56.25%;
   }
+
+  .content img {
+    width: 100%;
+  }
 </style>
 
 <script>
@@ -45,14 +49,6 @@
     props: {
       content: {
         type: String
-      }
-    },
-
-    computed: {
-      contentStyle () {
-        return {
-          'background-image': `url(${this.content})`
-        }
       }
     }
   }

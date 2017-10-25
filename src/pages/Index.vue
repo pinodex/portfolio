@@ -22,11 +22,9 @@
 
               <p>I played around with web development when I was a kid. That became my playground. Now I&lsquo;m working on different projects for myself and for other people.</p>
 
-              <hr />
-
-              <div class="level is-mobile">
+              <div class="level is-mobile has-contents-below section-divider">
                 <div class="level-left">
-                  <h2 class="subtitle">Works</h2>
+                  <h2 class="subtitle">Here&lsquo;s some of my work</h2>
                 </div>
 
                 <div class="level-right">
@@ -49,6 +47,34 @@
           </div>
         </div>
       </div>
+
+      <div class="container section-divider">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <div class="level is-mobile has-contents-below section-divider">
+                <div class="level-left">
+                  <h2 class="subtitle">Blog</h2>
+                </div>
+
+                <div class="level-right">
+                  <a href="https://blog.raphaelmarco.com">Visit Site</a>
+                </div>
+              </div>
+
+              <blockquote v-for="post in posts" :key="post.id">
+                <h1 class="is-size-4">
+                  <router-link :to="{ name: 'post', params: { slug: post.slug } }">{{ post.title }}</router-link>
+                </h1>
+
+                <p class="is-size-6 is-text-gray">
+                  <small>Posted on {{ new Date(post.created_at).toLocaleString() }}</small>
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </transition>
 </template>
@@ -58,6 +84,8 @@
   import works from '@/works/featured'
 
   export default {
+    inject: ['$blog'],
+
     components: { Navbar },
 
     data () {
@@ -66,7 +94,8 @@
         mouseY: 0,
         hasReceivedMouseMove: false,
 
-        works: []
+        works: [],
+        posts: []
       }
     },
 
@@ -97,6 +126,9 @@
 
     mounted () {
       this.works = works
+
+      this.$blog.get('/posts?limit=3')
+        .then(response => this.posts = response.data.posts)
     },
 
     methods: {
@@ -155,6 +187,10 @@
     letter-spacing: 5px;
     font-weight: 300;
     color: #ccc;
+  }
+
+  .section-divider {
+    margin-top: 3rem;
   }
 
   .work {

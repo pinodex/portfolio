@@ -1,0 +1,25 @@
+[
+  {
+    "slug": "sti-novaliches-tst",
+    "name": "STI Novaliches Talent Search Tabulation",
+    "thumbnail": "/static/img/featured/sti-novaliches-tst.jpg"
+  },
+
+  {
+    "slug": "sti-novaliches-mrmsv",
+    "name": "STI Novaliches Netizen&lsquo;s Choice",
+    "thumbnail": "/static/img/featured/sti-novaliches-mrmsv.jpg"
+  },
+
+  {
+    "slug": "sti-novaliches-sis",
+    "name": "STI Novaliches SIS",
+    "thumbnail": "/static/img/featured/sti-novaliches-tas.jpg"
+  },
+
+  {
+    "slug": "sti-novaliches-secv",
+    "name": "STI Novaliches SEC Automated Election",
+    "thumbnail": "/static/img/featured/sti-novaliches-secv.jpg"
+  }
+]

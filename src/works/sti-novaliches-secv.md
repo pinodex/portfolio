@@ -1,5 +1,9 @@
-<div class="has-text-centered has-contents-below">
-<iframe src="https://giphy.com/embed/nDQbWNwidXwWY" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<div class="has-contents-below">
+  <div style="width:100%;height:0;padding-bottom:56%;position:relative;">
+    <iframe src="https://giphy.com/embed/nDQbWNwidXwWY" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+  </div>
+
+  <p><a href="https://giphy.com/gifs/nDQbWNwidXwWY">via GIPHY</a></p>
 </div>
 
 Read the full write-up at [Medium.com](https://medium.com/@raphaelmarco/making-our-first-automated-student-government-elections-af390fea23ab).
@@ -10,6 +14,6 @@ Read the full write-up at [Medium.com](https://medium.com/@raphaelmarco/making-o
 * **AdonisJs**
 * **Socket.io**
 
-## Client app client
+## Client app stack
 * **Angular.js**
 * **Electron**

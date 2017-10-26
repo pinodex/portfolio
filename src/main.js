@@ -5,6 +5,7 @@ import VueProgressBar from 'vue-progressbar'
 
 import App from './App'
 import Browser from './components/Browser'
+import Screen from './components/Screen'
 
 import router from './router'
 import services from './services'
@@ -20,6 +21,7 @@ Vue.use(VueProgressBar, {
 })
 
 Vue.component('Browser', Browser)
+Vue.component('Screen', Screen)
 
 /* eslint-disable no-new */
 new Vue({

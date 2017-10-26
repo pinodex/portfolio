@@ -19,7 +19,7 @@
   }
 
   .frame {
-    background: url('/static/img/browser-frame.png');
+    background: url('/static/img/screen-frame.png');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -31,7 +31,7 @@
 
     overflow: hidden;
 
-    padding-top: 9.2%;
+    padding-top: 7.95%;
     padding-left: 6.7%;
     padding-right: 6.9%;
   }

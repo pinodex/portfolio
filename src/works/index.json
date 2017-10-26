@@ -1,5 +1,12 @@
 [
   {
+    "slug": "sti-novaliches-tst",
+    "name": "STI Novaliches Talent Search Tabulation",
+    "description": "A real-time tabulation system for STI Novaliches Talent Search",
+    "thumbnail": "/static/img/featured/sti-novaliches-tst.jpg"
+  },
+
+  {
     "slug": "sti-novaliches-secv",
     "name": "STI Novaliches SEC Voting",
     "description": "An automated voting system for STI Novaliches&lsquo; SEC Elections",
@@ -11,6 +18,13 @@
     "name": "STI Novaliches Netizen&lsquo;s Choice",
     "description": "An online voting website for STI Novaliches&lsquo; Mr. and Ms. STI",
     "thumbnail": "/static/img/works/mrmsv.png"
+  },
+
+  {
+    "slug": "sti-novaliches-tas",
+    "name": "STI Novaliches TAS",
+    "description": "Employee Timekeeping Authorization Slip manager for STI Novaliches",
+    "thumbnail": "/static/img/works/tas-01.png"
   },
 
   {

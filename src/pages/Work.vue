@@ -62,6 +62,7 @@
 <style lang="scss" scoped>
   .hero {
     background-size: cover;
+    background-position: center;
     margin-bottom: 1rem;
 
     .hero-body,

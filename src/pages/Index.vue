@@ -36,8 +36,20 @@
         </div>
       </div>
 
-      <div class="columns works is-mobile is-gapless">
+      <div class="columns works is-gapless is-centered is-hidden-touch">
         <div class="column is-3" v-for="work in works">
+          <div class="work">
+            <div class="thumbnail" :style="workStyle(work)"></div>
+
+            <router-link class="overlay-link"
+              :to="{ name: 'work', params: { slug: work.slug } }">
+            </router-link>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns works is-gapless is-multiline is-mobile is-centered is-hidden-desktop">
+        <div class="column is-6" v-for="work in works">
           <div class="work">
             <div class="thumbnail" :style="workStyle(work)"></div>
 

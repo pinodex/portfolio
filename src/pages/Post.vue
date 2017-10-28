@@ -1,11 +1,22 @@
 <template>
-  <transition name="fade">
-    <section v-if="post">
+  <transition name="fade" mode="out-in">
+    <section key="dummy" class="has-text-centered" v-if="post == null">
+      <div class="hero is-dark is-fullheight has-contents-below">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="is-size-2">&hellip;</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section key="actual" v-else>
       <div class="hero is-dark has-contents-below"
         :class="{ 'is-fullheight': post.feature_image }"
         :style="heroStyle">
 
-        <div class="overlay" v-if="post.feature_image"></div>
+        <div class="overlay" v-if="post.feature_image"
+         :class="{ 'is-hard': !isFeatureImageLoaded }"></div>
 
         <div class="hero-body">
           <div class="container has-text-centered">
@@ -39,13 +50,14 @@
 
     data () {
       return {
-        post: null
+        post: null,
+        isFeatureImageLoaded: false
       }
     },
 
     computed: {
       heroStyle () {
-        if (!this.post) {
+        if (!this.isFeatureImageLoaded) {
           return {}
         }
 
@@ -66,10 +78,12 @@
 
           if (this.post.feature_image) {
             this.post.feature_image = this.replaceContentUrl(this.post.feature_image)
+
+            let feature = new Image();
+
+            feature.src = this.post.feature_image;
+            feature.onload = () => this.isFeatureImageLoaded = true
           }
-        })
-        .catch(error => {
-          this.$router.push({ name: 'index' })
         })
     },
 
@@ -97,5 +111,10 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
+    transition: background 0.5s ease;
+  }
+
+  .overlay.is-hard {
+    background: rgba(0, 0, 0, 1);
   }
 </style>

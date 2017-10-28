@@ -32,5 +32,33 @@
     "name": "STI Novaliches SIS",
     "description": "Student Information System for STI Novaliches",
     "thumbnail": "/static/img/works/sis.png"
+  },
+
+  {
+    "slug": "san-bartolome-high-school-botb",
+    "name": "SBHS Battle of the Bands website",
+    "description": "San Bartolome High School Battle of the Bands website",
+    "thumbnail": "/static/img/works/sbhs-botb.png"
+  },
+
+  {
+    "slug": "san-bartolome-high-school",
+    "name": "San Bartolome High School website",
+    "description": "Official website of San Bartolome High School",
+    "thumbnail": "/static/img/works/sbhs.png"
+  },
+
+  {
+    "slug": "sweetfm",
+    "name": "SweetFM",
+    "description": "Online radio website",
+    "thumbnail": "/static/img/works/sweetfm.png"
+  },
+
+  {
+    "slug": "esprenfm",
+    "name": "EsprenFM",
+    "description": "Online radio website",
+    "thumbnail": "/static/img/works/esprenfm.png"
   }
 ]

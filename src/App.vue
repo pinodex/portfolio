@@ -8,6 +8,17 @@
     <router-view></router-view>
 
     <vue-progress-bar></vue-progress-bar>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p><strong>Raphael Marco</strong></p>
+          <p>
+            This website is <a href="https://github.com/pinodex/pinodex.github.io">open source</a>!
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -43,6 +54,10 @@
 
   .has-contents-below {
     margin-bottom: 1rem;
+  }
+
+  .footer {
+    margin-top: 5rem;
   }
 
   .fade-enter-active,

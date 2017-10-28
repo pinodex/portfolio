@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div class="container section-divider">
+      <div class="container section-divider" v-if="posts.length > 0">
         <div class="columns is-centered">
           <div class="column is-8">
             <div class="content">
@@ -127,7 +127,7 @@
     mounted () {
       this.works = works
 
-      this.$blog.get('/posts?limit=3')
+      this.$blog.get('/posts?limit=5')
         .then(response => this.posts = response.data.posts)
     },
 
@@ -152,11 +152,6 @@
 
 <style lang="scss" scoped>
   .main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-
     & > .hero {
       background: #263238;
       position: relative;

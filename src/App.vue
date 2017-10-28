@@ -48,6 +48,11 @@
     color: #263238;
   }
 
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .has-navbar-offset {
     margin-top: 52px;
   }

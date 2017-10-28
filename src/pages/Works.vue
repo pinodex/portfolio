@@ -10,7 +10,7 @@
     </div>
 
     <div class="container">
-      <div class="columns is-mobile">
+      <div class="columns">
         <div class="column is-4" v-for="chunk in chunks">
           <div class="work" v-for="work in chunk">
             <figure class="image">

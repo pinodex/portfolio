@@ -5,7 +5,7 @@ let instance = axios.create({
 })
 
 instance.interceptors.request.use(config => {
-  config.params = {}
+  config.params = config.params || {}
 
   config.params['client_id'] = window.__BLOG__.clientId
   config.params['client_secret'] = window.__BLOG__.clientSecret

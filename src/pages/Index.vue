@@ -43,21 +43,21 @@
         </div>
       </div>
 
-      <transition name="fade">
-        <div class="container section-divider" v-if="posts.length > 0">
-          <div class="columns is-centered">
-            <div class="column is-8">
-              <div class="content">
-                <div class="level is-mobile has-contents-below section-divider">
-                  <div class="level-left">
-                    <h2 class="subtitle">Blog</h2>
-                  </div>
-
-                  <div class="level-right">
-                    <a href="https://blog.raphaelmarco.com">Visit Site</a>
-                  </div>
+      <div class="container section-divider" v-if="showPosts">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <div class="level is-mobile has-contents-below section-divider">
+                <div class="level-left">
+                  <h2 class="subtitle">Blog</h2>
                 </div>
 
+                <div class="level-right">
+                  <a href="https://blog.raphaelmarco.com">Visit Site</a>
+                </div>
+              </div>
+
+              <template v-if="posts.length > 0">
                 <blockquote v-for="post in posts" :key="post.id">
                   <h1 class="is-size-4">
                     <router-link :to="{ name: 'post', params: { slug: post.slug } }">{{ post.title }}</router-link>
@@ -67,11 +67,23 @@
                     <small>Posted on {{ new Date(post.created_at).toLocaleString() }}</small>
                   </p>
                 </blockquote>
-              </div>
+              </template>
+
+              <template v-else>
+                <blockquote v-for="i in postCountLimit">
+                  <h1 class="is-size-4">
+                    <span class="skeleton-text"></span>
+                  </h1>
+
+                  <p class="is-size-6 is-text-gray">
+                    <small><span class="skeleton-text short"></span></small>
+                  </p>
+                </blockquote>
+              </template>
             </div>
           </div>
         </div>
-      </transition>
+      </div>
     </div>
   </transition>
 </template>
@@ -91,15 +103,21 @@
     data () {
       return {
         works: [],
-        posts: []
+        posts: [],
+
+        showPosts: true,
+        postCountLimit: 5
       }
     },
 
     mounted () {
       this.works = works
 
-      this.$blog.get('/posts?limit=5')
+      let params = { limit: this.postCountLimit }
+
+      this.$blog.get('/posts', { params })
         .then(response => this.posts = response.data.posts)
+        .catch(error => this.showPosts = false)
     }
   }
 </script>
@@ -123,5 +141,20 @@
 
   .section-divider {
     margin-top: 3rem;
+  }
+
+  .skeleton-text {
+    display: inline-block;
+
+    background: #e0e0e0;
+    max-width: 500px;
+    width: 100%;
+
+    height: 1.5rem;
+
+    &.short {
+      max-width: 300px;
+      height: 1rem;
+    }
   }
 </style>

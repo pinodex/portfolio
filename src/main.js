@@ -5,6 +5,7 @@ import 'es6-promise/auto'
 
 import Vue from 'vue'
 import VueProgressBar from 'vue-progressbar'
+import VueAnalytics from 'vue-analytics'
 
 import App from './App'
 import Browser from './components/Browser'
@@ -21,6 +22,10 @@ Vue.use(VueProgressBar, {
   color: '#607d8b',
   failedColor: 'red',
   height: '1px'
+})
+
+Vue.use(VueAnalytics, {
+  id: __GA_CODE__, router
 })
 
 Vue.component('Browser', Browser)

@@ -61,7 +61,6 @@
         isMenuExpanded: false,
 
         links: [
-          { key: 'index', url: '/', text: 'Home' },
           { key: 'works', url: '/works', text: 'Works' }
         ]
       }

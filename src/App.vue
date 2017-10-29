@@ -23,9 +23,6 @@
             <a href="https://ph.linkedin.com/in/raphaelmarco"><i class="icon-linkedin"></i></a>
             <a href="https://twitter.com/pinodexxd"><i class="icon-twitter"></i></a>
           </p>
-          <p>
-            This website is <a href="https://github.com/pinodex/pinodex.github.io">open source</a>!
-          </p>
         </div>
       </div>
     </footer>

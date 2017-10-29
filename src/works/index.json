@@ -1,5 +1,12 @@
 [
   {
+    "slug": "kyoo",
+    "name": "Kyoo",
+    "description": "Real-time queuing management platform",
+    "thumbnail": "/static/img/works/kyoo-01.png"
+  },
+
+  {
     "slug": "sti-novaliches-tst",
     "name": "STI Novaliches Talent Search Tabulation",
     "description": "A real-time tabulation system for STI Novaliches Talent Search",

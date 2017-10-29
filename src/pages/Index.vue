@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div class="main">
+    <div>
       <section class="hero is-dark is-fullheight">
         <div class="hero-body">
           <NameBox></NameBox>
@@ -11,20 +11,25 @@
         <div class="columns is-centered">
           <div class="column is-8">
             <div class="content">
-              <h1 class="title">Hi there!</h1>
-
-              <p class="is-size-5">I&lsquo;m Raphael Marco and I write codes.</p>
+              <h1 class="is-size-1">Hi there!</h1>
+              <p class="is-size-4">I&rsquo;m Raphael Marco and I write codes.</p>
 
               <p>I played around with web development when I was a kid. That became my playground. Now I&lsquo;m working on different projects for myself and for other people.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-              <div class="level is-mobile has-contents-below section-divider">
-                <div class="level-left">
-                  <h2 class="subtitle">Here&lsquo;s some of my work</h2>
-                </div>
+      <div class="container section-divider has-contents-below">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="level is-mobile">
+              <div class="level-left">
+                <h2 class="is-size-3">Works</h2>
+              </div>
 
-                <div class="level-right">
-                  <router-link :to="{ name: 'works' }">View All</router-link>
-                </div>
+              <div class="level-right">
+                <router-link :to="{ name: 'works' }">View All</router-link>
               </div>
             </div>
           </div>
@@ -46,20 +51,20 @@
       <div class="container section-divider" v-if="showPosts">
         <div class="columns is-centered">
           <div class="column is-8">
-            <div class="content">
-              <div class="level is-mobile has-contents-below section-divider">
-                <div class="level-left">
-                  <h2 class="subtitle">Blog</h2>
-                </div>
-
-                <div class="level-right">
-                  <a href="https://blog.raphaelmarco.com">Visit Site</a>
-                </div>
+            <div class="level is-mobile">
+              <div class="level-left">
+                <h2 class="is-size-3">Blog</h2>
               </div>
 
+              <div class="level-right">
+                <a href="https://blog.raphaelmarco.com">Visit Site</a>
+              </div>
+            </div>
+
+            <div class="content">
               <template v-if="posts.length > 0">
                 <blockquote v-for="post in posts" :key="post.id">
-                  <h1 class="is-size-4">
+                  <h1 class="is-size-5">
                     <router-link :to="{ name: 'post', params: { slug: post.slug } }">{{ post.title }}</router-link>
                   </h1>
 
@@ -71,7 +76,7 @@
 
               <template v-else>
                 <blockquote v-for="i in postCountLimit">
-                  <h1 class="is-size-4">
+                  <h1 class="is-size-5">
                     <span class="skeleton-text"></span>
                   </h1>
 
@@ -123,15 +128,13 @@
 </script>
 
 <style lang="scss" scoped>
-  .main {
-    & > .hero {
-      background: #263238;
-      position: relative;
+  .hero {
+    background: #263238;
+    position: relative;
 
-      .hero-body {
-        margin: 0 auto;
-        text-align: center;
-      }
+    .hero-body {
+      margin: 0 auto;
+      text-align: center;
     }
   }
 

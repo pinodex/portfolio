@@ -84,6 +84,8 @@
             feature.src = this.post.feature_image;
             feature.onload = () => this.isFeatureImageLoaded = true
           }
+
+          this.$root.setTitle(this.post.title)
         })
     },
 

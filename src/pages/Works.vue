@@ -56,6 +56,8 @@
       })
 
       this.$forceUpdate()
+
+      this.$root.setTitle('Works')
     }
   }
 </script>

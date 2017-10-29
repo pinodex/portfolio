@@ -34,4 +34,10 @@ new Vue({
   components: { App },
 
   provide: services,
+
+  methods: {
+    setTitle (text) {
+      document.title = `${text} - Raphael Marco`
+    }
+  }
 })

@@ -53,6 +53,8 @@
     mounted () {
       this.work = works.find(item => item.slug == this.$route.params.slug)
 
+      this.$root.setTitle(this.work.name)
+
       import(`@/works/${this.$route.params.slug}.md`)
         .then(data => this.post = data.default)
     }

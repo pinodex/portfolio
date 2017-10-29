@@ -134,6 +134,8 @@
       this.$blog.get('/posts', { params })
         .then(response => this.posts = response.data.posts)
         .catch(error => this.showPosts = false)
+
+      this.$root.setTitle('Home')
     }
   }
 </script>

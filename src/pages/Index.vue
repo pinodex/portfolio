@@ -38,25 +38,13 @@
 
       <div class="columns works is-gapless is-centered is-hidden-touch">
         <div class="column is-3" v-for="work in works">
-          <div class="work">
-            <div class="thumbnail" :style="workStyle(work)"></div>
-
-            <router-link class="overlay-link"
-              :to="{ name: 'work', params: { slug: work.slug } }">
-            </router-link>
-          </div>
+          <Work :model="work"></Work>
         </div>
       </div>
 
       <div class="columns works is-gapless is-multiline is-mobile is-centered is-hidden-desktop">
         <div class="column is-6" v-for="work in works">
-          <div class="work">
-            <div class="thumbnail" :style="workStyle(work)"></div>
-
-            <router-link class="overlay-link"
-              :to="{ name: 'work', params: { slug: work.slug } }">
-            </router-link>
-          </div>
+          <Work :model="work"></Work>
         </div>
       </div>
 
@@ -95,12 +83,14 @@
 
 <script>
   import Navbar from '@/components/Navbar'
+  import Work from '@/components/Work'
+
   import works from '@/works/featured'
 
   export default {
     inject: ['$blog'],
 
-    components: { Navbar },
+    components: { Navbar, Work },
 
     data () {
       return {
@@ -151,14 +141,6 @@
         this.mouseY = event.y
 
         this.hasReceivedMouseMove = true
-      },
-
-      workStyle (work) {
-        let style = {}
-
-        style['background-image'] = `url(${work.thumbnail})`
-
-        return style
       }
     }
   }
@@ -200,37 +182,5 @@
 
   .section-divider {
     margin-top: 3rem;
-  }
-
-  .work {
-    position: relative;
-    background: #eee;
-    height: 200px;
-    overflow: hidden;
-
-    .thumbnail {
-      background-position: center;
-      background-size: cover;
-
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      transition: transform 0.5s ease;
-    }
-
-    &:hover .thumbnail {
-      transform: scale(1.1);
-    }
-  }
-
-  .works .overlay-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
   }
 </style>

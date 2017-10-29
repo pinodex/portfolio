@@ -60,33 +60,35 @@
         </div>
       </div>
 
-      <div class="container section-divider" v-if="posts.length > 0">
-        <div class="columns is-centered">
-          <div class="column is-8">
-            <div class="content">
-              <div class="level is-mobile has-contents-below section-divider">
-                <div class="level-left">
-                  <h2 class="subtitle">Blog</h2>
+      <transition name="fade">
+        <div class="container section-divider" v-if="posts.length > 0">
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <div class="level is-mobile has-contents-below section-divider">
+                  <div class="level-left">
+                    <h2 class="subtitle">Blog</h2>
+                  </div>
+
+                  <div class="level-right">
+                    <a href="https://blog.raphaelmarco.com">Visit Site</a>
+                  </div>
                 </div>
 
-                <div class="level-right">
-                  <a href="https://blog.raphaelmarco.com">Visit Site</a>
-                </div>
+                <blockquote v-for="post in posts" :key="post.id">
+                  <h1 class="is-size-4">
+                    <router-link :to="{ name: 'post', params: { slug: post.slug } }">{{ post.title }}</router-link>
+                  </h1>
+
+                  <p class="is-size-6 is-text-gray">
+                    <small>Posted on {{ new Date(post.created_at).toLocaleString() }}</small>
+                  </p>
+                </blockquote>
               </div>
-
-              <blockquote v-for="post in posts" :key="post.id">
-                <h1 class="is-size-4">
-                  <router-link :to="{ name: 'post', params: { slug: post.slug } }">{{ post.title }}</router-link>
-                </h1>
-
-                <p class="is-size-6 is-text-gray">
-                  <small>Posted on {{ new Date(post.created_at).toLocaleString() }}</small>
-                </p>
-              </blockquote>
             </div>
           </div>
         </div>
-      </div>
+      </transition>
     </div>
   </transition>
 </template>

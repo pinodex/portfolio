@@ -33,7 +33,7 @@
 
     padding-top: 9.2%;
     padding-left: 6.7%;
-    padding-right: 6.9%;
+    padding-right: 7%;
   }
 
   .content {

@@ -72,7 +72,7 @@
   }
 
   .has-contents-below {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem !important;
   }
 
   .footer {

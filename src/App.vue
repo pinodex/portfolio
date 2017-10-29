@@ -14,7 +14,15 @@
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
-          <p><strong>Raphael Marco</strong></p>
+          <p class="is-size-4">Raphael Marco</p>
+
+          <p class="social-links">
+            <a href="https://github.com/pinodex"><i class="icon-github"></i></a>
+            <a href="http://stackoverflow.com/users/2680698/raphael-marco"><i class="icon-stack-overflow"></i></a>
+            <a href="http://codepen.io/pinodex/"><i class="icon-codepen"></i></a>
+            <a href="https://ph.linkedin.com/in/raphaelmarco"><i class="icon-linkedin"></i></a>
+            <a href="https://twitter.com/pinodexxd"><i class="icon-twitter"></i></a>
+          </p>
           <p>
             This website is <a href="https://github.com/pinodex/pinodex.github.io">open source</a>!
           </p>
@@ -25,6 +33,7 @@
 </template>
 
 <script>
+  import '@/icons/style.scss'
   import Navbar from '@/components/Navbar'
 
   export default {
@@ -51,7 +60,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   body {
     color: #263238;
   }
@@ -71,6 +80,15 @@
 
   .footer {
     margin-top: 5rem;
+  }
+
+  .social-links {
+    a {
+      display: inline-block;
+      font-size: 1.5rem;
+      padding: 1rem;
+      color: #555;
+    }
   }
 
   .fade-enter-active,

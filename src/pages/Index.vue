@@ -89,6 +89,17 @@
           </div>
         </div>
       </div>
+
+      <div class="container section-divider">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <h2 class="is-size-3">Contact</h2>
+
+            <p>You can reach me at <strong>raphaelmarco 📧 outlook.com</strong></p>
+            <p>My GitHub profile is <strong><a href="https://github.com/pinodex">@pinodex</a></strong></p>
+          </div>
+        </div>
+      </div>
     </div>
   </transition>
 </template>

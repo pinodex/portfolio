@@ -1,9 +1,9 @@
 <template>
   <div class="work" :style="workStyle">
     <transition name="fade">
-      <template v-if="isThumbnailLoaded">
+      <div v-if="isThumbnailLoaded">
         <div class="thumbnail" :style="thumbnailStyle"></div>
-      </template>
+      </div>
     </transition>
 
     <router-link class="overlay-link"

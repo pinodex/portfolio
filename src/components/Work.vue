@@ -1,5 +1,5 @@
 <template>
-  <div class="work">
+  <div class="work" :style="workStyle">
     <transition name="fade">
       <template v-if="isThumbnailLoaded">
         <div class="thumbnail" :style="thumbnailStyle"></div>
@@ -27,6 +27,12 @@
     },
 
     computed: {
+      workStyle () {
+        return {
+          'background-color': this.model.dominantColor
+        }
+      },
+
       thumbnailStyle () {
         if (!this.isThumbnailLoaded)  {
           return {}
@@ -50,7 +56,6 @@
 <style lang="scss" scoped>
   .work {
     position: relative;
-    background: #eee;
     height: 200px;
     overflow: hidden;
 

@@ -1,25 +1,29 @@
 [
   {
-    "slug": "sti-novaliches-tst",
-    "name": "STI Novaliches Talent Search Tabulation",
-    "thumbnail": "/static/img/featured/sti-novaliches-tst.jpg"
-  },
-
-  {
     "slug": "sti-novaliches-mrmsv",
     "name": "STI Novaliches Netizen&lsquo;s Choice",
-    "thumbnail": "/static/img/featured/sti-novaliches-mrmsv.jpg"
+    "thumbnail": "/static/img/featured/sti-novaliches-mrmsv.jpg",
+    "dominantColor": "#a6aebc"
   },
 
   {
     "slug": "sti-novaliches-tas",
     "name": "STI Novaliches TAS",
-    "thumbnail": "/static/img/featured/sti-novaliches-tas.jpg"
+    "thumbnail": "/static/img/featured/sti-novaliches-tas.jpg",
+    "dominantColor": "#203945"
   },
 
   {
     "slug": "sti-novaliches-secv",
     "name": "STI Novaliches SEC Automated Election",
-    "thumbnail": "/static/img/featured/sti-novaliches-secv.jpg"
+    "thumbnail": "/static/img/featured/sti-novaliches-secv.jpg",
+    "dominantColor": "#1e1e21"
+  },
+
+  {
+    "slug": "sti-novaliches-tst",
+    "name": "STI Novaliches Talent Search Tabulation",
+    "thumbnail": "/static/img/featured/sti-novaliches-tst.jpg",
+    "dominantColor": "#a6aebc"
   }
 ]

@@ -1,5 +1,7 @@
 <template>
-  <div id="app" :class="{ 'has-navbar-offset': $route.name != 'index' }">
+  <div id="app"
+    @mousemove="broadcastMouseMoveEvent"
+    :class="{ 'has-navbar-offset': $route.name != 'index' }">
     <Navbar
       :transparent="$route.name == 'index'"
       :blue="scrolledPastHero"
@@ -39,6 +41,12 @@
         this.scrolledPastHero = this.$route.name == 'index' &&
           window.scrollY >= window.innerHeight - 60
       })
+    },
+
+    methods: {
+      broadcastMouseMoveEvent (event) {
+        this.$root.$emit('mousemove', event)
+      }
     }
   }
 </script>

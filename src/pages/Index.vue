@@ -1,14 +1,9 @@
 <template>
   <transition name="fade">
-    <div class="main" @mousemove="updateMousePosition">
+    <div class="main">
       <section class="hero is-dark is-fullheight">
         <div class="hero-body">
-          <div class="container">
-            <div class="outline-box" :style="outlineBoxStyle">
-              <p class="is-size-1 hero-title">Raphael Marco</p>
-              <p class="is-size-5 hero-subtitle">Web Developer</p>
-            </div>
-          </div>
+          <NameBox></NameBox>
         </div>
       </section>
 
@@ -83,6 +78,7 @@
 
 <script>
   import Navbar from '@/components/Navbar'
+  import NameBox from '@/components/NameBox'
   import Work from '@/components/Work'
 
   import works from '@/works/featured'
@@ -90,41 +86,12 @@
   export default {
     inject: ['$blog'],
 
-    components: { Navbar, Work },
+    components: { Navbar, NameBox, Work },
 
     data () {
       return {
-        mouseX: 0,
-        mouseY: 0,
-        hasReceivedMouseMove: false,
-
         works: [],
         posts: []
-      }
-    },
-
-    computed: {
-      outlineBoxStyle () {
-        let style = {},
-            pos = this.boxShadowPosition
-
-        style['box-shadow'] = `${pos.x}px ${pos.y}px 0px 0px rgba(0, 0, 0, 0.2)`
-        style['transform'] = `translate(${pos.x / 2}px, ${pos.y / 2}px)`
-
-        return style
-      },
-
-      boxShadowPosition () {
-        let x = 0, y = 0
-
-        if (!this.hasReceivedMouseMove) {
-          return { x, y }
-        }
-
-        x = (this.mouseX - screen.width / 2) / 16 * -1
-        y = (this.mouseY - screen.height /2) / 16 * -1
-
-        return { x, y }
       }
     },
 
@@ -133,15 +100,6 @@
 
       this.$blog.get('/posts?limit=5')
         .then(response => this.posts = response.data.posts)
-    },
-
-    methods: {
-      updateMousePosition (event) {
-        this.mouseX = event.x
-        this.mouseY = event.y
-
-        this.hasReceivedMouseMove = true
-      }
     }
   }
 </script>
@@ -153,6 +111,7 @@
       position: relative;
 
       .hero-body {
+        margin: 0 auto;
         text-align: center;
       }
     }
@@ -160,24 +119,6 @@
 
   .hero {
     margin-bottom: 2rem;
-  }
-
-  .outline-box {
-    display: inline-block;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 2rem;
-  }
-
-  .hero-title {
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  .hero-subtitle {
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-weight: 300;
-    color: #ccc;
   }
 
   .section-divider {

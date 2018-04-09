@@ -1,5 +1,12 @@
 [
   {
+    "slug": "jose-rizal-online",
+    "name": "Jose Rizal Online",
+    "description": "Informational website for Jose Rizal",
+    "thumbnail": "/static/img/works/jose-rizal-online-01.jpg"
+  },
+
+  {
     "slug": "kyoo",
     "name": "Kyoo",
     "description": "Real-time queuing management platform",

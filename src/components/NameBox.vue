@@ -1,7 +1,7 @@
 <template>
   <div class="outline-box" :style="style">
     <p class="is-size-1 name">Raphael Marco</p>
-    <p class="is-size-5 description">Web Developer</p>
+    <p class="is-size-6 description">Full Stack Web Developer</p>
   </div>
 </template>
 
@@ -73,7 +73,7 @@
 
   .description {
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     font-weight: 300;
     color: #ccc;
   }

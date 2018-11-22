@@ -69,7 +69,7 @@
                   </h1>
 
                   <p class="is-size-6 is-text-gray">
-                    <small>Posted on {{ new Date(post.created_at).toLocaleString() }}</small>
+                    <small>Posted on {{ new Date(post.published_at).toLocaleString() }}</small>
                   </p>
                 </blockquote>
               </template>

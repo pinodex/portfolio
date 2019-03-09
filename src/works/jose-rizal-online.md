@@ -26,7 +26,7 @@ And his works and story.
 * Vue.js
 
 ### Website
-The website is hosted at [rizal.online](https://rizal.online).
+The website is hosted at ~~rizal.online~~ [joserizal.herokuapp.com](https://joserizal.herokuapp.com).
 
 ### Source
 The code is available at [Github](https://github.com/pinodex/JoseRizal).

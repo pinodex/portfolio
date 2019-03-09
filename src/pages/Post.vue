@@ -70,7 +70,7 @@
     },
 
     mounted () {
-      this.$blog.get(`/posts/slug/${this.$route.params.slug}`)
+      this.$blog.get(`/posts/slug/${this.$route.params.slug}/`)
         .then(response => {
           this.post = response.data.posts[0]
 

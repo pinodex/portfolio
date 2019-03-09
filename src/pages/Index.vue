@@ -131,7 +131,7 @@
 
       let params = { limit: this.postCountLimit }
 
-      this.$blog.get('/posts', { params })
+      this.$blog.get('/posts/', { params })
         .then(response => this.posts = response.data.posts)
         .catch(error => this.showPosts = false)
 

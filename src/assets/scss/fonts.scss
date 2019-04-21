@@ -1,0 +1,26 @@
+@import 'mixins';
+
+$public-sans-fonts: (
+  ('Black', 900, normal),
+  ('BlackItalic', 900, italic),
+  ('ExtraBold', 800, normal),
+  ('ExtraBoldItalic', 800, italic),
+  ('Bold', 700, normal),
+  ('BoldItalic', 700, italic),
+  ('SemiBold', 600, normal),
+  ('SemiBoldItalic', 600, italic),
+  ('Medium', 500, normal),
+  ('MediumItalic', 500, italic),
+  ('Regular', 400, normal),
+  ('Italic', 400, italic),
+  ('Light', 300, normal),
+  ('LightItalic', 300, italic),
+  ('ExtraLight', 200, normal),
+  ('ExtraLightItalic', 200, italic),
+  ('Thin', 100, normal),
+  ('ThinItalic', 100, italic)
+);
+
+@each $name, $weight, $style in $public-sans-fonts {
+  @include make-font-face('Public Sans', '/assets/webfonts/PublicSans-#{$name}', $weight, $style);
+}

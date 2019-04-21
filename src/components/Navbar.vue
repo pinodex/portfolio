@@ -23,10 +23,11 @@
   </nav>
 </template>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
   .navbar-item,
-  .navbar-link
+  .navbar-link {
     text-transform: uppercase
+  }
 </style>
 
 <script>

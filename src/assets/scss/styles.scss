@@ -1,22 +1,9 @@
 @import 'variables';
 @import 'bulma';
 
-.navbar.is-primary {
-  .navbar-brand,
-  .navbar-start,
-  .navbar-end {
-    & > .navbar-item,
-    .navbar-link {
-      color: #f1f1f1;
-      letter-spacing: 1px;
-    }
-  }
-
-  .navbar-brand > .navbar-item {
-    font-weight: bold;
-  }
-}
-
+/**
+ * Animations
+ */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity .5s

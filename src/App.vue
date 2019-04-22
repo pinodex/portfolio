@@ -32,12 +32,9 @@ export default {
 
   methods: {
     onScroll (e) {
-      const navbarStyle = getComputedStyle(this.$refs.navbar.$el)
-      let height = window.innerHeight
+      this.$root.$emit('scroll', e)
 
-      height -= Number(navbarStyle.height.replace('px', ''))
-
-      this.isNavbarCollapsed = window.scrollY > height
+      this.isNavbarCollapsed = window.scrollY > window.innerHeight / 2
     }
   }
 }

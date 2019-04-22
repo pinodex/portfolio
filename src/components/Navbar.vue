@@ -51,7 +51,8 @@ export default {
         'is-fixed-top': this.fixed,
         'is-collapsed': this.collapsed,
         'is-white': this.collapsed,
-        'is-dark': !this.collapsed
+        'is-dark': !this.collapsed,
+        'is-transparent': !this.collapsed
       }
     }
   }

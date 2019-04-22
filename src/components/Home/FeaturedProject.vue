@@ -47,9 +47,7 @@ export default {
 @import '@/assets/scss/_mixins.scss';
 
 .card {
-  border-radius: $border-radius;
   position: relative;
-  overflow: hidden;
 }
 
 .card-content {

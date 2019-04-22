@@ -5,6 +5,21 @@
   margin: 1rem 0;
 }
 
+.section {
+  padding: 1.5rem;
+}
+
+.has-border-radius {
+  border-radius: $border-radius;
+}
+
+.box,
+.card {
+  @extend .has-border-radius;
+
+  overflow: hidden;
+}
+
 /**
  * Animations
  */

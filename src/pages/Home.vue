@@ -17,9 +17,9 @@
     </section>
 
     <section class="section">
-      <div class="container">
-        <div class="columns">
-          <div class="column"
+      <div class="container featured-project-container">
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-half-mobile"
             v-for="(project, i) in featuredProjects"
             :key="i"
           >
@@ -31,6 +31,22 @@
             />
           </div>
         </div>
+
+        <a class="box has-text-centered is-hidden-desktop">
+          <p>
+            <span>More Projects</span>
+
+            <span class="icon">
+              <i class="icon-chevron-right"></i>
+            </span>
+          </p>
+        </a>
+
+        <a href="#" class="more-projects is-hidden-touch" title="More">
+          <span class="icon">
+            <i class="icon-chevron-right"></i>
+          </span>
+        </a>
       </div>
     </section>
 
@@ -57,8 +73,8 @@
 
     <section class="section">
       <div class="container">
-        <div class="columns">
-          <div class="column"
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-half-mobile"
             v-for="(post, i) in posts"
             :key="i"
           >
@@ -77,11 +93,11 @@
             <p class="is-size-3 is-spaced">Contact</p>
 
             <p class="is-size-5 is-spaced">
-              You can reach me at raphaelmarco &#128231; outlook.com
+              You can reach me at <span class="has-text-weight-semibold">raphaelmarco &#128231; outlook.com</span>
             </p>
 
             <p class="is-size-5 is-spaced">
-              My GitHub profile is <a href="https://github.com/pinodex">@pinodex</a>
+              My GitHub profile is <a href="https://github.com/pinodex" class="has-text-weight-semibold">@pinodex</a>
             </p>
           </div>
         </div>
@@ -127,11 +143,43 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.featured-project {
-  transition: transform .3s ease;
+@import 'bulma/sass/utilities/mixins.sass';
 
-  &:hover {
-    transform: translateY(-5px);
+@include desktop {
+  .featured-project {
+    transition: transform .3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.featured-project-container {
+  position: relative;
+}
+
+.more-projects {
+  position: absolute;
+  top: calc(50% - 4rem / 2);
+  right: -2rem;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  height: 4rem;
+  width: 4rem;
+
+  .icon i {
+    font-size: 2rem;
+    color: #4a4a4a;
   }
 }
 </style>

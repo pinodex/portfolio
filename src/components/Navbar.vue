@@ -5,6 +5,12 @@
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">Raph.</a>
+
+        <a role="button" class="navbar-burger burger">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
 
       <div class="navbar-menu">
@@ -58,6 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/_variables.scss';
+@import 'bulma/sass/utilities/mixins.sass';
 
 .navbar {
   height: #{$navbar-height + 2rem};
@@ -88,18 +95,20 @@ export default {
     }
   }
 
-  .navbar-brand {
-    transition: width .3s ease;
-    overflow: hidden;
-    width: 0px;
+  @include desktop {
+    .navbar-brand {
+      transition: width .3s ease;
+      overflow: hidden;
+      width: 0px;
 
-    & > .navbar-item {
-      font-weight: 600;
+      & > .navbar-item {
+        font-weight: 600;
+      }
     }
-  }
 
-  &.is-collapsed .navbar-brand {
-    width: 80px;
+    &.is-collapsed .navbar-brand {
+      width: 80px;
+    }
   }
 }
 </style>

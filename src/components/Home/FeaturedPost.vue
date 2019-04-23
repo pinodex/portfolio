@@ -9,11 +9,9 @@
 
       <div class="column">
         <div class="content">
-          <p class="is-size-4 has-text-weight-semibold">{{ title }}</p>
+          <p class="is-size-5 has-text-weight-semibold">{{ title }}</p>
 
           <p>{{ excerpt }}</p>
-
-          <a :href="url" class="button is-primary">Read More</a>
         </div>
       </div>
     </div>

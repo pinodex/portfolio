@@ -1,0 +1,57 @@
+<template>
+  <div>
+    <section class="section">
+      <div class="container">
+        <div class="hero is-primary is-bold has-border-radius">
+          <div class="hero-body">
+            <div class="content">
+              <h1 class="title">Projects</h1>
+
+              <p>A collection of personal, freelance, and school &amp; projects that I created and have worked on.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-3"
+            v-for="(project, i) in projects"
+            :key="i"
+          >
+            <Project
+              class="project"
+              :name="project.name"
+              :description="project.description"
+              :thumbnail="project.thumbnail"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+import Project from '@/components/Project'
+
+import projects from '@data/projects/index.json'
+
+export default {
+  components: { Project },
+
+  data: () => ({
+    projects
+  })
+}
+</script>
+
+<style lang="scss" scoped>
+.project {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+</style>

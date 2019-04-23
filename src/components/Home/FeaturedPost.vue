@@ -3,7 +3,10 @@
     <div class="columns is-vcentered is-gapless">
       <div class="column is-8">
         <figure class="image is-16by9">
-          <img :src="image" :alt="title">
+          <PreloadedImage
+            :src="image"
+            :alt="title"
+          />
         </figure>
       </div>
 

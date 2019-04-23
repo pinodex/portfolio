@@ -2,7 +2,10 @@
   <a :href="url" class="card">
     <div class="card-image">
       <figure class="image is-16by9">
-        <img :src="image" :alt="title">
+        <PreloadedImage
+          :src="image"
+          :alt="title"
+        />
       </figure>
     </div>
 
@@ -19,9 +22,12 @@
 </template>
 
 <script>
+import PreloadedImage from '@/components/PreloadedImage'
 import { blog } from '@/config'
 
 export default {
+  components: { PreloadedImage },
+
   props: {
     post: {
       type: Object
@@ -55,11 +61,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-</style>

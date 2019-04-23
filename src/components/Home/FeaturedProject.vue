@@ -2,7 +2,10 @@
   <div class="card" :style="cardStyle">
     <div class="card-image">
       <figure class="image is-1by1">
-        <img :src="thumbnail" :alt="name">
+        <PreloadedImage
+          :src="thumbnail"
+          :alt="name"
+        />
       </figure>
     </div>
 
@@ -13,7 +16,11 @@
 </template>
 
 <script>
+import PreloadedImage from '@/components/PreloadedImage'
+
 export default {
+  components: { PreloadedImage },
+
   props: {
     slug: {
       type: String

@@ -4,7 +4,7 @@
   >
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="/">Raph.</a>
+        <router-link class="navbar-item" to="/">Raph.</router-link>
 
         <a role="button" class="navbar-burger burger">
           <span aria-hidden="true"></span>
@@ -15,9 +15,13 @@
 
       <div class="navbar-menu">
         <div class="navbar-start">
-          <a href="#" class="navbar-item">Story</a>
-          <a href="#" class="navbar-item">Works</a>
-          <a href="#" class="navbar-item">Labs</a>
+          <router-link class="navbar-item"
+            v-for="(link, i) in links"
+            :key="i"
+            :to="link.target"
+          >
+            {{ link.name }}
+          </router-link>
         </div>
 
         <div class="navbar-end">
@@ -42,9 +46,14 @@ export default {
       default: false
     },
 
-    showBrand: {
+    autohideBrand: {
       type: Boolean,
       default: true
+    },
+
+    links: {
+      type: Array,
+      default: []
     }
   },
 
@@ -55,7 +64,8 @@ export default {
         'is-collapsed': this.collapsed,
         'is-white': this.collapsed,
         'is-dark': !this.collapsed,
-        'is-transparent': !this.collapsed
+        'is-transparent': !this.collapsed,
+        'is-brand-autohide': this.autohideBrand
       }
     }
   }
@@ -95,17 +105,18 @@ export default {
     }
   }
 
+  .navbar-brand > .navbar-item {
+    font-weight: 600;
+  }
+
   @include desktop {
     .navbar-brand {
       transition: width .3s ease;
       overflow: hidden;
       width: 0px;
-
-      & > .navbar-item {
-        font-weight: 600;
-      }
     }
 
+    &:not(.is-brand-autohide) .navbar-brand,
     &.is-collapsed .navbar-brand {
       width: 80px;
     }

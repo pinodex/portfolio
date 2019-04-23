@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <a class="box has-text-centered is-hidden-desktop">
+        <router-link to="/projects" class="box has-text-centered is-hidden-desktop">
           <p>
             <span>More Projects</span>
 
@@ -40,13 +40,13 @@
               <i class="icon-chevron-right"></i>
             </span>
           </p>
-        </a>
+        </router-link>
 
-        <a href="#" class="more-projects is-hidden-touch" title="More">
+        <router-link to="/projects" class="more-projects is-hidden-touch" title="More">
           <span class="icon">
             <i class="icon-chevron-right"></i>
           </span>
-        </a>
+        </router-link>
       </div>
     </section>
 
@@ -79,6 +79,7 @@
             :key="i"
           >
             <Post
+              class="post"
               :post="post"
             />
           </div>
@@ -181,5 +182,11 @@ export default {
     font-size: 2rem;
     color: #4a4a4a;
   }
+}
+
+.post {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 </style>

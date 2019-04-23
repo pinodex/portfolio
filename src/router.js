@@ -8,6 +8,7 @@ export default new Router({
 
   routes: [
     {
+      name: 'index',
       path: '/',
       component: () => import('@/pages/Home'),
       meta: {
@@ -16,6 +17,7 @@ export default new Router({
     },
 
     {
+      name: 'story',
       path: '/story',
       component: () => import('@/pages/Story'),
       meta: {
@@ -24,8 +26,18 @@ export default new Router({
     },
 
     {
+      name: 'projects',
       path: '/projects',
-      component: () => import('@/pages/Projects'),
+      component: () => import('@/pages/Projects/Index'),
+      meta: {
+        isNavbarBrandVisible: true
+      }
+    },
+
+    {
+      name: 'projects.view',
+      path: '/projects/:slug',
+      component: () => import('@/pages/Projects/View'),
       meta: {
         isNavbarBrandVisible: true
       }
@@ -34,6 +46,11 @@ export default new Router({
     {
       path: '/works',
       redirect: '/projects'
+    },
+
+    {
+      path: '/works/:slug',
+      redirect: '/projects/:slug'
     }
   ],
 

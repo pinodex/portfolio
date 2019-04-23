@@ -26,6 +26,7 @@
               :name="project.name"
               :description="project.description"
               :thumbnail="project.thumbnail"
+              :slug="project.slug"
             />
           </div>
         </div>

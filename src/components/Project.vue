@@ -1,5 +1,8 @@
 <template>
-  <div class="card">
+  <router-link
+    class="card"
+    :to="{ name: 'projects.view', params: { slug } }"
+  >
     <div class="card-image">
       <figure class="image is-16by9">
         <PreloadedImage
@@ -14,15 +17,11 @@
 
       <p>{{ description }}</p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
-import PreloadedImage from '@/components/PreloadedImage'
-
 export default {
-  components: { PreloadedImage },
-
   props: {
     slug: {
       type: String

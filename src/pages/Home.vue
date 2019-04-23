@@ -23,7 +23,8 @@
             v-for="(project, i) in featuredProjects"
             :key="i"
           >
-            <FeaturedProject class="featured-project"
+            <FeaturedProject
+              class="featured-project"
               :slug="project.slug"
               :name="project.name"
               :thumbnail="project.thumbnail"
@@ -148,10 +149,11 @@ export default {
 
 @include desktop {
   .featured-project {
-    transition: transform .3s ease;
+    transition: transform .3s ease !important;
 
     &:hover {
       transform: translateY(-5px);
+      box-shadow: initial;
     }
   }
 }

@@ -1,5 +1,9 @@
 <template>
-  <div class="card" :style="cardStyle">
+  <router-link
+    class="card"
+    :style="cardStyle"
+    :to="{ name: 'projects.view', params: { slug } }"
+  >
     <div class="card-image">
       <figure class="image is-1by1">
         <PreloadedImage
@@ -12,15 +16,11 @@
     <div class="card-content">
       <p>{{ name }}</p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
-import PreloadedImage from '@/components/PreloadedImage'
-
 export default {
-  components: { PreloadedImage },
-
   props: {
     slug: {
       type: String
@@ -45,7 +45,7 @@ export default {
         backgroundColor: this.color
       }
     }
-  },
+  }
 }
 </script>
 
@@ -54,6 +54,7 @@ export default {
 @import '@/assets/scss/_mixins.scss';
 
 .card {
+  display: block;
   position: relative;
 }
 

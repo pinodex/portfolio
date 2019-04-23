@@ -22,12 +22,9 @@
 </template>
 
 <script>
-import PreloadedImage from '@/components/PreloadedImage'
 import { blog } from '@/config'
 
 export default {
-  components: { PreloadedImage },
-
   props: {
     post: {
       type: Object

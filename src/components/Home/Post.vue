@@ -1,5 +1,5 @@
 <template>
-  <div :href="url" class="card">
+  <a :href="url" class="card">
     <div class="card-image">
       <figure class="image is-16by9">
         <img :src="image" :alt="title">
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>

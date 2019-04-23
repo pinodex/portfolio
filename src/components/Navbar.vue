@@ -3,23 +3,20 @@
     :class="navbarClass"
   >
     <div class="container">
-      <transition name="fade">
-        <div class="navbar-brand"
-          v-show="showBrand"
-        >
-          <a class="navbar-item" href="/">Raph.</a>
-        </div>
-      </transition>
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">Raph.</a>
+      </div>
 
       <div class="navbar-menu">
         <div class="navbar-start">
           <a href="#" class="navbar-item">Story</a>
           <a href="#" class="navbar-item">Works</a>
+          <a href="#" class="navbar-item">Labs</a>
         </div>
 
         <div class="navbar-end">
-          <a href="#" class="navbar-item">Blog</a>
-          <a href="#" class="navbar-item">Github</a>
+          <a href="https://blog.raphaelmarco.com" class="navbar-item">Blog</a>
+          <a href="https://github.com/pinodex" class="navbar-item" target="_blank">Github</a>
         </div>
       </div>
     </div>
@@ -91,8 +88,18 @@ export default {
     }
   }
 
-  .navbar-brand > .navbar-item {
-    font-weight: 600;
+  .navbar-brand {
+    transition: width .3s ease;
+    overflow: hidden;
+    width: 0px;
+
+    & > .navbar-item {
+      font-weight: 600;
+    }
+  }
+
+  &.is-collapsed .navbar-brand {
+    width: 80px;
   }
 }
 </style>

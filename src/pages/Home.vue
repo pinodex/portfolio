@@ -36,13 +36,13 @@
 
     <section class="section">
       <div class="container">
-        <div class="hero is-primary is-bold has-border-radius">
+        <a href="//blog.raphaelmarco.com" class="hero is-primary is-bold has-border-radius">
           <div class="hero-body">
-            <p class="is-size-3 is-spaced">Blog</p>
+            <p class="is-size-4">blog.raphaelmarco.com</p>
 
-            <p class="is-size-5">Random stuffs about me, development, design, events, and anything that I can write a blog post about.</p>
+            <p class="is-size-6">Random stuffs about me, development, design, events, and anything that I can write a blog post about.</p>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -52,7 +52,11 @@
           v-if="featuredPost"
           :post="featuredPost"
         />
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="container">
         <div class="columns">
           <div class="column"
             v-for="(post, i) in posts"
@@ -61,6 +65,24 @@
             <Post
               :post="post"
             />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <p class="is-size-3 is-spaced">Contact</p>
+
+            <p class="is-size-5 is-spaced">
+              You can reach me at raphaelmarco &#128231; outlook.com
+            </p>
+
+            <p class="is-size-5 is-spaced">
+              My GitHub profile is <a href="https://github.com/pinodex">@pinodex</a>
+            </p>
           </div>
         </div>
       </div>

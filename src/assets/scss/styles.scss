@@ -20,6 +20,16 @@
   overflow: hidden;
 }
 
+a.box,
+a.card {
+  transition: box-shadow .3s ease;
+}
+
+a.card:hover {
+  @extend a, .box, :hover;
+  @extend .is-paddingless;
+}
+
 /**
  * Animations
  */

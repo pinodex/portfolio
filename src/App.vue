@@ -7,14 +7,17 @@
     />
 
     <router-view />
+
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export default {
-  components: { Navbar },
+  components: { Navbar, Footer },
 
   data: () => ({
     isNavbarCollapsed: true
@@ -42,4 +45,5 @@ export default {
 
 <style lang="scss">
 @import '@/assets/scss/styles.scss';
+@import '@/assets/scss/fonts.scss';
 </style>

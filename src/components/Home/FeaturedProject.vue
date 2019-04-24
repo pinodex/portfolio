@@ -14,7 +14,7 @@
     </div>
 
     <div class="card-content">
-      <p>{{ name }}</p>
+      <p v-html="name"></p>
     </div>
   </router-link>
 </template>

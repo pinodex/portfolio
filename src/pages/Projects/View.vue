@@ -8,9 +8,9 @@
         >
           <div class="hero-body">
             <div class="content">
-              <h1 class="title">{{ meta.name }}</h1>
+              <h1 class="title" v-html="meta.name"></h1>
 
-              <p>{{ meta.description }}</p>
+              <p v-html="meta.description"></p>
             </div>
           </div>
         </div>

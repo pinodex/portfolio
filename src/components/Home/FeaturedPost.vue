@@ -12,9 +12,9 @@
 
       <div class="column">
         <div class="content">
-          <p class="is-size-5 has-text-weight-semibold">{{ title }}</p>
+          <p class="is-size-5 has-text-weight-semibold" v-html="title"></p>
 
-          <p>{{ excerpt }}</p>
+          <p v-html="excerpt"></p>
         </div>
       </div>
     </div>

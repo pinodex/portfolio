@@ -29,6 +29,10 @@
             </span>
           </a>
         </div>
+
+        <p>
+          This website is open-source! <a href="https://github.com/pinodex/portfolio">Fork it on Github</a>
+        </p>
       </div>
     </section>
   </footer>

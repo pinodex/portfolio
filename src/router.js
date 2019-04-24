@@ -61,6 +61,15 @@ export default new Router({
         isNavbarBrandVisible: true
       }
     },
+
+    {
+      name: 'labs.view',
+      path: '/labs/:slug',
+      component: () => import('@/pages/Labs/View'),
+      meta: {
+        isNavbarBrandVisible: true
+      }
+    }
   ],
 
   scrollBehavior (to, from, savedPosition) {

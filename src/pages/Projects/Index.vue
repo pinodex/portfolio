@@ -25,6 +25,7 @@
           >
             <Project
               class="project"
+              route="projects.view"
               :name="project.name"
               :description="project.description"
               :thumbnail="project.thumbnail"

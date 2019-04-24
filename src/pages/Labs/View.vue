@@ -17,13 +17,13 @@
       </div>
     </section>
 
-    <section class="section" v-if="project">
+    <section class="section" v-if="lab">
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-8">
             <div class="content">
               <component
-                :is="project.default"
+                :is="lab.default"
               />
             </div>
           </div>
@@ -34,12 +34,12 @@
 </template>
 
 <script>
-import projects from '@data/projects/index.json'
+import labs from '@data/labs/index.json'
 
 export default {
   data: () => ({
     meta: null,
-    project: null
+    lab: null
   }),
 
   computed: {
@@ -62,9 +62,9 @@ export default {
   async mounted () {
     const slug = this.$route.params.slug
 
-    this.meta = projects.find(p => p.slug == slug)
+    this.meta = labs.find(p => p.slug == slug)
 
-    this.project = await import(`@data/projects/${slug}.md`)
+    this.lab = await import(`@data/labs/${slug}.md`)
 
     this.$root.setPageTitle(this.meta.name)
   }

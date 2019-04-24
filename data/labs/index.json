@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "frequency-distribution-calculator",
+    "name": "Frequency Distribution Calculator",
+    "description": "Real-time frequency distribution calculator with Vue.js",
+    "thumbnail": "/assets/img/labs/frequency-distribution.png",
+    "tags": ["2016"]
+  },
+  {
+    "slug": "node-live-chat",
+    "name": "Node Live Chat",
+    "description": "See chats as they are typed. Live chat application with Node.js",
+    "thumbnail": "/assets/img/labs/node-live-chat.png",
+    "tags": ["2015"]
+  },
+  {
+    "slug": "flappy-pop",
+    "name": "Flappy Pop",
+    "description": "Remaking the Android Lollipop easter egg in HTML",
+    "thumbnail": "/assets/img/labs/flappy-pop.jpg",
+    "tags": ["2015"]
+  },
+  {
+    "slug": "jstmpl",
+    "name": "jstmpl",
+    "description": "A simple JavaScript templating engine",
+    "thumbnail": "/assets/img/labs/jstmpl.png",
+    "tags": ["2015"]
+  }
+]

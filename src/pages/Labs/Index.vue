@@ -9,8 +9,29 @@
             <div class="content">
               <h1 class="title">Labs</h1>
 
-              <p>A collection of personal, freelance, and school &amp; projects that I created and have worked on.</p>
+              <p>A collection of experimental projects that I created and have worked on.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-3"
+            v-for="(lab, i) in labs"
+            :key="i"
+          >
+            <Project
+              class="project"
+              route="labs.view"
+              :name="lab.name"
+              :description="lab.description"
+              :thumbnail="lab.thumbnail"
+              :slug="lab.slug"
+              :tags="lab.tags"
+            />
           </div>
         </div>
       </div>
@@ -19,7 +40,17 @@
 </template>
 
 <script>
+import Project from '@/components/Project'
+
+import labs from '@data/labs/index.json'
+
 export default {
+  components: { Project },
+
+  data: () => ({
+    labs
+  }),
+
   mounted () {
     this.$root.setPageTitle('Labs')
   }
@@ -27,6 +58,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.project {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .page-heading .heading-art {
   background-image: url(/assets/svg/labs.svg);
 }

@@ -1,6 +1,10 @@
 @import 'variables';
 @import 'bulma';
 
+html, body {
+  background: #fafafa;
+}
+
 .is-spaced {
   margin: 1rem 0;
 }

@@ -4,7 +4,7 @@
 
 #### Presenting, our project for Software Engineering subject!
 
-**Shoutout to my co-developer Girish Daloso _([@reeshkeed](https://github.com/reeshkeed))_!**
+**Shoutout to my co-developer Girish Daloso _([girishdaloso.me](http://girishdaloso.me), [@reeshkeed](https://github.com/reeshkeed))_!**
 
 </div>
 

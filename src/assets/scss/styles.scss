@@ -13,6 +13,10 @@
   border-radius: $border-radius;
 }
 
+.has-contents-below {
+  margin-bottom: 1rem;
+}
+
 .box,
 .card {
   @extend .has-border-radius;
@@ -28,6 +32,10 @@ a.card {
 a.card:hover {
   @extend a, .box, :hover;
   @extend .is-paddingless;
+}
+
+.image video {
+  @extend .image, img;
 }
 
 /**

@@ -19,11 +19,9 @@ I developed a system for real-time score tabulation for this year&lsquo;s local 
 Using websockets, I also accomplished sending real-time events to client applications. An administrator can switch categories/rounds and control the program switch, and synchronize it with all the clients.
 
 <div class="has-contents-below">
-  <div style="width:100%;height:0;padding-bottom:57%;position:relative;">
-    <iframe src="https://giphy.com/embed/xT1R9BUsnJZWB5Bm4E" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+  <div class="image is-16by9">
+    <video src="/assets/videos/projects/tabulation-system-test.mp4" muted autoplay controls loop></video>
   </div>
-
-  <p><a href="https://giphy.com/gifs/xT1R9BUsnJZWB5Bm4E">via GIPHY</a></p>
 </div>
 
 ## Stack

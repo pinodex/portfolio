@@ -10,11 +10,12 @@
         </g>
       </svg>
 
-      <div class="image is-16by9"
-        :style="imageStyle"
-      >
+      <div class="image is-16by9">
+        <slot v-if="!content"></slot>
+
         <PreloadedImage
           class="image"
+          v-if="content"
           :src="content"
         />
       </div>
@@ -26,7 +27,8 @@
 export default {
   props: {
     content: {
-      type: String
+      type: String,
+      default: null
     }
   }
 }

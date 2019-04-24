@@ -1,7 +1,13 @@
 <template>
   <div class="hero is-primary is-bold">
     <div class="hero-body has-text-centered">
-      <div class="outlined-box" :style="boxStyle">
+      <div class="outlined-box is-hidden-desktop">
+        <p class="is-size-1 name">Raphael Marco</p>
+
+        <p class="is-size-5 name-title">Full-Stack Web Developer</p>
+      </div>
+
+      <div class="outlined-box is-hidden-touch" :style="boxStyle">
         <p class="is-size-1 name">Raphael Marco</p>
 
         <p class="is-size-5 name-title">Full-Stack Web Developer</p>

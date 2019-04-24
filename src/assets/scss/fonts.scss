@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('/assets/webfonts/icomoon.eot?f3frlh');
-  src:  url('/assets/webfonts/icomoon.eot?f3frlh#iefix') format('embedded-opentype'),
+  font-display: auto;
+  src: local('FontAwesome'), url('/assets/webfonts/icomoon.eot?f3frlh');
+  src: local('FontAwesome'), url('/assets/webfonts/icomoon.eot?f3frlh#iefix') format('embedded-opentype'),
     url('/assets/webfonts/icomoon.ttf?f3frlh') format('truetype'),
     url('/assets/webfonts/icomoon.woff?f3frlh') format('woff'),
     url('/assets/webfonts/icomoon.svg?f3frlh#icomoon') format('svg');

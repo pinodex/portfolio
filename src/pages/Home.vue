@@ -8,7 +8,7 @@
           <div class="column is-8">
             <p class="is-size-1 is-spaced">Hi there!</p>
 
-            <p class="is-size-4 is-spaced">I’m Raphael Marco and I write codes.</p>
+            <h1 class="is-size-4 is-spaced">I’m Raphael Marco and I write codes.</h1>
 
             <p class="is-spaced">I played around with web development when I was a kid. That became my playground. Now I‘m working on different projects for myself and for other people.</p>
           </div>
@@ -53,9 +53,9 @@
 
     <section class="section">
       <div class="container">
-        <a href="//blog.raphaelmarco.com" class="hero is-primary is-bold has-border-radius">
+        <a href="https://blog.raphaelmarco.com" class="hero is-primary is-bold has-border-radius">
           <div class="hero-body">
-            <p class="is-size-4">blog.raphaelmarco.com</p>
+            <h1 class="is-size-4">blog.raphaelmarco.com</h1>
 
             <p class="is-size-6">Random stuffs about me, development, design, events, and anything that I can write a blog post about.</p>
           </div>
@@ -92,7 +92,7 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-8">
-            <p class="is-size-3 is-spaced">Contact</p>
+            <h1 class="is-size-3 is-spaced">Contact</h1>
 
             <p class="is-size-5 is-spaced">
               You can reach me at <span class="has-text-weight-semibold">raphaelmarco &#128231; outlook.com</span>

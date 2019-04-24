@@ -19,5 +19,11 @@ new Vue({
   router,
   provide: services,
   render: h => h(App),
-  el: '#app'
+  el: '#app',
+
+  methods: {
+    setPageTitle (title) {
+      document.title = title ? `${title} - Raphael Marco` : 'Raphael Marco'
+    }
+  }
 })

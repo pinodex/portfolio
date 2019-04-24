@@ -5,25 +5,25 @@
         <p class="is-size-3">Raphael Marco</p>
 
         <div class="social-links">
-          <a href="https://github.com/pinodex">
+          <a href="https://github.com/pinodex" rel="noopener" aria-label="@pinodex on Github">
             <span class="icon">
               <i class="icon-github"></i>
             </span>
           </a>
 
-          <a href="https://ph.linkedin.com/in/raphaelmarco">
+          <a href="https://ph.linkedin.com/in/raphaelmarco" rel="noopener" aria-label="Raphael Marco on LinkedIn">
             <span class="icon">
               <i class="icon-linkedin"></i>
             </span>
           </a>
 
-          <a href="https://stackoverflow.com/users/2680698/raphael-marco">
+          <a href="https://stackoverflow.com/users/2680698/raphael-marco" rel="noopener" aria-label="Raphael Marco on StackOverflow">
             <span class="icon">
               <i class="icon-stack-overflow"></i>
             </span>
           </a>
 
-          <a href="https://codepen.io/pinodex/">
+          <a href="https://codepen.io/pinodex/" rel="noopener" aria-label="Raphael Marco on Codepen">
             <span class="icon">
               <i class="icon-codepen"></i>
             </span>

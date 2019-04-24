@@ -2,15 +2,15 @@
   <div class="hero is-primary is-bold">
     <div class="hero-body has-text-centered">
       <div class="outlined-box is-hidden-desktop">
-        <p class="is-size-1 name">Raphael Marco</p>
+        <h1 class="is-size-1 name">Raphael Marco</h1>
 
-        <p class="is-size-5 name-title">Full-Stack Web Developer</p>
+        <h2 class="is-size-5 name-title">Full-Stack Web Developer</h2>
       </div>
 
       <div class="outlined-box is-hidden-touch" :style="boxStyle">
-        <p class="is-size-1 name">Raphael Marco</p>
+        <h1 class="is-size-1 name">Raphael Marco</h1>
 
-        <p class="is-size-5 name-title">Full-Stack Web Developer</p>
+        <h2 class="is-size-5 name-title">Full-Stack Developer</h2>
       </div>
     </div>
   </div>

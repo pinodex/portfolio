@@ -45,7 +45,11 @@ export default {
 
   data: () => ({
     projects
-  })
+  }),
+
+  mounted () {
+    this.$root.setPageTitle('Projects')
+  }
 }
 </script>
 

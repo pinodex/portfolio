@@ -65,6 +65,8 @@ export default {
     this.meta = projects.find(p => p.slug == slug)
 
     this.work = await import(`@data/projects/${slug}.md`)
+
+    this.$root.setPageTitle(this.meta.name)
   }
 }
 </script>

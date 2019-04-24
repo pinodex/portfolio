@@ -20,17 +20,17 @@
       <div class="container">
         <div class="columns is-multiline">
           <div class="column is-3"
-            v-for="(lab, i) in labs"
+            v-for="(entry, i) in entries"
             :key="i"
           >
             <Project
               class="project"
               route="labs.view"
-              :name="lab.name"
-              :description="lab.description"
-              :thumbnail="lab.thumbnail"
-              :slug="lab.slug"
-              :tags="lab.tags"
+              :name="entry.name"
+              :description="entry.description"
+              :thumbnail="entry.thumbnail"
+              :slug="entry.slug"
+              :tags="entry.tags"
             />
           </div>
         </div>
@@ -42,13 +42,13 @@
 <script>
 import Project from '@/components/Project'
 
-import labs from '@data/labs/index.json'
+import entries from '@data/labs/index.json'
 
 export default {
   components: { Project },
 
   data: () => ({
-    labs
+    entries
   }),
 
   mounted () {

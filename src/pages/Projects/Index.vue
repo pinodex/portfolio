@@ -2,7 +2,9 @@
   <div>
     <section class="section">
       <div class="container">
-        <div class="hero is-primary is-bold has-border-radius">
+        <div class="hero page-heading is-primary is-bold has-border-radius">
+          <div class="heading-art"></div>
+
           <div class="hero-body">
             <div class="content">
               <h1 class="title">Projects</h1>
@@ -58,5 +60,9 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.page-heading .heading-art {
+  background-image: url(/assets/svg/start-up.svg);
 }
 </style>

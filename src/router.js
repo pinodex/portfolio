@@ -51,7 +51,16 @@ export default new Router({
     {
       path: '/works/:slug',
       redirect: '/projects/:slug'
-    }
+    },
+
+    {
+      name: 'labs',
+      path: '/labs',
+      component: () => import('@/pages/Labs/Index'),
+      meta: {
+        isNavbarBrandVisible: true
+      }
+    },
   ],
 
   scrollBehavior (to, from, savedPosition) {

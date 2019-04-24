@@ -42,6 +42,35 @@ a.card:hover {
   @extend .image, img;
 }
 
+.page-heading {
+  position: relative;
+  overflow: hidden;
+
+  .heading-art {
+    background-size: cover;
+    background-position: center;
+
+    height: 256px;
+    width: 256px;
+
+    position: absolute;
+    top: -20px;
+    right: 0;
+
+    opacity: 1;
+
+    transition: opacity .3s ease;
+
+    @include touch {
+      opacity: 0.5;
+    }
+
+    @include mobile {
+      opacity: 0.25;
+    }
+  }
+}
+
 /**
  * Animations
  */

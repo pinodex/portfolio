@@ -63,7 +63,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section featured-post-container">
       <div class="container">
         <FeaturedPost
           v-if="featuredPost"
@@ -75,7 +75,7 @@
     <section class="section">
       <div class="container">
         <div class="columns is-multiline is-mobile">
-          <div class="column is-half-mobile"
+          <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile"
             v-for="(post, i) in posts"
             :key="i"
           >
@@ -155,6 +155,12 @@ export default {
       transform: translateY(-5px);
       box-shadow: initial;
     }
+  }
+}
+
+@include mobile {
+  .featured-post-container {
+    padding-bottom: 0;
   }
 }
 

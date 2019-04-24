@@ -31,6 +31,6 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 </style>

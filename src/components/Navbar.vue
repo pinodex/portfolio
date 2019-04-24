@@ -25,7 +25,7 @@
         </div>
 
         <div class="navbar-end">
-          <a href="https://blog.raphaelmarco.com" class="navbar-item">Blog</a>
+          <a href="https://blog.raphaelmarco.com" class="navbar-item" rel="noopener">Blog</a>
           <a href="https://github.com/pinodex" class="navbar-item" target="_blank">Github</a>
         </div>
       </div>

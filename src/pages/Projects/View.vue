@@ -1,24 +1,28 @@
 <template>
   <div>
-    <section class="section">
+    <section class="section" v-if="meta">
       <div class="container">
-        <div class="hero is-primary is-bold has-border-radius">
+        <div
+          class="hero is-primary is-medium project-header has-border-radius"
+          :style="headerStyle"
+        >
           <div class="hero-body">
             <div class="content">
-              <h1 class="title">Projects</h1>
+              <h1 class="title">{{ meta.name }}</h1>
+
+              <p>{{ meta.description }}</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" v-if="work">
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-8">
             <div class="content">
               <component
-                v-if="work"
                 :is="work.default"
               />
             </div>
@@ -38,6 +42,23 @@ export default {
     work: null
   }),
 
+  computed: {
+    headerStyle () {
+      return {
+        backgroundImage: `
+          linear-gradient(
+            141deg,
+            rgb(17, 40, 53) 0%,
+            rgba(36, 59, 85, 0.75) 71%,
+            rgba(40, 60, 107, 0.75) 100%
+          ),
+
+          url(${this.meta.thumbnail})
+        `
+      }
+    }
+  },
+
   async mounted () {
     const slug = this.$route.params.slug
 
@@ -50,6 +71,11 @@ export default {
 
 <style lang="scss" scoped>
 ::v-deep .window {
-  padding: 2rem;
+  padding: 2rem 0;
+}
+
+.project-header {
+  background-size: cover;
+  background-position: center;
 }
 </style>

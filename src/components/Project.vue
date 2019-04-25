@@ -53,7 +53,7 @@ export default {
 
     tags: {
       type: Array,
-      default: []
+      default: () => []
     },
 
     thumbnail: {

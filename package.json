@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "node server.js"
   },
   "dependencies": {
-    "core-js": "^2.6.5"
+    "core-js": "^2.6.5",
+    "express": "^4.16.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",
@@ -21,5 +23,9 @@
     "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.0.3",
     "vue-template-compiler": "^2.6.10"
+  },
+  "engine": {
+    "node": "^10.0.0",
+    "npm": "^6.0.0"
   }
 }

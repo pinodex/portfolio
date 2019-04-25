@@ -13,7 +13,7 @@
 <script>
 export default {
   mounted () {
-    this.$root.setPageTitle('Story')
+    this.setPageTitle('Story')
   }
 }
 </script>

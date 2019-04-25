@@ -129,6 +129,8 @@ export default {
   }),
 
   async mounted () {
+    this.setPageTitle()
+
     await this.loadPosts()
   },
 

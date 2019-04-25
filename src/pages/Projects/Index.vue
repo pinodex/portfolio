@@ -51,7 +51,7 @@ export default {
   }),
 
   mounted () {
-    this.$root.setPageTitle('Projects')
+    this.setPageTitle('Projects')
   }
 }
 </script>

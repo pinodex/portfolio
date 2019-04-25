@@ -30,6 +30,50 @@
         </div>
       </div>
     </section>
+
+    <hr />
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="level">
+              <div class="level-left">
+                <div class="level-item" v-if="prev">
+                  <div>
+                    <p class="has-text-weight-semibold">
+                      <router-link
+                        :to="{ name: 'projects.view', params: { slug: prev.slug } }"
+                      >
+                        {{ prev.name }}
+                      </router-link>
+                    </p>
+
+                    <p class="has-text-grey-light">Previous</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="level-right">
+                <div class="level-item" v-if="next">
+                  <div class="has-text-right">
+                    <p class="has-text-weight-semibold">
+                      <router-link
+                        :to="{ name: 'projects.view', params: { slug: next.slug } }"
+                      >
+                        {{ next.name }}
+                      </router-link>
+                    </p>
+
+                    <p class="has-text-grey-light">Next</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -38,7 +82,6 @@ import projects from '@data/projects/index.json'
 
 export default {
   data: () => ({
-    meta: null,
     project: null
   }),
 
@@ -56,17 +99,35 @@ export default {
           url(${this.meta.thumbnail})
         `
       }
+    },
+
+    index () {
+      return projects.findIndex(p => p.slug == this.$route.params.slug)
+    },
+
+    meta () {
+      return projects[this.index]
+    },
+
+    prev () {
+      return projects[this.index - 1]
+    },
+
+    next () {
+      return projects[this.index + 1]
+    }
+  },
+
+  watch: {
+    meta (meta) {
+      this.setPageTitle(meta.name)
     }
   },
 
   async mounted () {
-    const slug = this.$route.params.slug
+    this.project = await import(`@data/projects/${this.$route.params.slug}.md`)
 
-    this.meta = projects.find(p => p.slug == slug)
-
-    this.project = await import(`@data/projects/${slug}.md`)
-
-    this.$root.setPageTitle(this.meta.name)
+    this.setPageTitle(this.meta.name)
   }
 }
 </script>

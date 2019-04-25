@@ -52,7 +52,7 @@ export default {
   }),
 
   mounted () {
-    this.$root.setPageTitle('Labs')
+    this.setPageTitle('Labs')
   }
 }
 </script>

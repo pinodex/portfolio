@@ -15,15 +15,17 @@ Vue.component('PreloadedImage', PreloadedImage)
 Vue.component('Browser', Browser)
 Vue.component('Screen', Screen)
 
-new Vue({
-  router,
-  provide: services,
-  render: h => h(App),
-  el: '#app',
-
+Vue.mixin({
   methods: {
     setPageTitle (title) {
       document.title = title ? `${title} - Raphael Marco` : 'Raphael Marco'
     }
   }
+})
+
+new Vue({
+  router,
+  provide: services,
+  render: h => h(App),
+  el: '#app'
 })

@@ -1,6 +1,6 @@
 Inspired from my early days with AngularJS 1.x. I created my own simple JavaScript templating engine. Although it does not do real token parsing. All are done with RegEx.
 
-<Browser content="/assets/img/labs/jstmpl-docs.png"></Browser>
+<Browser src="/assets/img/labs/jstmpl-docs.png"></Browser>
 
 ### Docs
 

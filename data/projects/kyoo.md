@@ -12,19 +12,19 @@
 
 Kyoo (queue) is an online queuing management platform. It features a real-time queue interaction between the establishment and the customer.
 
-<Browser content="/assets/img/projects/kyoo-01.png"></Browser>
+<Browser src="/assets/img/projects/kyoo-01.png"></Browser>
 
 Kyoo allows easy authentication through the major social media platforms (Facebook, Twitter, and Google), while keeping a standalone login/signup procedure.
 
-<Browser content="/assets/img/projects/kyoo-02.png"></Browser>
+<Browser src="/assets/img/projects/kyoo-02.png"></Browser>
 
 ### Administrator interface
 
-<Browser content="/assets/img/projects/kyoo-03.png"></Browser>
+<Browser src="/assets/img/projects/kyoo-03.png"></Browser>
 
-<Browser content="/assets/img/projects/kyoo-04.png"></Browser>
+<Browser src="/assets/img/projects/kyoo-04.png"></Browser>
 
-<Browser content="/assets/img/projects/kyoo-05.png"></Browser>
+<Browser src="/assets/img/projects/kyoo-05.png"></Browser>
 
 ### Stack
 * MySQL

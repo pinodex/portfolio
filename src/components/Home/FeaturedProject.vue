@@ -5,7 +5,7 @@
     :to="{ name: 'projects.view', params: { slug } }"
   >
     <div class="card-image">
-      <figure class="image is-1by1">
+      <figure class="image is-16by9">
         <PreloadedImage
           :src="thumbnail"
           :alt="name"

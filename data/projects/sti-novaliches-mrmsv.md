@@ -1,4 +1,4 @@
-<Browser content="/assets/img/projects/mrmsv.png"></Browser>
+<Browser src="/assets/img/projects/mrmsv.png"></Browser>
 
 This was used during the Talent Search period of STI Novaliches.
 

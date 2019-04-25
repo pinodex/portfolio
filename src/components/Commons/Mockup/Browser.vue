@@ -13,13 +13,12 @@
       </svg>
 
       <div class="image is-16by9">
-        <slot v-if="!content"></slot>
-
-        <PreloadedImage
-          class="image"
-          v-if="content"
-          :src="content"
-        />
+        <slot>
+          <MockupMedia
+            :src="src"
+            :type="type"
+          />
+        </slot>
       </div>
     </div>
   </div>

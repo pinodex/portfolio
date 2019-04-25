@@ -3,14 +3,33 @@
     <section class="section" v-if="meta">
       <div class="container">
         <div
-          class="hero is-primary is-medium project-header has-border-radius"
+          class="hero is-primary project-header has-border-radius"
+          :class="{ 'is-medium': !meta.logo }"
           :style="headerStyle"
         >
           <div class="hero-body">
             <div class="content">
-              <h1 class="title" v-html="meta.name"></h1>
+              <div class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <div>
+                      <h1 class="title" v-html="meta.name"></h1>
+                      <p v-html="meta.description"></p>
+                    </div>
+                  </div>
+                </div>
 
-              <p v-html="meta.description"></p>
+                <div class="level-right">
+                  <div
+                    class="level-item"
+                    v-if="meta.logo"
+                  >
+                    <figure class="image">
+                      <img :src="meta.logo" alt="Logo">
+                    </figure>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -87,6 +106,8 @@ export default {
 
   computed: {
     headerStyle () {
+      let headerImage = this.meta.header || this.meta.thumbnail
+
       return {
         backgroundImage: `
           linear-gradient(
@@ -96,7 +117,7 @@ export default {
             rgba(40, 60, 107, 0.75) 100%
           ),
 
-          url(${this.meta.thumbnail})
+          url(${headerImage})
         `
       }
     },
@@ -119,26 +140,42 @@ export default {
   },
 
   watch: {
-    meta (meta) {
-      this.setPageTitle(meta.name)
+    async meta (meta) {
+      await this.load()
     }
   },
 
   async mounted () {
-    this.project = await import(`@data/projects/${this.$route.params.slug}.md`)
+    await this.load()
+  },
 
-    this.setPageTitle(this.meta.name)
+  methods: {
+    async load () {
+      this.project = await import(`@data/projects/${this.$route.params.slug}.md`)
+
+      this.setPageTitle(this.meta.name)
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import 'bulma/sass/utilities/mixins.sass';
+
 ::v-deep .window {
-  padding: 2rem 0;
+  padding: 2rem;
+
+  @include touch {
+    padding: 2rem 0;
+  }
 }
 
 .project-header {
   background-size: cover;
   background-position: center;
+
+  @include mobile {
+    text-align: center;
+  }
 }
 </style>

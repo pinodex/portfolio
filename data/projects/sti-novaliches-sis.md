@@ -1,4 +1,4 @@
-<Browser content="/assets/img/projects/sis.png"></Browser>
+<Browser src="/assets/img/projects/sis.png"></Browser>
 
 The development was stared in the 1st quarter of 2016. I proposed it as an improvement and replacement of the existing online grading system of STI College Novaliches. The changes added more features other than just allowing the students to view their grades.
 

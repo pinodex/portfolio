@@ -1,5 +1,14 @@
 [
   {
+    "slug": "vianderito",
+    "name": "Vianderito",
+    "description": "A cashier-less grocery and convenience store platform.",
+    "thumbnail": "/assets/img/projects/vianderito-banner.jpg",
+    "header": "/assets/img/projects/vianderito-1.png",
+    "logo": "/assets/img/projects/vianderito-logo-text.png"
+  },
+
+  {
     "slug": "jose-rizal-online",
     "name": "Jose Rizal Online",
     "description": "Informational website for Jose Rizal",

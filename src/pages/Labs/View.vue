@@ -133,8 +133,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'bulma/sass/utilities/mixins.sass';
+
 ::v-deep .window {
-  padding: 2rem 0;
+  padding: 2rem;
+
+  @include touch {
+    padding: 2rem 0;
+  }
 }
 
 .project-header {

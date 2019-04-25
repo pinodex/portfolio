@@ -1,16 +1,16 @@
 [
   {
-    "slug": "sti-novaliches-mrmsv",
-    "name": "STI Novaliches Netizens Choice",
-    "thumbnail": "/assets/img/projects/featured/sti-novaliches-mrmsv.jpg",
-    "color": "#a6aebc"
+    "slug": "vianderito",
+    "name": "Vianderito",
+    "thumbnail": "/assets/img/projects/vianderito-banner.jpg",
+    "color": "#4c98bc"
   },
 
   {
-    "slug": "sti-novaliches-tas",
-    "name": "STI Novaliches TAS",
-    "thumbnail": "/assets/img/projects/featured/sti-novaliches-tas.jpg",
-    "color": "#203945"
+    "slug": "jose-rizal-online",
+    "name": "Jose Rizal Online",
+    "thumbnail": "/assets/img/projects/jose-rizal-online-01.jpg",
+    "color": "#6f5544"
   },
 
   {

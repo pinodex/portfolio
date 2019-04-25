@@ -1,4 +1,4 @@
-<Browser content="/assets/img/projects/tas-01.png"></Browser>
+<Browser src="/assets/img/projects/tas-01.png"></Browser>
 
 This project allows management and approval of employee leaves.
 

@@ -55,9 +55,8 @@ a.card:hover {
   position: relative;
   overflow: hidden;
 
-  .heading-art {
-    background-size: cover;
-    background-position: center;
+  svg.heading-art {
+    display: block;
 
     height: 256px;
     width: 256px;

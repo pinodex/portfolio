@@ -10,7 +10,11 @@
       fixed
     />
 
-    <transition name="fade" mode="out-in">
+    <transition
+      name="fade"
+      mode="out-in"
+      @before-enter="beforeEnter"
+    >
       <router-view />
     </transition>
 
@@ -27,6 +31,7 @@ export default {
 
   data: () => ({
     isScrolledPast: true,
+    isNavbarCollapsible: false,
 
     navLinks: [
       {
@@ -55,10 +60,6 @@ export default {
       return true
     },
 
-    isNavbarCollapsible () {
-      return this.$route.meta.isNavbarCollapsible == true
-    },
-
     autohideBrand () {
       return this.$route.meta.isBrandVisible !== true
     }
@@ -79,6 +80,10 @@ export default {
       this.$root.$emit('scroll', e)
 
       this.isScrolledPast = window.scrollY > window.innerHeight / 2
+    },
+
+    beforeEnter (e) {
+      this.isNavbarCollapsible = this.$route.meta.isNavbarCollapsible
     }
   }
 }

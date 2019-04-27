@@ -4,7 +4,13 @@
   >
     <div class="container">
       <div class="navbar-brand">
-        <router-link class="navbar-item" to="/">Raph.</router-link>
+        <router-link class="navbar-item" to="/">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 512 512" width="50">
+            <path fill="#41608C" d="M468 107l-1-1h-81L272 297l-62 109h92l53-93c19-33 31-44 31 0v92l1 1h80l1-1V107z"/>
+            <path fill="#30456B" d="M44 107l1-1h81l114 191 62 109h-92l-53-93c-19-33-31-44-31 0v92l-1 1H45l-1-1V107z"/>
+            <path fill="#47699A" d="M126 106h64s91 0 91 104c0 103-91 103-91 103h-64V106z"/>
+          </svg>
+        </router-link>
 
         <a role="button" class="navbar-burger burger">
           <span aria-hidden="true"></span>
@@ -19,6 +25,7 @@
             v-for="(link, i) in links"
             :key="i"
             :to="link.target"
+            :class="{ 'is-active': activeNavItem == i }"
           >
             {{ link.name }}
           </router-link>
@@ -67,6 +74,12 @@ export default {
         'is-transparent': !this.collapsed,
         'is-brand-autohide': this.autohideBrand
       }
+    },
+
+    activeNavItem () {
+      const current = this.$route
+
+      return this.links.findIndex(l => current.path.indexOf(l.target) !== -1)
     }
   }
 }
@@ -91,17 +104,46 @@ export default {
 
   &.is-collapsed {
     height: $navbar-height;
+
+    .navbar-start,
+    .navbar-end {
+      & > a.navbar-item {
+        &:hover {
+          background-color: transparent;
+          color: $primary;
+        }
+
+        &.is-active {
+          background-color: transparent;
+          font-weight: 600;
+
+          color: $primary;
+          box-shadow: inset 0 -3px 0 $primary;
+        }
+      }
+    }
+  }
+
+  &.is-transparent {
+    .navbar-start,
+    .navbar-end {
+      & > a.navbar-item:hover {
+        box-shadow: inset 0 -3px 0 #fff;
+        color: #fff;
+      }
+    }
   }
 
   .navbar-brand,
   .navbar-start,
   .navbar-end {
     & > .navbar-item,
-    .navbar-link {
-      color: #f1f1f1;
+    & > .navbar-link {
       font-weight: 400;
       letter-spacing: 1px;
       text-transform: uppercase;
+
+      transition: all .3s ease;
     }
   }
 

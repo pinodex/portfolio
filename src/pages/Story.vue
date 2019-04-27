@@ -15,6 +15,10 @@
             <div class="has-text-centered">
               <h1 class="is-size-3">Raphael Marco</h1>
               <h2 class="is-size-6">Full-Stack Developer</h2>
+
+              <SocialLinks
+                :pro="true"
+              />
             </div>
           </div>
         </div>
@@ -36,9 +40,12 @@
 </template>
 
 <script>
+import SocialLinks from '@/components/SocialLinks'
 import story from '@data/story.md'
 
 export default {
+  components: { SocialLinks },
+
   computed: {
     story: () => story
   },

@@ -1,4 +1,6 @@
 module.exports = {
+  siteUrl: process.env.VUE_APP_SITE_URL,
+
   blog: {
     url: process.env.VUE_APP_BLOG_URL,
     apiBase: process.env.VUE_APP_BLOG_API_BASE,

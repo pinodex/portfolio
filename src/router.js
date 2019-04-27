@@ -69,7 +69,16 @@ export default new Router({
       meta: {
         isNavbarBrandVisible: true
       }
-    }
+    },
+
+    {
+      name: 'privacyPolicy',
+      path: '/privacy-policy',
+      component: () => import('@/pages/PrivacyPolicy'),
+      meta: {
+        isNavbarBrandVisible: true
+      }
+    },
   ],
 
   scrollBehavior (to, from, savedPosition) {

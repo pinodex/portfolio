@@ -9,6 +9,14 @@
         <p>
           This website is open-source! <a href="https://github.com/pinodex/portfolio">Fork it on Github</a>
         </p>
+
+        <p>
+          <router-link
+            :to="{ name: 'privacyPolicy' }"
+          >
+            Privacy Policy
+          </router-link>
+        </p>
       </div>
     </section>
   </footer>

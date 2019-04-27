@@ -16,7 +16,7 @@ import services from './services'
 
 Vue.config.productionTip = false
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' && !Boolean(window.localStorage.noTracking)) {
   Vue.use(VueAnalytics, {
     id: googleAnalyticsId,
     router

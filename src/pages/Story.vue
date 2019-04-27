@@ -5,7 +5,11 @@
         <div class="hero is-primary is-bold has-border-radius">
           <div class="hero-body">
             <figure class="image is-128x128 is-element-centered has-contents-below">
-              <img class="is-rounded" src="/assets/img/avatar.jpg" alt="Avatar">
+              <PreloadedImage
+                class="is-rounded"
+                src="/assets/img/avatar.jpg"
+                alt="Avatar"
+              />
             </figure>
 
             <div class="has-text-centered">

@@ -3,7 +3,6 @@
     <img
       v-show="mountedSrc"
       :src="mountedSrc"
-      :alt="alt"
     >
   </transition>
 </template>
@@ -12,10 +11,6 @@
 export default {
   props: {
     src: {
-      type: String
-    },
-
-    alt: {
       type: String
     }
   },

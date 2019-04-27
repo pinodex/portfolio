@@ -1,11 +1,11 @@
 import axios from 'axios'
 import { blog } from '@/config'
 
-let instance = axios.create({
+let request = axios.create({
   baseURL: blog.apiBase
 })
 
-instance.interceptors.request.use(config => {
+request.interceptors.request.use(config => {
   config.params = config.params || {}
 
   config.params['client_id'] = blog.clientId
@@ -14,5 +14,13 @@ instance.interceptors.request.use(config => {
   return config
 }, error => Promise.reject(error))
 
+export default {
 
-export default instance
+  async getPosts (limit) {
+    const params = { limit }
+    const response = await request.get('/posts/', { params })
+
+    return response.data.posts
+  }
+
+}

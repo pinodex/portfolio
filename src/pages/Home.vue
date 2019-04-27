@@ -136,11 +136,12 @@ export default {
 
   methods: {
     async loadPosts () {
-      const params = { limit: 5 }
-      const request = await this.$blog.get('/posts/', { params })
+      try {
+        const posts = await this.$blog.getPosts(5)
 
-      this.featuredPost = request.data.posts[0]
-      this.posts = request.data.posts.slice(1)
+        this.featuredPost = posts[0]
+        this.posts = posts.slice(1)
+      } catch (e) {}
     }
   }
 }

@@ -53,7 +53,7 @@ export default {
   display: inline-block;
 
   border: 2px solid lighten($primary, 10);
-  border-radius: $border-radius;
+  border-radius: $radius;
 
   margin: 0 auto;
   padding: 3rem;

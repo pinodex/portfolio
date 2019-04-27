@@ -1,9 +1,8 @@
+@import 'bulma/sass/utilities/initial-variables.sass';
+
 $primary: #243B55;
 $secondary: darken($primary, 10);
 $tertiary: darken($primary, 20);
-
 $link: lighten($primary, 10);
-
-$border-radius: 4px;
 
 $navbar-height: 3rem;

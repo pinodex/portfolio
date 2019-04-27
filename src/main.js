@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueCarousel from 'vue-carousel'
 
 import App from './App.vue'
 
@@ -11,6 +12,8 @@ import router from './router'
 import services from './services'
 
 Vue.config.productionTip = false
+
+Vue.use(VueCarousel)
 
 Vue.component('PreloadedImage', PreloadedImage)
 Vue.component('MockupMedia', MockupMedia)

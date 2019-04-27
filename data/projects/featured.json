@@ -9,21 +9,21 @@
   {
     "slug": "jose-rizal-online",
     "name": "Jose Rizal Online",
-    "thumbnail": "/assets/img/projects/jose-rizal-online-01.jpg",
+    "thumbnail": "/assets/img/projects/jose-rizal-banner.png",
     "color": "#6f5544"
   },
 
   {
     "slug": "sti-novaliches-secv",
     "name": "STI Novaliches SEC Automated Election",
-    "thumbnail": "/assets/img/projects/featured/sti-novaliches-secv.jpg",
+    "thumbnail": "/assets/img/projects/sti-novaliches-secv.jpg",
     "color": "#1e1e21"
   },
 
   {
     "slug": "sti-novaliches-tst",
     "name": "STI Novaliches Talent Search Tabulation",
-    "thumbnail": "/assets/img/projects/featured/sti-novaliches-tst.jpg",
+    "thumbnail": "/assets/img/projects/sti-novaliches-tst.jpg",
     "color": "#a6aebc"
   }
 ]

@@ -19,6 +19,7 @@
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "vue": "^2.6.10",
+    "vue-carousel": "^0.18.0",
     "vue-loader": "^15.7.0",
     "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.0.3",

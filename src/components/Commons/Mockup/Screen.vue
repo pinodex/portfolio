@@ -1,13 +1,11 @@
 <template>
   <div class="window">
     <div class="frame">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 640 18" preserveAspectRatio="none">
-        <g>
-          <path fill="#CDCCCC" d="M640,18H0V3.9C0,1.8,1.8,0,4,0h631.9c2.2,0,4,1.8,4,3.9V18z" />
-          <circle opacity="0.71" fill="#E64D3C" cx="10.4" cy="9" r="3.8" />
-          <circle opacity="0.71" fill="#F0C419" cx="22.7" cy="9" r="3.8" />
-          <circle opacity="0.71" fill="#4FBA6F" cx="35.1" cy="9" r="3.8" />
-        </g>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 640 18">
+        <path fill="#CDCCCC" d="M640 18H0V4c0-2 2-4 4-4h632c2 0 4 2 4 4v14z"/>
+        <circle cx="10" cy="9" r="4" fill="#E64D3C"/>
+        <circle cx="23" cy="9" r="4" fill="#F0C419"/>
+        <circle cx="35" cy="9" r="4" fill="#4FBA6F"/>
       </svg>
 
       <div class="image is-16by9">

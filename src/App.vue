@@ -3,6 +3,7 @@
     :class="{ 'has-navbar-fixed-top': !isNavbarCollapsible }"
   >
     <Navbar
+      @menu="state => navbarMenuActive = state"
       :collapsed="isNavbarCollapsed"
       :autohideBrand="autohideBrand"
       :links="navLinks"
@@ -19,6 +20,16 @@
     </transition>
 
     <Footer />
+
+    <transition
+      name="fade"
+    >
+      <div
+        class="dark-overlay is-hidden-desktop"
+        @click="closeMenu()"
+        v-show="navbarMenuActive"
+      ></div>
+    </transition>
   </div>
 </template>
 
@@ -32,6 +43,7 @@ export default {
   data: () => ({
     isScrolledPast: true,
     isNavbarCollapsible: false,
+    navbarMenuActive: false,
 
     navLinks: [
       {
@@ -65,6 +77,12 @@ export default {
     }
   },
 
+  watch: {
+    '$route.path': function () {
+      this.closeMenu()
+    }
+  },
+
   mounted () {
     window.addEventListener('scroll', this.onScroll, false)
 
@@ -84,6 +102,10 @@ export default {
 
     beforeEnter (e) {
       this.isNavbarCollapsible = this.$route.meta.isNavbarCollapsible
+    },
+
+    closeMenu () {
+      this.$refs.navbar.closeMenu()
     }
   }
 }
@@ -96,5 +118,16 @@ export default {
 
 .has-navbar-fixed-top {
   margin-top: $navbar-height;
+}
+
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
 }
 </style>

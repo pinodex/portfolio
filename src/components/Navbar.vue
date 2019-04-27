@@ -12,20 +12,26 @@
           </svg>
         </router-link>
 
-        <a role="button" class="navbar-burger burger">
+        <a role="button" class="navbar-burger burger"
+          @click.prevent="toggleMenu()"
+        >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
 
-      <div class="navbar-menu">
+      <div
+        class="navbar-menu"
+        :class="{ 'is-active': menuActive }"
+      >
         <div class="navbar-start">
           <router-link class="navbar-item"
             v-for="(link, i) in links"
             :key="i"
             :to="link.target"
             :class="{ 'is-active': activeNavItem == i }"
+            @click="closeMenu()"
           >
             {{ link.name }}
           </router-link>
@@ -42,6 +48,10 @@
 
 <script>
 export default {
+  data: () => ({
+    menuActive: false
+  }),
+
   props: {
     fixed: {
       type: Boolean,
@@ -68,18 +78,38 @@ export default {
     navbarClass () {
       return {
         'is-fixed-top': this.fixed,
-        'is-collapsed': this.collapsed,
-        'is-white': this.collapsed,
-        'is-dark': !this.collapsed,
-        'is-transparent': !this.collapsed,
+        'is-collapsed': this.computedCollapsed,
+        'is-white': this.computedCollapsed,
+        'is-dark': !this.computedCollapsed,
+        'is-transparent': !this.computedCollapsed,
         'is-brand-autohide': this.autohideBrand
       }
+    },
+
+    computedCollapsed () {
+      return this.collapsed || this.menuActive
     },
 
     activeNavItem () {
       const current = this.$route
 
       return this.links.findIndex(l => current.path.indexOf(l.target) !== -1)
+    }
+  },
+
+  watch: {
+    menuActive (state) {
+      this.$emit('menu', state)
+    }
+  },
+
+  methods: {
+    toggleMenu () {
+      this.menuActive = !this.menuActive
+    },
+
+    closeMenu () {
+      this.menuActive = false
     }
   }
 }
@@ -90,7 +120,9 @@ export default {
 @import 'bulma/sass/utilities/mixins.sass';
 
 .navbar {
-  height: #{$navbar-height + 2rem};
+  @include desktop {
+    height: #{$navbar-height + 2rem};
+  }
 
   transition: all .3s ease;
 
@@ -103,7 +135,9 @@ export default {
   }
 
   &.is-collapsed {
-    height: $navbar-height;
+    @include desktop {
+      height: $navbar-height;
+    }
 
     .navbar-start,
     .navbar-end {
@@ -118,7 +152,10 @@ export default {
           font-weight: 600;
 
           color: $primary;
-          box-shadow: inset 0 -3px 0 $primary;
+
+          @include desktop {
+            box-shadow: inset 0 -3px 0 $primary;
+          }
         }
       }
     }
@@ -128,8 +165,11 @@ export default {
     .navbar-start,
     .navbar-end {
       & > a.navbar-item:hover {
-        box-shadow: inset 0 -3px 0 #fff;
         color: #fff;
+
+        @include desktop {
+          box-shadow: inset 0 -3px 0 #fff;
+        }
       }
     }
   }
@@ -144,6 +184,7 @@ export default {
       text-transform: uppercase;
 
       transition: all .3s ease;
+      text-align: center;
     }
   }
 

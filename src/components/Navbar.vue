@@ -4,7 +4,11 @@
   >
     <div class="container">
       <div class="navbar-brand">
-        <router-link class="navbar-item" to="/">
+        <router-link
+          class="navbar-item"
+          aria-label="Go to Homepage"
+          to="/"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 512 512" width="50">
             <path fill="#41608C" d="M468 107l-1-1h-81L272 297l-62 109h92l53-93c19-33 31-44 31 0v92l1 1h80l1-1V107z"/>
             <path fill="#30456B" d="M44 107l1-1h81l114 191 62 109h-92l-53-93c-19-33-31-44-31 0v92l-1 1H45l-1-1V107z"/>

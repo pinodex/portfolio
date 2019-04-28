@@ -7,7 +7,8 @@ module.exports = {
     loaderOptions: {
       sass: {
         data: `
-          @import '~bulma/sass/utilities/_all.sass';
+          @import '~bulma/sass/utilities/initial-variables.sass';
+          @import '~bulma/sass/utilities/mixins.sass';
           @import '@/assets/scss/_variables.scss';
           @import '@/assets/scss/_mixins.scss';
         `

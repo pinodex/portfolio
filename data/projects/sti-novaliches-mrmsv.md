@@ -11,4 +11,4 @@ This was used during the Talent Search period of STI Novaliches.
 * **Vue.js** for the frontend
 
 ## Website
-The website is archived at [vote.stinovaliches.edu.ph](https://vote.stinovaliches.edu.ph).
+~~The website is archived at [vote.stinovaliches.edu.ph](https://vote.stinovaliches.edu.ph).~~

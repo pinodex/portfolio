@@ -17,4 +17,4 @@ The development was stared in the 1st quarter of 2016. I proposed it as an impro
 * Vue.js
 
 ## Website
-The website is currently hosted at [student.stinovaliches.edu.ph](https://student.stinovaliches.edu.ph).
+~~The website is currently hosted at [student.stinovaliches.edu.ph](https://student.stinovaliches.edu.ph).~~

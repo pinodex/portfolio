@@ -17,4 +17,4 @@ This project allows management and approval of employee leaves.
 * Bulma
 
 ## Website
-The website is currently hosted at [employee.stinovaliches.edu.ph](https://employee.stinovaliches.edu.ph).
+~~The website is currently hosted at [employee.stinovaliches.edu.ph](https://employee.stinovaliches.edu.ph).~~

@@ -3,11 +3,11 @@
   Emilio Miguel Amoyan, Marc Darriel Luna, Stephan Nicole Portuguez.</em>
 </p>
 
-<div class="has-text-centered has-contents-below">
-
-![](/assets/img/projects/vianderito-mockups2.png)
-
-</div>
+<figure class="image is-16by9">
+  <PreloadedImage
+    src="/assets/img/projects/vianderito-mockups2.png"
+  />
+</figure>
 
 Vianderito is an online platform that eliminates the need of a cashier to checkout in a grocery or a convenience store. It also eliminates the need of scanning an item one-by-one with a barcode scanner by using RFID stickers and long-range RFID scanner.
 
@@ -67,72 +67,104 @@ The application runs on Android.
 
 <carousel :navigationEnabled="true">
   <slide>
-    <div class="has-text-centered">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-phone-1.png" alt="Mobile">
-    </div>
+    <figure class="image is-9by16">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-phone-1.png"
+        alt="Mobile"
+      />
+    </figure>
     <p class="is-size-7 has-text-centered">
       <em>Landing</em>
     </p>
   </slide>
 
   <slide>
-    <div class="has-text-centered">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-phone-2.png" alt="Mobile">
-    </div>
+    <figure class="image is-9by16">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-phone-2.png"
+        alt="Mobile"
+      />
+    </figure>
     <p class="is-size-7 has-text-centered">
       <em>Login</em>
     </p>
   </slide>
 
   <slide>
-    <div class="has-text-centered">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-phone-3.png" alt="Mobile">
-    </div>
+    <figure class="image is-9by16">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-phone-3.png"
+        alt="Mobile"
+      />
+    </figure>
     <p class="is-size-7 has-text-centered">
       <em>Sign Up</em>
     </p>
   </slide>
 
   <slide>
-    <div class="has-text-centered">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-phone-4.png" alt="Mobile">
-    </div>
+    <figure class="image is-9by16">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-phone-4.png"
+        alt="Mobile"
+      />
+    </figure>
     <p class="is-size-7 has-text-centered">
       <em>Product Listing</em>
     </p>
   </slide>
 
   <slide>
-    <div class="has-text-centered">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-phone-5.png" alt="Mobile">
-    </div>
+    <figure class="image is-9by16">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-phone-5.png"
+        alt="Mobile"
+      />
+    </figure>
     <p class="is-size-7 has-text-centered">
       <em>QR Code Scanner</em>
     </p>
   </slide>
 
   <slide>
-    <div class="has-text-centered">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-phone-6.png" alt="Mobile">
-    </div>
+    <figure class="image is-9by16">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-phone-6.png"
+        alt="Mobile"
+      />
+    </figure>
     <p class="is-size-7 has-text-centered">
       <em>Account Management</em>
     </p>
   </slide>
 
   <slide>
-    <div class="has-text-centered">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-phone-7.png" alt="Mobile">
-    </div>
+    <figure class="image is-9by16">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-phone-7.png"
+        alt="Mobile"
+      />
+    </figure>
     <p class="is-size-7 has-text-centered">
       <em>Order History</em>
     </p>
   </slide>
 
   <slide>
-    <div class="has-text-centered">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-phone-8.png" alt="Mobile">
-    </div>
+    <figure class="image is-9by16">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-phone-8.png"
+        alt="Mobile"
+      />
+    </figure>
     <p class="is-size-7 has-text-centered">
       <em>Order Details</em>
     </p>
@@ -145,16 +177,22 @@ The RFID reader is a long-range UHF RFID reader. I used the EPCGEN2 protocol. It
 
 I wasn&lsquo;t really at that time when I bought the correct reader as I have no related experience with RFID. I only got it to work with single tags before the documentation was sent to me.
 
-<figure class="image">
-  <img class="has-border-radius" src="/assets/img/projects/vianderito-reader-1.png" alt="Reader">
+<figure class="image is-16by9">
+  <PreloadedImage
+    src="/assets/img/projects/vianderito-reader-1.png"
+  />
 </figure>
 
 When I finally got the documentation and the demo software, I learned that you have to set a certain flags to switch the reading from single mode to multiple mode. With the RFID reader hooked to my computer via an RS232 <-> USB converter, the demo software, and the technical documentation, I learned how the reader is sending the data of each tags that it sees.
 
 <carousel :perPage="1" :navigationEnabled="true">
   <slide>
-    <figure class="image">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-reader-2.png" alt="Reader">
+    <figure class="image is-16by9">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-reader-2.png"
+        alt="Reader"
+      />
     </figure>
     <p class="is-size-7 has-text-centered">
       <em>This is how the data should look like</em>
@@ -162,8 +200,12 @@ When I finally got the documentation and the demo software, I learned that you h
   </slide>
 
   <slide>
-    <figure class="image">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-reader-3.png" alt="Reader">
+    <figure class="image is-16by9">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-reader-3.png"
+        alt="Reader"
+      />
     </figure>
     <p class="is-size-7 has-text-centered">
       <em>The flags that the reader accepts for mode switching</em>
@@ -171,8 +213,12 @@ When I finally got the documentation and the demo software, I learned that you h
   </slide>
 
   <slide>
-    <figure class="image">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-reader-4.png" alt="Reader">
+    <figure class="image is-16by9">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-reader-4.png"
+        alt="Reader"
+      />
     </figure>
     <p class="is-size-7 has-text-centered">
       <em>The structure of the EPCGEN2 data</em>
@@ -182,8 +228,12 @@ When I finally got the documentation and the demo software, I learned that you h
 
 Having learned the protocol and data structures, I built a small Python script that will poll for incoming data and parse each individual tags&lsquo; EPC (extended product code).
 
-<figure class="image">
-  <img class="has-border-radius" src="/assets/img/projects/vianderito-reader-5.png" alt="Reader">
+<figure class="image is-16by9">
+  <PreloadedImage
+    class="has-border-radius"
+    src="/assets/img/projects/vianderito-reader-5.png"
+    alt="Reader"
+  />
 </figure>
 
 From that, whenever it sees an EPC or a group of EPCs, the script will send to the server for product and inventory matching and to allow the product to be added to the customer&lsquo;s cart.
@@ -210,7 +260,11 @@ Vianderito had participated in the I.T. Exhibit that our school held every year 
 <carousel :perPage="1" :navigationEnabled="true">
   <slide>
     <figure class="image is-4by3">
-      <img class="has-border-radius" src="/assets/img/projects/it-exhibit-1.jpg" alt="Exhibit">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/it-exhibit-1.jpg"
+        alt="Exhibit"
+      />
     </figure>
     <p class="is-size-7 has-text-centered">
       <em>The Event Proper. &copy; STI College Novaliches, 2018</em>
@@ -219,7 +273,11 @@ Vianderito had participated in the I.T. Exhibit that our school held every year 
 
   <slide>
     <figure class="image is-4by3">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-exhibit-1.jpg" alt="Exhibit">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-exhibit-1.jpg"
+        alt="Exhibit"
+      />
     </figure>
     <p class="is-size-7 has-text-centered">
       <em>Our Cute Little Space at the Exhibit</em>
@@ -228,7 +286,11 @@ Vianderito had participated in the I.T. Exhibit that our school held every year 
 
   <slide>
     <figure class="image is-4by3">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-exhibit-2.jpg" alt="Exhibit">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-exhibit-2.jpg"
+        alt="Exhibit"
+      />
     </figure>
     <p class="is-size-7 has-text-centered">
       <em>Vianderito!</em>
@@ -237,7 +299,11 @@ Vianderito had participated in the I.T. Exhibit that our school held every year 
 
   <slide>
     <figure class="image is-4by3">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-exhibit-3.jpg" alt="Exhibit">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-exhibit-3.jpg"
+        alt="Exhibit"
+      />
     </figure>
     <p class="is-size-7 has-text-centered">
       <em>Bird&lsquo;s Eye View</em>
@@ -246,7 +312,11 @@ Vianderito had participated in the I.T. Exhibit that our school held every year 
 
   <slide>
     <figure class="image is-4by3">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-exhibit-4.jpg" alt="Exhibit">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-exhibit-4.jpg"
+        alt="Exhibit"
+      />
     </figure>
     <p class="is-size-7 has-text-centered">
       <em>Behind The Scene</em>
@@ -255,7 +325,11 @@ Vianderito had participated in the I.T. Exhibit that our school held every year 
 
   <slide>
     <figure class="image is-4by3">
-      <img class="has-border-radius" src="/assets/img/projects/vianderito-exhibit-5.jpg" alt="Exhibit">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/vianderito-exhibit-5.jpg"
+        alt="Exhibit"
+      />
     </figure>
     <p class="is-size-7 has-text-centered">
       <em>More Behind The Scene</em>
@@ -264,7 +338,11 @@ Vianderito had participated in the I.T. Exhibit that our school held every year 
 
   <slide>
     <figure class="image is-4by3">
-      <img class="has-border-radius" src="/assets/img/projects/it-exhibit-2.jpg" alt="Exhibit">
+      <PreloadedImage
+        class="has-border-radius"
+        src="/assets/img/projects/it-exhibit-2.jpg"
+        alt="Exhibit"
+      />
     </figure>
     <p class="is-size-7 has-text-centered">
       <em>Thesis mates</em>

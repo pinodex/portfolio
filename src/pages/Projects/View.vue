@@ -36,6 +36,8 @@
       </div>
     </section>
 
+    <div class="page-loader" v-if="!project"></div>
+
     <section class="section" v-if="project">
       <div class="container">
         <div class="columns is-centered">
@@ -59,7 +61,7 @@
             <div class="level">
               <div class="level-left">
                 <div class="level-item" v-if="prev">
-                  <div>
+                  <div class="quick-prev">
                     <p class="has-text-weight-semibold">
                       <router-link
                         :to="{ name: 'projects.view', params: { slug: prev.slug } }"
@@ -75,7 +77,7 @@
 
               <div class="level-right">
                 <div class="level-item" v-if="next">
-                  <div class="has-text-right">
+                  <div class="quick-next">
                     <p class="has-text-weight-semibold">
                       <router-link
                         :to="{ name: 'projects.view', params: { slug: next.slug } }"
@@ -160,8 +162,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'bulma/sass/utilities/mixins.sass';
-
 ::v-deep .window {
   padding: 2rem;
 

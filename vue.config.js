@@ -3,6 +3,18 @@ const path = require('path')
 module.exports = {
   productionSourceMap: false,
 
+  css: {
+    loaderOptions: {
+      sass: {
+        data: `
+          @import '~bulma/sass/utilities/_all.sass';
+          @import '@/assets/scss/_variables.scss';
+          @import '@/assets/scss/_mixins.scss';
+        `
+      }
+    }
+  },
+
   configureWebpack: {
     resolve: {
       alias: {

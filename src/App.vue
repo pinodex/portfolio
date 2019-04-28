@@ -120,7 +120,6 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/styles.scss';
 @import '@/assets/scss/fonts.scss';
-@import '@/assets/scss/_variables.scss';
 
 .has-navbar-fixed-top {
   margin-top: $navbar-height;

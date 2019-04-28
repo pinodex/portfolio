@@ -148,8 +148,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'bulma/sass/utilities/mixins.sass';
-
 @include desktop {
   .featured-project {
     transition: transform .3s ease !important;

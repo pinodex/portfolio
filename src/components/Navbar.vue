@@ -128,9 +128,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_variables.scss';
-@import 'bulma/sass/utilities/mixins.sass';
-
 .navbar {
   @include desktop {
     height: #{$navbar-height + 2rem};
@@ -156,17 +153,17 @@ export default {
       & > a.navbar-item {
         &:hover {
           background-color: transparent;
-          color: $primary;
+          color: $link;
         }
 
         &.is-active {
           background-color: transparent;
           font-weight: 600;
 
-          color: $primary;
+          color: $link;
 
           @include desktop {
-            box-shadow: inset 0 -3px 0 $primary;
+            box-shadow: inset 0 -3px 0 $link;
           }
         }
       }

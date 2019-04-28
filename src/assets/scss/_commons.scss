@@ -1,0 +1,152 @@
+html, body {
+  background: #fafafa;
+}
+
+.is-spaced {
+  margin: 1rem 0;
+}
+
+.section {
+  padding: 1.5rem;
+}
+
+.content figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.is-element-centered {
+  margin: 0 auto;
+}
+
+.is-vmargined {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.has-border-radius {
+  border-radius: $radius;
+}
+
+.has-contents-below {
+  margin-bottom: 1rem;
+}
+
+.box,
+.card {
+  @extend .has-border-radius;
+
+  overflow: hidden;
+}
+
+a.box,
+a.card {
+  transition: box-shadow .3s ease;
+}
+
+a.card:hover {
+  @extend a, .box, :hover;
+  @extend .is-paddingless;
+}
+
+.image video {
+  @extend .image, img;
+}
+
+.page-loader {
+  @include loader();
+
+  height: 3rem;
+  width: 3rem;
+
+  margin: 0 auto;
+}
+
+.quick-prev,
+.quick-next {
+  text-align: center;
+}
+
+@include desktop {
+  .quick-prev {
+    text-align: left;
+  }
+
+  .quick-next {
+    text-align: right;
+  }
+}
+
+ul.horizontal {
+  li {
+    display: inline;
+    margin: 0 0.5rem;
+  }
+}
+
+.page-heading {
+  position: relative;
+  overflow: hidden;
+
+  svg.heading-art {
+    display: block;
+
+    height: 256px;
+    width: 256px;
+
+    position: absolute;
+    top: -20px;
+    right: 20px;
+
+    opacity: 1;
+
+    transition: opacity .3s ease;
+
+    @include touch {
+      opacity: 0.5;
+    }
+
+    @include mobile {
+      opacity: 0.25;
+    }
+  }
+}
+
+.footer {
+  background: #fff;
+  margin-top: 1.5rem;
+}
+
+.social-links {
+  & > a {
+    display: inline-block;
+    padding: 1.5rem;
+  }
+
+  .icon i {
+    font-size: 1.5rem;
+  }
+
+  a {
+    color: #4a4a4a;
+    transition: all .3s ease;
+
+    &:hover {
+      color: #000;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+/**
+ * Animations
+ */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .3s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0
+}

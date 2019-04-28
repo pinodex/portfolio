@@ -40,26 +40,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.social-links {
-  & > a {
-    display: inline-block;
-    padding: 1.5rem;
-  }
-
-  .icon i {
-    font-size: 1.5rem;
-  }
-
-  a {
-    color: #4a4a4a;
-    transition: all .3s ease;
-
-    &:hover {
-      color: #000;
-      transform: translateY(-3px);
-    }
-  }
-}
-</style>

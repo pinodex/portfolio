@@ -10,13 +10,25 @@
           This website is open-source! <a href="https://github.com/pinodex/portfolio">Fork it on Github</a>
         </p>
 
-        <p>
-          <router-link
-            :to="{ name: 'privacyPolicy' }"
-          >
-            Privacy Policy
-          </router-link>
-        </p>
+        <ul class="horizontal">
+          <li>
+            <router-link
+              :to="{ name: 'contact' }"
+              :class="{ 'has-text-weight-semibold': $route.name == 'contact' }"
+            >
+              Contact
+            </router-link>
+          </li>
+
+          <li>
+            <router-link
+              :to="{ name: 'privacyPolicy' }"
+              :class="{ 'has-text-weight-semibold': $route.name == 'privacyPolicy' }"
+            >
+              Privacy Policy
+            </router-link>
+          </li>
+        </ul>
       </div>
     </section>
   </footer>

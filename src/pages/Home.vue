@@ -95,7 +95,7 @@
             <h1 class="is-size-3 is-spaced">Contact</h1>
 
             <p class="is-size-5 is-spaced">
-              You can reach me at <span class="has-text-weight-semibold">raphaelmarco &#128231; outlook.com</span>
+              You can reach me at <span class="has-text-weight-semibold">me@raphaelmarco.com</span>
             </p>
 
             <p class="is-size-5 is-spaced">

@@ -22,6 +22,11 @@ html, body {
   margin: 0 auto;
 }
 
+.is-vmargined {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 .has-border-radius {
   border-radius: $radius;
 }

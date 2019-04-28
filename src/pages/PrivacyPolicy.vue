@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <div class="container">
+    <div class="container is-vmargined">
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">

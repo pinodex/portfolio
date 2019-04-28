@@ -48,17 +48,23 @@ export default {
     navLinks: [
       {
         name: 'Story',
-        target: '/story'
+        target: {
+          name: 'story'
+        }
       },
 
       {
         name: 'Projects',
-        target: '/projects'
+        target: {
+          name: 'projects'
+        }
       },
 
       {
         name: 'Labs',
-        target: '/labs'
+        target: {
+          name: 'labs'
+        }
       }
     ]
   }),

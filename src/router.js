@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import NotFound from '@/pages/Errors/NotFound'
+
 Vue.use(Router)
 
 export default new Router({
@@ -79,6 +81,20 @@ export default new Router({
         isNavbarBrandVisible: true
       }
     },
+
+    {
+      name: 'contact',
+      path: '/contact',
+      component: () => import('@/pages/Contact'),
+      meta: {
+        isNavbarBrandVisible: true
+      }
+    },
+
+    {
+      path: '*',
+      component: NotFound
+    }
   ],
 
   scrollBehavior (to, from, savedPosition) {

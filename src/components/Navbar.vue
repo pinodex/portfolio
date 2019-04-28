@@ -43,7 +43,15 @@
 
         <div class="navbar-end">
           <a href="https://blog.raphaelmarco.com" class="navbar-item">Blog</a>
-          <a href="https://github.com/pinodex" class="navbar-item" target="_blank" rel="noopener">Github</a>
+          <a href="https://github.com/pinodex" class="navbar-item is-external" target="_blank" rel="noopener">Github</a>
+
+          <router-link
+            class="navbar-item"
+            :to="{ name: 'contact' }"
+            :class="{ 'is-active': $route.name == 'contact' }"
+          >
+            Contact
+          </router-link>
         </div>
       </div>
     </div>
@@ -95,9 +103,9 @@ export default {
     },
 
     activeNavItem () {
-      const current = this.$route
+      const name = this.$route.name || ''
 
-      return this.links.findIndex(l => current.path.indexOf(l.target) !== -1)
+      return this.links.findIndex(l => name.indexOf(l.target.name) !== -1)
     }
   },
 
@@ -189,6 +197,27 @@ export default {
 
       transition: all .3s ease;
       text-align: center;
+
+      &.is-external {
+        &::after {
+          font-family: 'icomoon';
+          font-size: 0.9rem;
+          content: '\e905';
+
+          margin-left: 5px;
+
+          @include desktop {
+            overflow: hidden;
+            max-width: 0px;
+
+            transition: max-width .3s ease;
+          }
+        }
+
+        &:hover::after {
+          max-width: 20px;
+        }
+      }
     }
   }
 

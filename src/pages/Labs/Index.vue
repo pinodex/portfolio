@@ -28,7 +28,7 @@
             :key="i"
           >
             <Project
-              class="project"
+              class="project translate-on-hover"
               route="labs.view"
               :name="entry.name"
               :description="entry.description"

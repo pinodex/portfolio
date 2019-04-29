@@ -24,7 +24,7 @@
             :key="i"
           >
             <FeaturedProject
-              class="featured-project"
+              class="featured-project translate-on-hover"
               :slug="project.slug"
               :name="project.name"
               :thumbnail="project.thumbnail"
@@ -33,7 +33,10 @@
           </div>
         </div>
 
-        <router-link to="/projects" class="box has-text-centered is-hidden-desktop">
+        <router-link
+          class="box has-text-centered is-hidden-desktop"
+          :to="{ name: 'projects' }"
+        >
           <p>
             <span>More Projects</span>
 
@@ -43,7 +46,12 @@
           </p>
         </router-link>
 
-        <router-link to="/projects" class="more-projects is-hidden-touch" title="More">
+        <router-link
+          class="more-projects is-hidden-touch"
+          :to="{ name: 'projects' }"
+          aria-label="View more projects"
+          title="More"
+        >
           <span class="icon">
             <i class="icon-chevron-right"></i>
           </span>
@@ -53,9 +61,9 @@
 
     <section class="section">
       <div class="container">
-        <a href="https://blog.raphaelmarco.com" class="hero is-primary is-bold has-border-radius">
+        <a href="https://blog.raphaelmarco.com" class="hero is-primary is-bold has-border-radius translate-on-hover">
           <div class="hero-body">
-            <h1 class="is-size-4">blog.raphaelmarco.com</h1>
+            <h1 class="is-size-4 has-text-weight-semibold">blog.raphaelmarco.com</h1>
 
             <p class="is-size-6">Random stuffs about me, development, design, events, and anything that I can write a blog post about.</p>
           </div>
@@ -66,6 +74,7 @@
     <section class="section featured-post-container">
       <div class="container">
         <FeaturedPost
+          class="translate-on-hover"
           v-if="featuredPost"
           :post="featuredPost"
         />
@@ -75,12 +84,13 @@
     <section class="section">
       <div class="container">
         <div class="columns is-multiline is-mobile">
-          <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile"
+          <div
+            class="column is-one-quarter-desktop is-half-tablet is-full-mobile"
             v-for="(post, i) in posts"
             :key="i"
           >
             <Post
-              class="post"
+              class="post translate-on-hover"
               :post="post"
             />
           </div>
@@ -148,17 +158,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@include desktop {
-  .featured-project {
-    transition: transform .3s ease !important;
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: initial;
-    }
-  }
-}
-
 @include mobile {
   .featured-post-container {
     padding-bottom: 0;
@@ -186,6 +185,12 @@ export default {
 
   height: 4rem;
   width: 4rem;
+
+  transition: transform .3s ease;
+
+  &:hover {
+    transform: translateX(4px);
+  }
 
   .icon i {
     font-size: 2rem;

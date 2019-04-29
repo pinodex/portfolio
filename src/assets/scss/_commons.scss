@@ -2,6 +2,11 @@ html, body {
   background: #fafafa;
 }
 
+::selection {
+  background-color: $primary;
+  color: $white;
+}
+
 .is-spaced {
   margin: 1rem 0;
 }
@@ -40,17 +45,25 @@ html, body {
 }
 
 a.box,
-a.card {
-  transition: box-shadow .3s ease;
-}
-
+a.box:hover,
+a.card,
 a.card:hover {
-  @extend a, .box, :hover;
-  @extend .is-paddingless;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
 }
 
 .image video {
   @extend .image, img;
+}
+
+@include desktop {
+  .translate-on-hover {
+    transition: transform .3s ease !important;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
 }
 
 .page-loader {
@@ -113,7 +126,7 @@ ul.horizontal {
 }
 
 .footer {
-  background: #fff;
+  background: $white;
   margin-top: 1.5rem;
 }
 

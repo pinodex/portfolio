@@ -1,6 +1,6 @@
 # Storytime
 
-Ever since I&lsquo;ve been a tinkerer. I like knowing how things work. I&lsquo; always interested in how the world works and how it is powered by technology.
+Ever since I&lsquo;ve been a tinkerer. I like knowing how things work. I&lsquo;ve always interested in how the world works and how it is powered by technology.
 
 I started coding when I was 11 years old. I always wanted to build something to be used by other people. It is my encouragement for learning and building stuffs, that people can benefit from my works.
 

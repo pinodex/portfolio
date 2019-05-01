@@ -1,5 +1,5 @@
 html, body {
-  background: #fafafa;
+  background: $white-bis;
 }
 
 ::selection {
@@ -114,6 +114,10 @@ ul.horizontal {
     opacity: 1;
 
     transition: opacity .3s ease;
+
+    path {
+      fill: $white-bis;
+    }
 
     @include touch {
       opacity: 0.5;

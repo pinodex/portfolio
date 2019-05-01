@@ -158,8 +158,6 @@ export default {
 
         &.is-active {
           background-color: transparent;
-          font-weight: 600;
-
           color: $link;
 
           @include desktop {

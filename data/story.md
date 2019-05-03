@@ -7,3 +7,5 @@ I started coding when I was 11 years old. I always wanted to build something to 
 From there, I&lsquo;ve worked with different projects, sometimes alone, sometimes with other people and volunteered to do websites and systems for the purpose of learning. I learn by doing actual things.
 
 I put the label **Full-Stack Developer** under my name, having the knowledge and experience I gained doing different projects.
+
+[View/Download my CV](https://raphaelmarco.com/cv.pdf)

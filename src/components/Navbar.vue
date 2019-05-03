@@ -172,10 +172,10 @@ export default {
     .navbar-start,
     .navbar-end {
       & > a.navbar-item:hover {
-        color: #fff;
+        color: $white;
 
         @include desktop {
-          box-shadow: inset 0 -3px 0 #fff;
+          box-shadow: inset 0 -3px 0 $white;
         }
       }
     }

@@ -41,14 +41,14 @@ html, body {
 .card {
   @extend .has-border-radius;
 
+  box-shadow: 0 0 0 1px $box-card-shadow-color;
   overflow: hidden;
 }
 
-a.box,
-a.box:hover,
-a.card,
-a.card:hover {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+a.box, a.box:hover,
+a.card, a.card:hover,
+a.hero, a.hero:hover {
+  box-shadow: 0 2px 5px $box-card-link-shadow-color;
   border-color: transparent;
 }
 
@@ -145,11 +145,11 @@ ul.horizontal {
   }
 
   a {
-    color: #4a4a4a;
+    color: $grey-darker;
     transition: all .3s ease;
 
     &:hover {
-      color: #000;
+      color: $black;
       transform: translateY(-3px);
     }
   }

@@ -178,8 +178,8 @@ export default {
   align-items: center;
   justify-content: center;
 
-  background: #fff;
-  border: 1px solid #eee;
+  background: $white;
+  border: 1px solid $white-ter;
   border-radius: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
@@ -190,11 +190,17 @@ export default {
 
   &:hover {
     transform: translateX(4px);
+
+    .icon i {
+      color: $link;
+    }
   }
 
   .icon i {
     font-size: 2rem;
-    color: #4a4a4a;
+    color: $grey-dark;
+
+    transition: transform .3s ease;
   }
 }
 

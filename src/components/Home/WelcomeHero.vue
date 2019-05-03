@@ -62,12 +62,12 @@ export default {
 .name {
   text-transform: uppercase;
   font-weight: 700;
-  color: #f1f1f1;
+  color: $white-bis;
 }
 
 .name-title {
   font-weight: 300;
   letter-spacing: 2px;
-  color: #f1f1f1;
+  color: $white-bis;
 }
 </style>

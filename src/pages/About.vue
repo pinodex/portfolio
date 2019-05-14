@@ -103,7 +103,7 @@ export default {
   },
 
   mounted () {
-    this.setPageTitle('Story')
+    this.setPageTitle('About')
   }
 }
 </script>

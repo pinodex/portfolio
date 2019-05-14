@@ -13,10 +13,20 @@ module.exports = {
           @import '@/assets/scss/_mixins.scss';
         `
       }
+    },
+
+    extract: {
+      filename: 'assets/css/[name].css',
+      chunkFilename: 'assets/css/[name].css',
     }
   },
 
   configureWebpack: {
+    output: {
+      filename: 'assets/js/[name].js',
+      chunkFilename: 'assets/js/[name].js',
+    },
+
     resolve: {
       alias: {
         '@data': path.resolve(__dirname, 'data/')

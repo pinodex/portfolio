@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "name": "portfolio",
+  "alias": "raphaelmarco.com",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ],
+  "build": {
+    "env": {
+      "VUE_APP_SITE_URL": "https://raphaelmarco.com",
+      "VUE_APP_BLOG_URL": "https://blog.raphaelmarco.com",
+      "VUE_APP_BLOG_API_BASE": "https://blog.raphaelmarco.com/ghost/api/v0.1",
+      "VUE_APP_GA_CODE": "UA-51347043-3",
+      "VUE_APP_BLOG_CLIENT_ID": "@blog-client-id",
+      "VUE_APP_BLOG_CLIENT_SECRET": "@blog-client-secret"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*).pdf",
+      "status": 302,
+      "headers": {
+        "Location": "https://raphaelmarco.storage.googleapis.com/$1.pdf"
+      }
+    },
+    {
+      "src": "^/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": ".*",
+      "dest": "/index.html"
+    }
+  ]
+}

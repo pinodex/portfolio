@@ -19,12 +19,17 @@ export default new Router({
     },
 
     {
-      name: 'story',
-      path: '/story',
-      component: () => import('@/pages/Story'),
+      name: 'about',
+      path: '/about',
+      component: () => import('@/pages/About'),
       meta: {
         isNavbarBrandVisible: true
       }
+    },
+
+    {
+      path: '/story',
+      redirect: '/about'
     },
 
     {

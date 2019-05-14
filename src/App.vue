@@ -47,9 +47,9 @@ export default {
 
     navLinks: [
       {
-        name: 'Story',
+        name: 'About',
         target: {
-          name: 'story'
+          name: 'about'
         }
       },
 

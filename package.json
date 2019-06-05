@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "now-build": "vue-cli-service build && node src/rss/build.js",
+    "now-build": "node src/rss/build.js && vue-cli-service build",
     "build-rss": "npx env-cmd node src/rss/build.js",
     "start": "node server.js"
   },

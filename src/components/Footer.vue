@@ -12,6 +12,20 @@
 
         <ul class="horizontal">
           <li>
+            <a :href="rssFeed" target="_blank">RSS</a>
+          </li>
+
+          <li>
+            <a :href="atomFeed" target="_blank">Atom</a>
+          </li>
+
+          <li>
+            <a :href="jsonFeed" target="_blank">JSON Feed</a>
+          </li>
+        </ul>
+
+        <ul class="horizontal">
+          <li>
             <router-link
               :to="{ name: 'contact' }"
               :class="{ 'has-text-weight-semibold': $route.name == 'contact' }"
@@ -36,8 +50,23 @@
 
 <script>
 import SocialLinks from '@/components/SocialLinks'
+import { site } from '@/config'
 
 export default {
-  components: { SocialLinks }
+  components: { SocialLinks },
+
+  computed: {
+    rssFeed () {
+      return `${site.url}/feed/rss.xml`
+    },
+
+    atomFeed () {
+      return `${site.url}/feed/atom.xml`
+    },
+
+    jsonFeed () {
+      return `${site.url}/feed/index.json`
+    }
+  }
 }
 </script>

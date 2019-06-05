@@ -33,7 +33,7 @@
             <hr />
 
             <template v-if="isOptedOut">
-              <p>If you agree to the Privacy Policy stated above, you may opt-in to tracking by <span class="has-text-weight-semibold">{{ siteUrl }}</span> with <a class="has-text-weight-semibold" href="https://analytics.google.com/analytics/web/" target="_blank">Google Analytics</a>. It will help me learn about my visitors and make better decisions about website content.</p>
+              <p>If you agree to the Privacy Policy stated above, you may opt-in to tracking by <span class="has-text-weight-semibold">{{ site.url }}</span> with <a class="has-text-weight-semibold" href="https://analytics.google.com/analytics/web/" target="_blank">Google Analytics</a>. It will help me learn about my visitors and make better decisions about website content.</p>
 
               <button
                 class="button"
@@ -46,7 +46,7 @@
             <template v-else>
               <h2 class="subtitle">Opt-out of Tracking</h2>
 
-              <p>If you don&lsquo;t want your data to be collected, you may opt-out of tracking from <span class="has-text-weight-semibold">{{ siteUrl }}</span> by clicking the button below.</p>
+              <p>If you don&lsquo;t want your data to be collected, you may opt-out of tracking from <span class="has-text-weight-semibold">{{ site.url }}</span> by clicking the button below.</p>
 
               <p>
                 <button
@@ -66,11 +66,11 @@
 </template>
 
 <script>
-import { siteUrl } from '@/config'
+import { site } from '@/config'
 
 export default {
   computed: {
-    siteUrl: () => siteUrl,
+    site: () => site,
 
     isOptedOut () {
       return Boolean(window.localStorage.noTracking)

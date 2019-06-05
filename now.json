@@ -10,7 +10,12 @@
   ],
   "build": {
     "env": {
+      "VUE_APP_SITE_TITLE": "Raphael Marco",
+      "VUE_APP_SITE_DESCRIPTION": "Full-Stack Developer. A showcase of collection of projects that I created and have worked on.",
       "VUE_APP_SITE_URL": "https://raphaelmarco.com",
+      "VUE_APP_FEED_AUTHOR_NAME": "Raphael Marco",
+      "VUE_APP_FEED_AUTHOR_EMAIL": "me@raphaelmarco.com",
+      "VUE_APP_FEED_AUTHOR_LINK": "https://raphaelmarco.com",
       "VUE_APP_BLOG_URL": "https://blog.raphaelmarco.com",
       "VUE_APP_BLOG_API_BASE": "https://blog.raphaelmarco.com/ghost/api/v0.1",
       "VUE_APP_GA_CODE": "UA-51347043-3",
@@ -29,6 +34,10 @@
     {
       "src": "^/assets/(.*)",
       "dest": "/assets/$1"
+    },
+    {
+      "src": "^/feed/(.*)",
+      "dest": "/feed/$1"
     },
     {
       "src": ".*",

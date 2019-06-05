@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "now-build": "vue-cli-service build",
+    "now-build": "vue-cli-service build && node src/rss/build.js",
+    "build-rss": "npx env-cmd node src/rss/build.js",
     "start": "node server.js"
   },
   "dependencies": {
@@ -15,8 +16,12 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",
     "@vue/cli-service": "^3.6.0",
+    "app-root-path": "^2.2.1",
     "axios": "^0.18.0",
     "bulma": "^0.7.4",
+    "env-cmd": "^9.0.2",
+    "feed": "^3.0.0",
+    "markdown-it": "^8.4.2",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "vue": "^2.6.10",

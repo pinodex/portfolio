@@ -378,3 +378,12 @@ Vianderito is a combination of different systems working together to make the pl
 * Long-range UHF RFID Reader (RS232)
 * pyserial
 * Python
+
+## Source
+
+May the source be with you!
+
+* Administration System/Server: [github.com/pinodex/vianderito-server](https://github.com/pinodex/vianderito-server)
+* Kiosk Software [github.com/pinodex/vianderito-kiosk](https://github.com/pinodex/vianderito-kiosk)
+* Android application: [github.com/pinodex/vianderito-app](https://github.com/pinodex/vianderito-app)
+* RFID Reader [github.com/pinodex/vianderito-reader](https://github.com/pinodex/vianderito-reader)

@@ -22,8 +22,6 @@
 </template>
 
 <script>
-import { blog } from '@/config'
-
 export default {
   props: {
     post: {

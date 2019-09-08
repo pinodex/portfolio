@@ -41,7 +41,7 @@ export default {
     },
 
     image () {
-      return `${blog.url}${this.post.feature_image}`
+      return this.post.feature_image
     },
 
     excerpt () {

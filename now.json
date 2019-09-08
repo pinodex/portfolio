@@ -6,6 +6,10 @@
     {
       "src": "package.json",
       "use": "@now/static-build"
+    },
+    {
+      "src": "latest-posts.js",
+      "use": "@now/node"
     }
   ],
   "build": {
@@ -17,19 +21,18 @@
       "VUE_APP_FEED_AUTHOR_EMAIL": "me@raphaelmarco.com",
       "VUE_APP_FEED_AUTHOR_LINK": "https://raphaelmarco.com",
       "VUE_APP_BLOG_URL": "https://blog.raphaelmarco.com",
-      "VUE_APP_BLOG_API_BASE": "https://blog.raphaelmarco.com/ghost/api/v0.1",
-      "VUE_APP_GA_CODE": "UA-51347043-3",
-      "VUE_APP_BLOG_CLIENT_ID": "@blog-client-id",
-      "VUE_APP_BLOG_CLIENT_SECRET": "@blog-client-secret"
+      "VUE_APP_GA_CODE": "UA-51347043-3"
     }
+  },
+  "env": {
+    "BLOG_URL": "https://blog.raphaelmarco.com",
+    "BLOG_API_KEY": "@blog-api-key",
+    "CACHE_BUST_KEY": "@cache-bust-key"
   },
   "routes": [
     {
-      "src": "/(.*).pdf",
-      "status": 302,
-      "headers": {
-        "Location": "https://raphaelmarco.storage.googleapis.com/$1.pdf"
-      }
+      "src": "/latest-posts.json",
+      "dest": "/latest-posts.js"
     },
     {
       "src": "^/assets/(.*)",
@@ -38,6 +41,13 @@
     {
       "src": "^/feed/(.*)",
       "dest": "/feed/$1"
+    },
+    {
+      "src": "/(.*).pdf",
+      "status": 302,
+      "headers": {
+        "Location": "https://raphaelmarco.storage.googleapis.com/$1.pdf"
+      }
     },
     {
       "src": ".*",

@@ -41,7 +41,7 @@ export default {
     },
 
     image () {
-      return this.post.feature_image
+      return this.post.image
     },
 
     excerpt () {
@@ -49,11 +49,7 @@ export default {
         return this.post.custom_excerpt
       }
 
-      let trimmed = this.post.html.replace(/(<([^>]+)>)/ig, '').substring(0, 100)
-
-      trimmed = trimmed.substring(0, Math.min(trimmed.length, trimmed.lastIndexOf(' ')))
-
-      return trimmed + '...'
+      return this.post.excerpt
     }
   }
 }

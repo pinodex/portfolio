@@ -33,7 +33,7 @@ export default {
 
   computed: {
     url () {
-      return `${blog.url}${this.post.url}`
+      return this.post.url
     },
 
     title () {

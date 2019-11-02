@@ -55,6 +55,7 @@
 
                       <ul>
                         <li>PHP</li>
+                        <li>Python</li>
                         <li>JavaScript</li>
                         <li>Java</li>
                         <li>HTML, CSS</li>

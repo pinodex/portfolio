@@ -17,6 +17,7 @@
               <h2 class="is-size-6">Full-Stack Developer</h2>
 
               <SocialLinks
+                class="links"
                 :pro="true"
               />
             </div>
@@ -114,5 +115,9 @@ export default {
   ul {
     font-size: 0.9rem;
   }
+}
+
+.links::v-deep a {
+  color: #fff;
 }
 </style>

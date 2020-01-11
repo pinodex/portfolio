@@ -8,3 +8,8 @@ $gap: 120px;
 
 $box-card-shadow-color: rgba(10, 10, 10, 0.05);
 $box-card-link-shadow-color: rgba(10, 10, 10, 0.1);
+
+@import '~bulma/sass/utilities/initial-variables';
+@import '~bulma/sass/utilities/functions';
+@import '~bulma/sass/utilities/derived-variables';
+@import '~bulma/sass/utilities/mixins';

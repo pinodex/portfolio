@@ -23,7 +23,7 @@
     <section class="section">
       <div class="container">
         <div class="columns is-multiline">
-          <div class="column is-3-desktop is-6-tablet"
+          <div class="column is-4"
             v-for="(entry, i) in entries"
             :key="i"
           >

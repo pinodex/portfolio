@@ -3,30 +3,20 @@ const path = require('path')
 module.exports = {
   productionSourceMap: false,
 
+  assetsDir: 'assets/',
+
   css: {
     loaderOptions: {
       sass: {
         data: `
-          @import '~bulma/sass/utilities/initial-variables.sass';
-          @import '~bulma/sass/utilities/mixins.sass';
           @import '@/assets/scss/_variables.scss';
           @import '@/assets/scss/_mixins.scss';
         `
       }
-    },
-
-    extract: {
-      filename: 'assets/css/[name].css',
-      chunkFilename: 'assets/css/[name].css',
     }
   },
 
   configureWebpack: {
-    output: {
-      filename: 'assets/js/[name].js',
-      chunkFilename: 'assets/js/[name].js',
-    },
-
     resolve: {
       alias: {
         '@data': path.resolve(__dirname, 'data/')

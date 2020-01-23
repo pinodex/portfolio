@@ -28,63 +28,10 @@
 
     <section class="section">
       <div class="container">
-        <div class="columns">
+        <div class="columns is-centered">
           <div class="column is-8">
             <div class="content">
               <component :is="story"></component>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="card">
-              <div class="card-content">
-                <div class="content">
-                  <p class="has-text-weight-bold">Work:</p>
-
-                  <p>
-                    <span class="has-text-weight-semibold">Software Engineer</span><br />
-                    Salarium
-                  </p>
-                </div>
-
-                <hr />
-
-                <div class="columns is-mobile">
-                  <div class="column">
-                    <div class="content skillset">
-                      <p class="has-text-weight-bold">Languages &amp; Frameworks:</p>
-
-                      <ul>
-                        <li>PHP</li>
-                        <li>Python</li>
-                        <li>JavaScript</li>
-                        <li>Java</li>
-                        <li>HTML, CSS</li>
-                        <li>Sass/SCSS</li>
-                        <li>Laravel</li>
-                        <li>Vue.js</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="column">
-                    <div class="content skillset">
-                      <p class="has-text-weight-bold">Tools &amp; Technologies:</p>
-
-                      <ul>
-                        <li>Git</li>
-                        <li>Node.js</li>
-                        <li>Sublime Text</li>
-                        <li>PhpStorm</li>
-                        <li>Android Studio</li>
-                        <li>Photoshop</li>
-                        <li>Illustrator</li>
-                        <li>MySQL</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

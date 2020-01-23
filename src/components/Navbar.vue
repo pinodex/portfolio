@@ -140,7 +140,7 @@ export default {
   }
 
   &.is-white {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid #eee;
   }
 
   &.is-collapsed {

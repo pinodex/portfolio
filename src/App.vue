@@ -122,7 +122,7 @@ export default {
 @import '@/assets/scss/fonts.scss';
 
 .has-navbar-fixed-top {
-  margin-top: $navbar-height;
+  margin-top: $navbar-height + 2rem;
 }
 
 .dark-overlay {

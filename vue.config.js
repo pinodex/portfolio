@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   productionSourceMap: false,
@@ -11,20 +11,20 @@ module.exports = {
         data: `
           @import '@/assets/scss/_variables.scss';
           @import '@/assets/scss/_mixins.scss';
-        `
-      }
-    }
+        `,
+      },
+    },
   },
 
   configureWebpack: {
     resolve: {
       alias: {
-        '@data': path.resolve(__dirname, 'data/')
-      }
-    }
+        '@data': path.resolve(__dirname, 'data/'),
+      },
+    },
   },
 
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.module.rule('md')
       .test(/\.md/)
       .use('vue-loader')
@@ -33,7 +33,7 @@ module.exports = {
       .use('vue-markdown-loader')
       .loader('vue-markdown-loader/lib/markdown-compiler')
       .options({
-        raw: true
-      })
-  }
-}
+        raw: true,
+      });
+  },
+};

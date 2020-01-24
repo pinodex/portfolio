@@ -36,29 +36,29 @@
 export default {
   props: {
     route: {
-      type: String
+      type: String,
     },
 
     slug: {
-      type: String
+      type: String,
     },
 
     name: {
-      type: String
+      type: String,
     },
 
     description: {
-      type: String
+      type: String,
     },
 
     tags: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
 
     thumbnail: {
-      type: String
-    }
-  }
-}
+      type: String,
+    },
+  },
+};
 </script>

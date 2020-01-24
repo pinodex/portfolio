@@ -1,17 +1,17 @@
-let context = require.context('./', true, /\.js$/),
-    services = {}
+const context = require.context('./', true, /\.js$/);
+const services = {};
 
-export default function (app) {
-  context.keys().forEach(name => {
-    if (name === './index.js') return
+export default function () {
+  context.keys().forEach((name) => {
+    if (name === './index.js') return;
 
-    let id = name
+    const id = name
       .replace('./', '') // Remove leading directory name
       .replace(/\//g, '.') // Replace slashes with dots
-      .replace('.js', '') // Remove file ext
+      .replace('.js', ''); // Remove file ext
 
-    services[`$${id}`] = context(name).default
+    services[`$${id}`] = context(name).default;
   });
 
-  return services
+  return services;
 }

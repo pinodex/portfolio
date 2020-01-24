@@ -35,8 +35,8 @@ export default {
   props: {
     pro: {
       type: Boolean,
-      default: false
-    }
-  }
-}
+      default: false,
+    },
+  },
+};
 </script>

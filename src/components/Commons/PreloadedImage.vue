@@ -11,22 +11,22 @@
 export default {
   props: {
     src: {
-      type: String
-    }
+      type: String,
+    },
   },
 
   data: () => ({
-    mountedSrc: null
+    mountedSrc: null,
   }),
 
-  mounted () {
-    const image = new Image()
+  mounted() {
+    const image = new Image();
 
     image.onload = () => {
-      this.mountedSrc = this.src
-    }
+      this.mountedSrc = this.src;
+    };
 
-    image.src = this.src
-  }
-}
+    image.src = this.src;
+  },
+};
 </script>

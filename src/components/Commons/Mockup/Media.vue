@@ -19,12 +19,12 @@
 export default {
   props: {
     src: {
-      type: String
+      type: String,
     },
 
     type: {
-      type: String
-    }
-  }
-}
+      type: String,
+    },
+  },
+};
 </script>

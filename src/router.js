@@ -1,9 +1,9 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-import NotFound from '@/pages/Errors/NotFound'
+import NotFound from '@/pages/Errors/NotFound.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -12,128 +12,128 @@ export default new Router({
     {
       name: 'index',
       path: '/',
-      component: () => import('@/pages/Home'),
+      component: () => import('@/pages/Home.vue'),
       meta: {
-        isNavbarCollapsible: true
-      }
+        isNavbarCollapsible: true,
+      },
     },
 
     {
       name: 'about',
       path: '/about',
-      component: () => import('@/pages/About'),
+      component: () => import('@/pages/About.vue'),
       meta: {
-        isNavbarBrandVisible: true
-      }
+        isNavbarBrandVisible: true,
+      },
     },
 
     {
       path: '/story',
-      redirect: '/about'
+      redirect: '/about',
     },
 
     {
       name: 'projects',
       path: '/projects',
-      component: () => import('@/pages/Projects/Index'),
+      component: () => import('@/pages/Projects/Index.vue'),
       meta: {
-        isNavbarBrandVisible: true
-      }
+        isNavbarBrandVisible: true,
+      },
     },
 
     {
       name: 'projects.view',
       path: '/projects/:slug',
-      component: () => import('@/pages/Projects/View'),
+      component: () => import('@/pages/Projects/View.vue'),
       meta: {
-        isNavbarBrandVisible: true
-      }
+        isNavbarBrandVisible: true,
+      },
     },
 
     {
       path: '/works',
-      redirect: '/projects'
+      redirect: '/projects',
     },
 
     {
       path: '/works/:slug',
-      redirect: '/projects/:slug'
+      redirect: '/projects/:slug',
     },
 
     {
       name: 'labs',
       path: '/labs',
-      component: () => import('@/pages/Labs/Index'),
+      component: () => import('@/pages/Labs/Index.vue'),
       meta: {
-        isNavbarBrandVisible: true
-      }
+        isNavbarBrandVisible: true,
+      },
     },
 
     {
       name: 'labs.view',
       path: '/labs/:slug',
-      component: () => import('@/pages/Labs/View'),
+      component: () => import('@/pages/Labs/View.vue'),
       meta: {
-        isNavbarBrandVisible: true
-      }
+        isNavbarBrandVisible: true,
+      },
     },
 
     {
       name: 'privacyPolicy',
       path: '/privacy-policy',
-      component: () => import('@/pages/PrivacyPolicy'),
+      component: () => import('@/pages/PrivacyPolicy.vue'),
       meta: {
-        isNavbarBrandVisible: true
-      }
+        isNavbarBrandVisible: true,
+      },
     },
 
     {
       name: 'contact',
       path: '/contact',
-      component: () => import('@/pages/Contact'),
+      component: () => import('@/pages/Contact.vue'),
       meta: {
-        isNavbarBrandVisible: true
-      }
+        isNavbarBrandVisible: true,
+      },
     },
 
     {
       path: '*',
-      component: NotFound
-    }
+      component: NotFound,
+    },
   ],
 
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     }
 
-    return new Promise((resolve, reject) => {
-      let scrollDuration = 500,
-          cosParameter = window.scrollY / 2,
-          oldTimestamp = performance.now(),
-          scrollCount = 0
+    return new Promise((resolve) => {
+      const scrollDuration = 500;
+      const cosParameter = window.scrollY / 2;
+      let oldTimestamp = performance.now();
+      let scrollCount = 0;
 
-      function step (newTimestamp) {
-        scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp))
+      function step(newTimestamp) {
+        scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
 
         if (scrollCount >= Math.PI) {
-          window.scrollTo(0, 0)
+          window.scrollTo(0, 0);
         }
 
         if (window.scrollY === 0) {
-          resolve({ x: 0, y: 0 })
+          resolve({ x: 0, y: 0 });
 
-          return
+          return;
         }
 
-        window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)))
+        window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
 
-        oldTimestamp = newTimestamp
+        oldTimestamp = newTimestamp;
 
-        window.requestAnimationFrame(step)
+        window.requestAnimationFrame(step);
       }
 
       window.requestAnimationFrame(step);
-    })
-  }
-})
+    });
+  },
+});

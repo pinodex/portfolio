@@ -49,24 +49,24 @@
 </template>
 
 <script>
-import SocialLinks from '@/components/SocialLinks'
-import { site } from '@/config'
+import SocialLinks from '@/components/SocialLinks.vue';
+import { site } from '@/config';
 
 export default {
   components: { SocialLinks },
 
   computed: {
-    rssFeed () {
-      return `${site.url}/feed/rss.xml`
+    rssFeed() {
+      return `${site.url}/feed/rss.xml`;
     },
 
-    atomFeed () {
-      return `${site.url}/feed/atom.xml`
+    atomFeed() {
+      return `${site.url}/feed/atom.xml`;
     },
 
-    jsonFeed () {
-      return `${site.url}/feed/index.json`
-    }
-  }
-}
+    jsonFeed() {
+      return `${site.url}/feed/index.json`;
+    },
+  },
+};
 </script>

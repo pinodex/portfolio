@@ -80,15 +80,15 @@
 </template>
 
 <script>
-import labs from '@data/labs/index.json'
+import labs from '@data/labs/index.json';
 
 export default {
   data: () => ({
-    lab: null
+    lab: null,
   }),
 
   computed: {
-    headerStyle () {
+    headerStyle() {
       return {
         backgroundImage: `
           linear-gradient(
@@ -99,39 +99,39 @@ export default {
           ),
 
           url(${this.meta.thumbnail})
-        `
-      }
+        `,
+      };
     },
 
-    index () {
-      return labs.findIndex(p => p.slug == this.$route.params.slug)
+    index() {
+      return labs.findIndex(p => p.slug === this.$route.params.slug);
     },
 
-    meta () {
-      return labs[this.index]
+    meta() {
+      return labs[this.index];
     },
 
-    prev () {
-      return labs[this.index - 1]
+    prev() {
+      return labs[this.index - 1];
     },
 
-    next () {
-      return labs[this.index + 1]
-    }
+    next() {
+      return labs[this.index + 1];
+    },
   },
 
   watch: {
-    meta (meta) {
-      this.setPageTitle(meta.name)
-    }
+    meta(meta) {
+      this.setPageTitle(meta.name);
+    },
   },
 
-  async mounted () {
-    this.lab = await import(`@data/labs/${this.$route.params.slug}.md`)
+  async mounted() {
+    this.lab = await import(`@data/labs/${this.$route.params.slug}.md`);
 
-    this.setPageTitle(this.meta.name)
-  }
-}
+    this.setPageTitle(this.meta.name);
+  },
+};
 </script>
 
 <style lang="scss" scoped>

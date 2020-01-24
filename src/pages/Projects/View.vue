@@ -99,16 +99,16 @@
 </template>
 
 <script>
-import projects from '@data/projects/index.json'
+import projects from '@data/projects/index.json';
 
 export default {
   data: () => ({
-    project: null
+    project: null,
   }),
 
   computed: {
-    headerStyle () {
-      let headerImage = this.meta.header || this.meta.thumbnail
+    headerStyle() {
+      const headerImage = this.meta.header || this.meta.thumbnail;
 
       return {
         backgroundImage: `
@@ -120,45 +120,45 @@ export default {
           ),
 
           url(${headerImage})
-        `
-      }
+        `,
+      };
     },
 
-    index () {
-      return projects.findIndex(p => p.slug == this.$route.params.slug)
+    index() {
+      return projects.findIndex(p => p.slug === this.$route.params.slug);
     },
 
-    meta () {
-      return projects[this.index]
+    meta() {
+      return projects[this.index];
     },
 
-    prev () {
-      return projects[this.index - 1]
+    prev() {
+      return projects[this.index - 1];
     },
 
-    next () {
-      return projects[this.index + 1]
-    }
+    next() {
+      return projects[this.index + 1];
+    },
   },
 
   watch: {
-    async meta (meta) {
-      await this.load()
-    }
+    async meta() {
+      await this.load();
+    },
   },
 
-  async mounted () {
-    await this.load()
+  async mounted() {
+    await this.load();
   },
 
   methods: {
-    async load () {
-      this.project = await import(`@data/projects/${this.$route.params.slug}.md`)
+    async load() {
+      this.project = await import(`@data/projects/${this.$route.params.slug}.md`);
 
-      this.setPageTitle(this.meta.name)
-    }
-  }
-}
+      this.setPageTitle(this.meta.name);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

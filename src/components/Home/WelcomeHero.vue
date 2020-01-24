@@ -19,27 +19,27 @@
 <script>
 export default {
   data: () => ({
-    boxTranslateY: 0
+    boxTranslateY: 0,
   }),
 
   computed: {
-    boxStyle () {
+    boxStyle() {
       return {
-        transform: `translateY(${this.boxTranslateY}px)`
-      }
-    }
+        transform: `translateY(${this.boxTranslateY}px)`,
+      };
+    },
   },
 
-  mounted () {
-    this.$root.$on('scroll', e => {
-      this.boxTranslateY = (window.scrollY / 2)
-    })
+  mounted() {
+    this.$root.$on('scroll', () => {
+      this.boxTranslateY = (window.scrollY / 2);
+    });
   },
 
-  beforeDestroy () {
-    this.$root.$off('scroll')
-  }
-}
+  beforeDestroy() {
+    this.$root.$off('scroll');
+  },
+};
 </script>
 
 <style lang="scss" scoped>

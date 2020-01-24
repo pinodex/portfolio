@@ -1,30 +1,23 @@
-const fs = require('fs')
-const path = require('path')
-const root = require('app-root-path')
-const config = require('../config')
+const fs = require('fs');
+const root = require('app-root-path');
+const config = require('../config');
 
-const FeedBuilder = require('./feed-builder')
-const PostRenderer = require('./post-renderer')
+const FeedBuilder = require('./feed-builder');
+const PostRenderer = require('./post-renderer');
 
-const projects = require(`${root}/data/projects/index.json`)
-const labs = require(`${root}/data/labs/index.json`)
+const projects = require('../../data/projects/index.json');
+const labs = require('../../data/labs/index.json');
 
-const renderer = new PostRenderer()
+const renderer = new PostRenderer();
 
-renderer.setPathResolver((rawPath) => {
-  return root + '/data' + rawPath
-})
+renderer.setPathResolver(rawPath => `${root}/data${rawPath}`);
 
-renderer.setPreprocessor((content) => {
-  // Do cleanup
-  return content
-    .replace(/MockupMedia/mg, 'video')
-    .replace(/Browser|PreloadedImage|Screen/mg, 'img')
-    .replace(/<carousel(.*)>|<slide>/mg, '<div>')
-    .replace(/<\/carousel>|<\/slide>/mg, '</div>')
-    .replace(/<video[^]src="(.*)"[^>]*>/, '<video src="$1">')
-    .replace(/(\/assets[\w~,;\-\./?%&+#=]*)/mg, `${config.site.url}$1`)
-})
+renderer.setPreprocessor(content => content.replace(/MockupMedia/mg, 'video')
+  .replace(/Browser|PreloadedImage|Screen/mg, 'img')
+  .replace(/<carousel(.*)>|<slide>/mg, '<div>')
+  .replace(/<\/carousel>|<\/slide>/mg, '</div>')
+  .replace(/<video[^]src="(.*)"[^>]*>/, '<video src="$1">')
+  .replace(/(\/assets[\w~,;\-./?%&+#=]*)/mg, `${config.site.url}$1`));
 
 const builder = new FeedBuilder({
   title: config.site.title,
@@ -35,14 +28,14 @@ const builder = new FeedBuilder({
   json: `${config.site.url}/feed/index.json`,
   atom: `${config.site.url}/feed/atom.xml`,
   rss: `${config.site.url}/feed/rss.xml`,
-  author: config.feed.author
-}, renderer)
+  author: config.feed.author,
+}, renderer);
 
-builder.addItems(projects, '/projects/')
-builder.addItems(labs, '/labs/')
+builder.addItems(projects, '/projects/');
+builder.addItems(labs, '/labs/');
 
-const targetPath = `${root}/public/feed`
+const targetPath = `${root}/public/feed`;
 
-fs.writeFileSync(`${targetPath}/rss.xml`, builder.rss())
-fs.writeFileSync(`${targetPath}/atom.xml`, builder.atom())
-fs.writeFileSync(`${targetPath}/index.json`, builder.json())
+fs.writeFileSync(`${targetPath}/rss.xml`, builder.rss());
+fs.writeFileSync(`${targetPath}/atom.xml`, builder.atom());
+fs.writeFileSync(`${targetPath}/index.json`, builder.json());

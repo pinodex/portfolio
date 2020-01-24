@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import Post from './Post'
+import Post from './Post.vue';
 
 export default {
-  extends: Post
-}
+  extends: Post,
+};
 </script>
 
 <style lang="scss" scoped>

@@ -1,4 +1,4 @@
-const Feed = require('feed').Feed
+const { Feed } = require('feed');
 
 class FeedBuilder {
   /**
@@ -16,67 +16,67 @@ class FeedBuilder {
    * - author.email
    * - author.link
    */
-  constructor (config = {}, renderer) {
-    this._config = config
-    this._renderer = renderer
+  constructor(config = {}, renderer) {
+    this.config = config;
+    this.renderer = renderer;
 
-    this._init()
+    this.init();
   }
 
-  _init () {
-    this._feed = new Feed({
-      title: this._config.title,
-      description: this._config.description,
-      id: this._config.link,
-      link: this._config.link,
+  init() {
+    this.feed = new Feed({
+      title: this.config.title,
+      description: this.config.description,
+      id: this.config.link,
+      link: this.config.link,
       language: 'en',
-      image: this._config.image,
-      favicon: this._config.favicon,
-      copyright: `Copyright 2019, ${this._config.title}`,
+      image: this.config.image,
+      favicon: this.config.favicon,
+      copyright: `Copyright 2019, ${this.config.title}`,
       updated: new Date(),
       feedLinks: {
-        json: this._config.json,
-        atom: this._config.atom,
-        rss: this._config.rss,
+        json: this.config.json,
+        atom: this.config.atom,
+        rss: this.config.rss,
       },
-      author: this._config.author
-    })
+      author: this.config.author,
+    });
   }
 
-  _makeItemUrl (prefix, url) {
-    return this._config.link + prefix + url
+  makeItemUrl(prefix, url) {
+    return this.config.link + prefix + url;
   }
 
-  addItem (item, slugPrefix = '/') {
-    const url = this._makeItemUrl(slugPrefix, item.slug)
+  addItem(item, slugPrefix = '/') {
+    const url = this.makeItemUrl(slugPrefix, item.slug);
 
-    this._feed.addItem({
+    this.feed.addItem({
       id: url,
       link: url,
       title: item.name,
       description: item.description,
-      content: this._renderer.render(slugPrefix + item.slug + '.md'),
-      image: this._makeItemUrl('', item.thumbnail),
-      author: this._config.author,
-      date: new Date()
-    })
+      content: this.renderer.render(`${slugPrefix + item.slug}.md`),
+      image: this.makeItemUrl('', item.thumbnail),
+      author: this.config.author,
+      date: new Date(),
+    });
   }
 
-  addItems (items, slugPrefix = '/') {
-    items.forEach(item => this.addItem(item, slugPrefix))
+  addItems(items, slugPrefix = '/') {
+    items.forEach(item => this.addItem(item, slugPrefix));
   }
 
-  rss () {
-    return this._feed.rss2()
+  rss() {
+    return this.feed.rss2();
   }
 
-  atom () {
-    return this._feed.atom1()
+  atom() {
+    return this.feed.atom1();
   }
 
-  json () {
-    return this._feed.json1()
+  json() {
+    return this.feed.json1();
   }
 }
 
-module.exports = FeedBuilder
+module.exports = FeedBuilder;

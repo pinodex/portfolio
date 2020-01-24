@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   components: { Navbar, Footer },
@@ -49,72 +49,72 @@ export default {
       {
         name: 'About',
         target: {
-          name: 'about'
-        }
+          name: 'about',
+        },
       },
 
       {
         name: 'Projects',
         target: {
-          name: 'projects'
-        }
+          name: 'projects',
+        },
       },
 
       {
         name: 'Labs',
         target: {
-          name: 'labs'
-        }
-      }
-    ]
+          name: 'labs',
+        },
+      },
+    ],
   }),
 
   computed: {
-    isNavbarCollapsed () {
+    isNavbarCollapsed() {
       if (this.isNavbarCollapsible) {
-        return this.isScrolledPast
+        return this.isScrolledPast;
       }
 
-      return true
+      return true;
     },
 
-    autohideBrand () {
-      return this.$route.meta.isBrandVisible !== true
-    }
+    autohideBrand() {
+      return this.$route.meta.isBrandVisible !== true;
+    },
   },
 
   watch: {
-    '$route.path': function () {
-      this.closeMenu()
-    }
+    '$route.path': function onRoutePathChange() {
+      this.closeMenu();
+    },
   },
 
-  mounted () {
-    window.addEventListener('scroll', this.onScroll, false)
+  mounted() {
+    window.addEventListener('scroll', this.onScroll, false);
 
-    this.onScroll()
+    this.onScroll();
   },
 
-  beforeDestroy () {
-    window.removeEventListener('scroll', this.onScroll, false)
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll, false);
   },
 
   methods: {
-    onScroll (e) {
-      this.$root.$emit('scroll', e)
+    onScroll(e) {
+      this.$root.$emit('scroll', e);
 
-      this.isScrolledPast = window.scrollY > window.innerHeight / 2
+      this.isScrolledPast = window.scrollY > window.innerHeight / 2;
     },
 
-    beforeEnter (e) {
-      this.isNavbarCollapsible = this.$route.meta.isNavbarCollapsible
+    beforeEnter() {
+      this.isNavbarCollapsible = this.$route.meta.isNavbarCollapsible;
     },
 
-    closeMenu () {
-      this.$refs.navbar.closeMenu()
-    }
-  }
-}
+    closeMenu() {
+      this.$refs.navbar.closeMenu();
+    },
+  },
+};
 </script>
 
 <style lang="scss">

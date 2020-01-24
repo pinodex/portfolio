@@ -10,12 +10,30 @@
               class="notification is-info"
               v-if="isOptedOut"
             >
-              <p>You opted out in this tracking and is not participating in the collection of data.</p>
+              <p>
+                You opted out in this tracking and is not participating in the collection of data.
+              </p>
             </div>
 
-            <p>I use a third-party service called <a class="has-text-weight-semibold" href="https://analytics.google.com/analytics/web/" target="_blank">Google Analytics</a> to collect data about my visitors.</p>
+            <p>
+              I use a third-party service called
 
-            <p>It allows me to learn and understand the people who visits my website, gather information about the technology that my visitors use (browser, OS), and gather information about what country does my visitors came from.</p>
+              <a
+                class="has-text-weight-semibold"
+                href="https://analytics.google.com/analytics/web/"
+                target="_blank"
+              >
+                Google Analytics
+              </a>
+
+              to collect data about my visitors.
+            </p>
+
+            <p>
+              It allows me to learn and understand the people who visits my website, gather
+              information about the technology that my visitors use (browser, OS), and gather
+              information about what country does my visitors came from.
+            </p>
 
             <p>No personal data is collected.</p>
 
@@ -33,7 +51,22 @@
             <hr />
 
             <template v-if="isOptedOut">
-              <p>If you agree to the Privacy Policy stated above, you may opt-in to tracking by <span class="has-text-weight-semibold">{{ site.url }}</span> with <a class="has-text-weight-semibold" href="https://analytics.google.com/analytics/web/" target="_blank">Google Analytics</a>. It will help me learn about my visitors and make better decisions about website content.</p>
+              <p>
+                If you agree to the Privacy Policy stated above, you may opt-in to tracking by
+
+                <span class="has-text-weight-semibold">{{ site.url }}</span> with
+
+                <a
+                  class="has-text-weight-semibold"
+                  href="https://analytics.google.com/analytics/web/"
+                  target="_blank"
+                >
+                  Google Analytics
+                </a>.
+
+                It will help me learn about my visitors and make better decisions about
+                website content.
+              </p>
 
               <button
                 class="button"
@@ -46,7 +79,11 @@
             <template v-else>
               <h2 class="subtitle">Opt-out of Tracking</h2>
 
-              <p>If you don&lsquo;t want your data to be collected, you may opt-out of tracking from <span class="has-text-weight-semibold">{{ site.url }}</span> by clicking the button below.</p>
+              <p>
+                If you don&lsquo;t want your data to be collected, you may opt-out of tracking
+                from <span class="has-text-weight-semibold">{{ site.url }}</span>
+                by clicking the button below.
+              </p>
 
               <p>
                 <button
@@ -66,37 +103,37 @@
 </template>
 
 <script>
-import { site } from '@/config'
+import { site } from '@/config';
 
 export default {
   computed: {
     site: () => site,
 
-    isOptedOut () {
-      return Boolean(window.localStorage.noTracking)
-    }
+    isOptedOut() {
+      return Boolean(window.localStorage.noTracking);
+    },
   },
 
-  mounted () {
-    this.setPageTitle('Privacy Policy')
+  mounted() {
+    this.setPageTitle('Privacy Policy');
   },
 
   methods: {
-    confirmOptIn () {
+    confirmOptIn() {
 
     },
 
-    optIn () {
-      window.localStorage.removeItem('noTracking')
+    optIn() {
+      window.localStorage.removeItem('noTracking');
 
-      window.location.reload()
+      window.location.reload();
     },
 
-    optOut () {
-      window.localStorage.noTracking = true
+    optOut() {
+      window.localStorage.noTracking = true;
 
-      window.location.reload()
-    }
-  }
-}
+      window.location.reload();
+    },
+  },
+};
 </script>

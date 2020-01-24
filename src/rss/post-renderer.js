@@ -1,36 +1,37 @@
-const MarkdownIt = require('markdown-it')
-const fs = require('fs')
+const MarkdownIt = require('markdown-it');
+const fs = require('fs');
 
 class PostRenderer {
-  constructor () {
-    this._md = new MarkdownIt({
-      html: true
-    })
+  constructor() {
+    this.md = new MarkdownIt({
+      html: true,
+    });
 
-    this._resolvePath = (path) => path
-    this._preprocess = (content) => content
+    this.resolvePath = path => path;
+    this.preprocess = content => content;
+    this.defaultEncoding = 'utf8';
   }
 
-  setPathResolver (resolver) {
-    this._resolvePath = resolver
+  setPathResolver(resolver) {
+    this.resolvePath = resolver;
   }
 
-  setPreprocessor (preprocessor) {
-    this._preprocess = preprocessor
+  setPreprocessor(preprocessor) {
+    this.preprocess = preprocessor;
   }
 
-  render (file) {
-    const filePath = this._resolvePath(file)
-    let raw = this._getContents(filePath)
+  render(file) {
+    const filePath = this.resolvePath(file);
+    let raw = this.getContents(filePath);
 
-    raw = this._preprocess(raw)
+    raw = this.preprocess(raw);
 
-    return this._md.render(raw)
+    return this.md.render(raw);
   }
 
-  _getContents (file, encoding = 'utf8') {
-    return fs.readFileSync(file, encoding)
+  getContents(file, encoding) {
+    return fs.readFileSync(file, encoding || this.defaultEncoding);
   }
 }
 
-module.exports = PostRenderer
+module.exports = PostRenderer;

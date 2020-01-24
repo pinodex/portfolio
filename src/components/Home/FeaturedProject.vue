@@ -23,30 +23,30 @@
 export default {
   props: {
     slug: {
-      type: String
+      type: String,
     },
 
     name: {
-      type: String
+      type: String,
     },
 
     thumbnail: {
-      type: String
+      type: String,
     },
 
     color: {
-      type: String
-    }
+      type: String,
+    },
   },
 
   computed: {
-    cardStyle () {
+    cardStyle() {
       return {
-        backgroundColor: this.color
-      }
-    }
-  }
-}
+        backgroundColor: this.color,
+      };
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

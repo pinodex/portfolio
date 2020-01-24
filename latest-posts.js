@@ -1,73 +1,70 @@
-const fs = require('fs')
-const axios = require('axios')
+const axios = require('axios');
 
-const ghostUrl = process.env.BLOG_URL
-const ghostApiKey = process.env.BLOG_API_KEY
-const cacheBustKey = process.env.CACHE_BUST_KEY
+const ghostUrl = process.env.BLOG_URL;
+const ghostApiKey = process.env.BLOG_API_KEY;
+const cacheBustKey = process.env.CACHE_BUST_KEY;
 
-const output = []
+const output = [];
 
-function trimContent (content) {
-  content = content
+function trimContent(content) {
+  const trimmedContent = content
     .replace(/(<([^>]+)>)/ig, '').substring(0, 100)
-    .substring(0, Math.min(content.length, content.lastIndexOf(' ')))
+    .substring(0, Math.min(content.length, content.lastIndexOf(' ')));
 
-  return `${content}...`
+  return `${trimmedContent}...`;
 }
 
 /*!
  * GET handler
- * 
+ *
  * @param  {IncomingMessage} request
  * @param  {ServerResponse}  response
  */
-async function get (request, response) {
+async function getHandler(request, response) {
   // Return cached content if exists
   if (output.length > 0) {
-    response.json(output)
-    
-    return
+    response.json(output);
+
+    return;
   }
 
   const { data: { posts } } = await axios.get(`${ghostUrl}/ghost/api/v2/content/posts`, {
     params: {
       limit: 5,
-      key: ghostApiKey
-    }
-  })
+      key: ghostApiKey,
+    },
+  });
 
-  for (let i = 0; i < posts.length; i++) {
-    const post = posts[i]
-
+  posts.forEach((post) => {
     output.push({
       title: post.title,
       image: post.feature_image,
       excerpt: trimContent(post.html),
       custom_excerpt: post.custom_excerpt,
-      url: post.url
-    })
-  }
+      url: post.url,
+    });
+  });
 
-  response.json(output)
+  response.json(output);
 }
 
 /*!
  * POST handler
- * 
+ *
  * @param  {IncomingMessage} request
  * @param  {ServerResponse}  response
  */
-async function post (request, response) {
+async function postHandler(request, response) {
   // Content cache busting
-  if (request.query.cacheBustKey == cacheBustKey) {
+  if (request.query.cacheBustKey === cacheBustKey) {
     // Clear cached content
-    output.length = 0
+    output.length = 0;
 
-    response.status(204).send()
-    return
+    response.status(204).send();
+    return;
   }
 
-  response.status(401).send()
+  response.status(401).send();
 }
 
 /*!
@@ -77,11 +74,12 @@ async function post (request, response) {
 module.exports = async (request, response) => {
   switch (request.method) {
     case 'GET':
-      return await get(request, response)
+      return getHandler(request, response);
 
     case 'POST':
-      return await post(request, response)
-  }
+      return postHandler(request, response);
 
-  response.status(405).send()
-}
+    default:
+      return response.status(405).send();
+  }
+};

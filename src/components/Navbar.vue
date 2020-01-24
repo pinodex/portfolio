@@ -9,11 +9,7 @@
           aria-label="Go to Homepage"
           to="/"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 512 512" width="50">
-            <path fill="#41608C" d="M468 107l-1-1h-81L272 297l-62 109h92l53-93c19-33 31-44 31 0v92l1 1h80l1-1V107z"/>
-            <path fill="#30456B" d="M44 107l1-1h81l114 191 62 109h-92l-53-93c-19-33-31-44-31 0v92l-1 1H45l-1-1V107z"/>
-            <path fill="#47699A" d="M126 106h64s91 0 91 104c0 103-91 103-91 103h-64V106z"/>
-          </svg>
+          <img src="@/assets/svg/logo.svg" alt="Logo" />
         </router-link>
 
         <a role="button" class="navbar-burger burger"
@@ -43,7 +39,14 @@
 
         <div class="navbar-end">
           <a href="https://blog.raphaelmarco.com" class="navbar-item">Blog</a>
-          <a href="https://github.com/pinodex" class="navbar-item is-external" target="_blank" rel="noopener">Github</a>
+          <a
+            href="https://github.com/pinodex"
+            class="navbar-item is-external"
+            target="_blank"
+            rel="noopener"
+          >
+            Github
+          </a>
 
           <router-link
             class="navbar-item"
@@ -61,70 +64,70 @@
 <script>
 export default {
   data: () => ({
-    menuActive: false
+    menuActive: false,
   }),
 
   props: {
     fixed: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     collapsed: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     autohideBrand: {
       type: Boolean,
-      default: true
+      default: true,
     },
 
     links: {
       type: Array,
-      default: []
-    }
+      default: () => [],
+    },
   },
 
   computed: {
-    navbarClass () {
+    navbarClass() {
       return {
         'is-fixed-top': this.fixed,
         'is-collapsed': this.computedCollapsed,
         'is-white': this.computedCollapsed,
         'is-dark': !this.computedCollapsed,
         'is-transparent': !this.computedCollapsed,
-        'is-brand-autohide': this.autohideBrand
-      }
+        'is-brand-autohide': this.autohideBrand,
+      };
     },
 
-    computedCollapsed () {
-      return this.collapsed || this.menuActive
+    computedCollapsed() {
+      return this.collapsed || this.menuActive;
     },
 
-    activeNavItem () {
-      const name = this.$route.name || ''
+    activeNavItem() {
+      const name = this.$route.name || '';
 
-      return this.links.findIndex(l => name.indexOf(l.target.name) !== -1)
-    }
+      return this.links.findIndex(l => name.indexOf(l.target.name) !== -1);
+    },
   },
 
   watch: {
-    menuActive (state) {
-      this.$emit('menu', state)
-    }
+    menuActive(state) {
+      this.$emit('menu', state);
+    },
   },
 
   methods: {
-    toggleMenu () {
-      this.menuActive = !this.menuActive
+    toggleMenu() {
+      this.menuActive = !this.menuActive;
     },
 
-    closeMenu () {
-      this.menuActive = false
-    }
-  }
-}
+    closeMenu() {
+      this.menuActive = false;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -218,6 +221,11 @@ export default {
 
   .navbar-brand > .navbar-item {
     font-weight: 600;
+
+    img {
+      max-height: initial;
+      width: 50px;
+    }
   }
 
   @include desktop {

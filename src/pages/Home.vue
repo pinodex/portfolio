@@ -10,7 +10,10 @@
 
             <h1 class="is-size-4 is-spaced">I’m Raphael Marco and I write codes.</h1>
 
-            <p class="is-spaced">I played around with web development when I was a kid. That became my playground. Now I‘m working on different projects for myself and for other people.</p>
+            <p class="is-spaced">
+              I played around with web development when I was a kid. That became my playground.
+              Now I‘m working on different projects for myself and for other people.
+            </p>
           </div>
         </div>
       </div>
@@ -61,11 +64,23 @@
 
     <section class="section">
       <div class="container">
-        <a href="https://blog.raphaelmarco.com" class="hero is-primary is-bold has-border-radius translate-on-hover">
+        <a
+          href="https://blog.raphaelmarco.com"
+          class="
+            hero
+            is-primary
+            is-bold
+            has-border-radius
+            translate-on-hover
+          "
+        >
           <div class="hero-body">
             <h1 class="is-size-4 has-text-weight-semibold">blog.raphaelmarco.com</h1>
 
-            <p class="is-size-6">Random stuffs about me, development, design, events, and anything that I can write a blog post about.</p>
+            <p class="is-size-6">
+              Random stuffs about me, development, design, events, and anything that
+              I can write a blog post about.
+            </p>
           </div>
         </a>
       </div>
@@ -109,7 +124,9 @@
             </p>
 
             <p class="is-size-5 is-spaced">
-              My GitHub profile is <a href="https://github.com/pinodex" class="has-text-weight-semibold">@pinodex</a>
+              My GitHub profile is
+
+              <a href="https://github.com/pinodex" class="has-text-weight-semibold">@pinodex</a>
             </p>
           </div>
         </div>
@@ -119,42 +136,43 @@
 </template>
 
 <script>
-import WelcomeHero from '@/components/Home/WelcomeHero'
-import FeaturedProject from '@/components/Home/FeaturedProject'
-import FeaturedPost from '@/components/Home/FeaturedPost'
-import Post from '@/components/Home/Post'
+import featuredProjects from '@data/projects/featured.json';
+import WelcomeHero from '@/components/Home/WelcomeHero.vue';
+import FeaturedProject from '@/components/Home/FeaturedProject.vue';
+import FeaturedPost from '@/components/Home/FeaturedPost.vue';
+import Post from '@/components/Home/Post.vue';
 
-import featuredProjects from '@data/projects/featured.json'
 
 export default {
   inject: ['$blog'],
 
-  components: { WelcomeHero, FeaturedProject, FeaturedPost, Post },
+  components: {
+    WelcomeHero, FeaturedProject, FeaturedPost, Post,
+  },
 
   data: () => ({
     featuredProjects,
 
     featuredPost: null,
-    posts: []
+    posts: [],
   }),
 
-  async mounted () {
-    this.setPageTitle()
+  async mounted() {
+    this.setPageTitle();
 
-    await this.loadPosts()
+    await this.loadPosts();
   },
 
   methods: {
-    async loadPosts () {
-      try {
-        const posts = await this.$blog.getPosts(5)
+    async loadPosts() {
+      const allPosts = await this.$blog.getPosts(5);
+      const [featuredPost] = allPosts;
 
-        this.featuredPost = posts[0]
-        this.posts = posts.slice(1)
-      } catch (e) {}
-    }
-  }
-}
+      this.featuredPost = featuredPost;
+      this.posts = allPosts.slice(1);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import Screen from './Screen'
+import Screen from './Screen.vue';
 
 export default {
-  extends: Screen
-}
+  extends: Screen,
+};
 </script>

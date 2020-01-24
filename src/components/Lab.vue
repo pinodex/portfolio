@@ -24,20 +24,20 @@
 export default {
   props: {
     slug: {
-      type: String
+      type: String,
     },
 
     name: {
-      type: String
+      type: String,
     },
 
     description: {
-      type: String
+      type: String,
     },
 
     thumbnail: {
-      type: String
-    }
-  }
-}
+      type: String,
+    },
+  },
+};
 </script>

@@ -25,30 +25,30 @@
 export default {
   props: {
     post: {
-      type: Object
-    }
+      type: Object,
+    },
   },
 
   computed: {
-    url () {
-      return this.post.url
+    url() {
+      return this.post.url;
     },
 
-    title () {
-      return this.post.title
+    title() {
+      return this.post.title;
     },
 
-    image () {
-      return this.post.image
+    image() {
+      return this.post.image;
     },
 
-    excerpt () {
+    excerpt() {
       if (this.post.custom_excerpt) {
-        return this.post.custom_excerpt
+        return this.post.custom_excerpt;
       }
 
-      return this.post.excerpt
-    }
-  }
-}
+      return this.post.excerpt;
+    },
+  },
+};
 </script>

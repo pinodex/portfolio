@@ -30,8 +30,8 @@
 
 <script>
 export default {
-  mounted () {
-    this.setPageTitle('Contact')
-  }
-}
+  mounted() {
+    this.setPageTitle('Contact');
+  },
+};
 </script>

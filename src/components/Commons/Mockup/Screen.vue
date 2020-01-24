@@ -25,15 +25,15 @@ export default {
   props: {
     src: {
       type: String,
-      default: null
+      default: null,
     },
 
     type: {
       type: String,
-      default: 'image'
-    }
-  }
-}
+      default: 'image',
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

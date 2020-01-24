@@ -28,8 +28,8 @@
 
 <script>
 export default {
-  mounted () {
-    this.setPageTitle('Page Not Found')
-  }
-}
+  mounted() {
+    this.setPageTitle('Page Not Found');
+  },
+};
 </script>

@@ -41,20 +41,20 @@
 </template>
 
 <script>
-import SocialLinks from '@/components/SocialLinks'
-import story from '@data/story.md'
+import story from '@data/story.md';
+import SocialLinks from '@/components/SocialLinks.vue';
 
 export default {
   components: { SocialLinks },
 
   computed: {
-    story: () => story
+    story: () => story,
   },
 
-  mounted () {
-    this.setPageTitle('About')
-  }
-}
+  mounted() {
+    this.setPageTitle('About');
+  },
+};
 </script>
 
 <style lang="scss" scoped>

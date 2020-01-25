@@ -9,7 +9,11 @@
           aria-label="Go to Homepage"
           to="/"
         >
-          <img src="@/assets/svg/logo.svg" alt="Logo" />
+          <img
+            src="@/assets/svg/logo.svg"
+            alt="Logo"
+            svg-inline
+          />
         </router-link>
 
         <a role="button" class="navbar-burger burger"
@@ -222,7 +226,7 @@ export default {
   .navbar-brand > .navbar-item {
     font-weight: 600;
 
-    img {
+    svg {
       max-height: initial;
       width: 50px;
     }

@@ -11,7 +11,11 @@
             </div>
           </div>
 
-          <img class="heading-art" src="@/assets/svg/labs.svg" />
+          <img
+            class="heading-art"
+            src="@/assets/svg/labs.svg"
+            svg-inline
+          />
         </div>
       </div>
     </section>

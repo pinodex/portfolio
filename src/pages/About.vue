@@ -14,7 +14,7 @@
 
             <div class="has-text-centered">
               <h1 class="is-size-3">Raphael Marco</h1>
-              <h2 class="is-size-6">Full-Stack Developer</h2>
+              <h2 class="is-size-6">Software Engineer</h2>
 
               <SocialLinks
                 class="links"

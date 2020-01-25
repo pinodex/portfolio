@@ -15,10 +15,10 @@
           </div>
 
           <img
-            class="heading-art"
             src="@/assets/svg/projects.svg"
-            :class="{ 'fly': isFlying }"
+            :class="{ 'heading-art': true, 'fly': isFlying }"
             @click="fly()"
+            svg-inline
           />
         </div>
       </div>

@@ -19,7 +19,8 @@
     "vue": "^2.6.10",
     "vue-analytics": "^5.16.4",
     "vue-carousel": "^0.18.0",
-    "vue-router": "^3.0.3"
+    "vue-router": "^3.0.3",
+    "vue-svg-inline-loader": "^1.4.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",

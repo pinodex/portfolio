@@ -1,16 +1,28 @@
 <template>
   <div class="hero is-primary is-bold">
     <div class="hero-body has-text-centered">
-      <div class="outlined-box is-hidden-desktop">
+      <div class="is-hidden-desktop">
+        <img
+          class="logo"
+          src="@/assets/svg/logo-outline.svg"
+          svg-inline
+        />
+
         <h1 class="is-size-1 name">Raphael Marco</h1>
 
-        <h2 class="is-size-5 name-title">Full-Stack Web Developer</h2>
+        <h2 class="is-size-5 name-title">Software Engineer</h2>
       </div>
 
-      <div class="outlined-box is-hidden-touch" :style="boxStyle">
+      <div class="is-hidden-touch" :style="boxStyle">
+        <img
+          class="logo"
+          src="@/assets/svg/logo-outline.svg"
+          svg-inline
+        />
+
         <h1 class="is-size-1 name">Raphael Marco</h1>
 
-        <h2 class="is-size-5 name-title">Full-Stack Developer</h2>
+        <h2 class="is-size-5 name-title">Software Engineer</h2>
       </div>
     </div>
   </div>
@@ -47,16 +59,12 @@ export default {
   overflow: hidden;
 }
 
-.outlined-box {
-  display: inline-block;
+.hero-body {
+  justify-content: center;
+}
 
-  border: 2px solid lighten($primary, 10);
-  border-radius: $radius;
-
-  margin: 0 auto;
-  padding: 3rem;
-
-  text-align: center;
+.logo {
+  height: 150px;
 }
 
 .name {

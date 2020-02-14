@@ -21,7 +21,7 @@
       "VUE_APP_FEED_AUTHOR_EMAIL": "me@raphaelmarco.com",
       "VUE_APP_FEED_AUTHOR_LINK": "https://raphaelmarco.com",
       "VUE_APP_BLOG_URL": "https://blog.raphaelmarco.com",
-      "VUE_APP_GA_CODE": "UA-51347043-3"
+      "VUE_APP_SIMPLEANALYTICS_DOMAIN": "godseye.raphaelmarco.com"
     }
   },
   "env": {

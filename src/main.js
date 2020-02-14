@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueCarousel from 'vue-carousel';
-import VueAnalytics from 'vue-analytics';
+import SimpleAnalytics from 'simple-analytics-vue';
 
 import App from './App.vue';
 
@@ -9,7 +9,7 @@ import MockupMedia from './components/Commons/Mockup/Media.vue';
 import Browser from './components/Commons/Mockup/Browser.vue';
 import Screen from './components/Commons/Mockup/Screen.vue';
 
-import { googleAnalyticsId } from './config';
+import { simpleAnalyticsDomain } from './config';
 
 import router from './router';
 import services from './services';
@@ -17,9 +17,8 @@ import services from './services';
 Vue.config.productionTip = false;
 
 if (process.env.NODE_ENV === 'production' && !window.localStorage.noTracking) {
-  Vue.use(VueAnalytics, {
-    id: googleAnalyticsId,
-    router,
+  Vue.use(SimpleAnalytics, {
+    domain: simpleAnalyticsDomain,
   });
 }
 

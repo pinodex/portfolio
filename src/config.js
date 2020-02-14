@@ -13,5 +13,5 @@ module.exports = {
     },
   },
 
-  googleAnalyticsId: process.env.VUE_APP_GA_CODE,
+  simpleAnalyticsDomain: process.env.VUE_APP_SIMPLEANALYTICS_DOMAIN,
 };

@@ -20,10 +20,10 @@
 
               <a
                 class="has-text-weight-semibold"
-                href="https://analytics.google.com/analytics/web/"
+                href="https://simpleanalytics.com"
                 target="_blank"
               >
-                Google Analytics
+                Simple Analytics
               </a>
 
               to collect data about my visitors.
@@ -40,13 +40,21 @@
             <h2 class="subtitle">What data is collected?</h2>
 
             <ul>
-              <li>What browser are you using</li>
-              <li>What kind of device are you using</li>
-              <li>What ISP do you use</li>
+              <li>What page did you come from</li>
+              <li>What browser or device are you using</li>
               <li>What country do you came from</li>
               <li>How long is your stay here</li>
               <li>How often do you return to this website</li>
             </ul>
+
+            <p>
+              <a
+                href="https://docs.simpleanalytics.com/what-we-collect?ref=simpleanalytics.com"
+                target="_blank"
+              >
+                See definitive list at Simple Analytics
+              </a>
+            </p>
 
             <hr />
 
@@ -58,10 +66,10 @@
 
                 <a
                   class="has-text-weight-semibold"
-                  href="https://analytics.google.com/analytics/web/"
+                  href="https://docs.simpleanalytics.com/what-we-collect?ref=simpleanalytics.com"
                   target="_blank"
                 >
-                  Google Analytics
+                  Simple Analytics
                 </a>.
 
                 It will help me learn about my visitors and make better decisions about

@@ -16,8 +16,8 @@
     "express": "^4.16.4",
     "feed": "^3.0.0",
     "markdown-it": "^8.4.2",
+    "simple-analytics-vue": "^1.1.0",
     "vue": "^2.6.10",
-    "vue-analytics": "^5.16.4",
     "vue-carousel": "^0.18.0",
     "vue-router": "^3.0.3",
     "vue-svg-inline-loader": "^1.4.4"

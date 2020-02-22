@@ -1,4 +1,6 @@
 const path = require('path');
+const { DefinePlugin } = require('webpack');
+const { site } = require('./src/config');
 
 module.exports = {
   productionSourceMap: false,
@@ -25,6 +27,16 @@ module.exports = {
   },
 
   chainWebpack: (config) => {
+    config
+      .plugin('html')
+      .tap((args) => {
+        args[0].SITE_TITLE = site.title;
+        args[0].SITE_DESCRIPTION = site.description;
+        args[0].SITE_URL = site.url;
+
+        return args;
+      });
+
     config.module.rule('md')
       .test(/\.md/)
       .use('vue-loader')

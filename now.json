@@ -1,7 +1,6 @@
 {
   "version": 2,
   "name": "portfolio",
-  "alias": "raphaelmarco.com",
   "builds": [
     {
       "src": "package.json",
@@ -12,18 +11,6 @@
       "use": "@now/node"
     }
   ],
-  "build": {
-    "env": {
-      "VUE_APP_SITE_TITLE": "Raphael Marco",
-      "VUE_APP_SITE_DESCRIPTION": "Full-Stack Developer. A showcase of collection of projects that I created and have worked on.",
-      "VUE_APP_SITE_URL": "https://raphaelmarco.com",
-      "VUE_APP_FEED_AUTHOR_NAME": "Raphael Marco",
-      "VUE_APP_FEED_AUTHOR_EMAIL": "me@raphaelmarco.com",
-      "VUE_APP_FEED_AUTHOR_LINK": "https://raphaelmarco.com",
-      "VUE_APP_BLOG_URL": "https://blog.raphaelmarco.com",
-      "VUE_APP_SIMPLEANALYTICS_DOMAIN": "godseye.raphaelmarco.com"
-    }
-  },
   "env": {
     "BLOG_URL": "https://blog.raphaelmarco.com",
     "BLOG_API_KEY": "@blog-api-key",
@@ -43,10 +30,10 @@
       "dest": "/feed/$1"
     },
     {
-      "src": "/(.*).pdf",
+      "src": "/cv.pdf",
       "status": 302,
       "headers": {
-        "Location": "https://raphaelmarco.storage.googleapis.com/$1.pdf"
+        "Location": "https://raphaelmarco.storage.googleapis.com/cv.pdf"
       }
     },
     {

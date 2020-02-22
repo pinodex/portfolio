@@ -62,7 +62,7 @@
               <p>
                 If you agree to the Privacy Policy stated above, you may opt-in to tracking by
 
-                <span class="has-text-weight-semibold">{{ site.url }}</span> with
+                <span class="has-text-weight-semibold">{{ websiteUrl }}</span> with
 
                 <a
                   class="has-text-weight-semibold"
@@ -89,7 +89,7 @@
 
               <p>
                 If you don&lsquo;t want your data to be collected, you may opt-out of tracking
-                from <span class="has-text-weight-semibold">{{ site.url }}</span>
+                from <span class="has-text-weight-semibold">{{ websiteUrl }}</span>
                 by clicking the button below.
               </p>
 
@@ -111,11 +111,11 @@
 </template>
 
 <script>
-import { site } from '@/config';
-
 export default {
   computed: {
-    site: () => site,
+    websiteUrl() {
+      return window.location.origin;
+    },
 
     isOptedOut() {
       return Boolean(window.localStorage.noTracking);
@@ -127,10 +127,6 @@ export default {
   },
 
   methods: {
-    confirmOptIn() {
-
-    },
-
     optIn() {
       window.localStorage.removeItem('noTracking');
 

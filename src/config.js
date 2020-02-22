@@ -1,17 +1,17 @@
 module.exports = {
   site: {
-    title: process.env.VUE_APP_SITE_TITLE,
-    description: process.env.VUE_APP_SITE_DESCRIPTION,
-    url: process.env.VUE_APP_SITE_URL,
+    title: 'Raphael Marco',
+    description: 'A showcase of collection of projects that I created and have worked on.',
+    url: 'https://raphaelmarco.com',
   },
 
   feed: {
     author: {
-      name: process.env.VUE_APP_FEED_AUTHOR_NAME,
-      email: process.env.VUE_APP_FEED_AUTHOR_EMAIL,
-      link: process.env.VUE_APP_FEED_AUTHOR_LINK,
+      name: 'Raphael Marco',
+      email: 'me@raphaelmarco.com',
+      link: 'https://raphaelmarco.com',
     },
   },
 
-  simpleAnalyticsDomain: process.env.VUE_APP_SIMPLEANALYTICS_DOMAIN,
+  simpleAnalyticsDomain: 'godseye.raphaelmarco.com',
 };

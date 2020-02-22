@@ -12,15 +12,15 @@
 
         <ul class="horizontal">
           <li>
-            <a :href="rssFeed" target="_blank">RSS</a>
+            <a href="/feed/rss.xml" target="_blank">RSS</a>
           </li>
 
           <li>
-            <a :href="atomFeed" target="_blank">Atom</a>
+            <a href="/feed/atom.xml" target="_blank">Atom</a>
           </li>
 
           <li>
-            <a :href="jsonFeed" target="_blank">JSON Feed</a>
+            <a href="/feed/index.json" target="_blank">JSON Feed</a>
           </li>
         </ul>
 
@@ -50,23 +50,8 @@
 
 <script>
 import SocialLinks from '@/components/SocialLinks.vue';
-import { site } from '@/config';
 
 export default {
   components: { SocialLinks },
-
-  computed: {
-    rssFeed() {
-      return `${site.url}/feed/rss.xml`;
-    },
-
-    atomFeed() {
-      return `${site.url}/feed/atom.xml`;
-    },
-
-    jsonFeed() {
-      return `${site.url}/feed/index.json`;
-    },
-  },
 };
 </script>

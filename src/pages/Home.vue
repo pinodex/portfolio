@@ -175,56 +175,43 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@include mobile {
-  .featured-post-container {
-    padding-bottom: 0;
-  }
-}
+<style lang="sass" scoped>
++mobile
+  .featured-post-container
+    padding-bottom: 0
 
-.featured-project-container {
-  position: relative;
-}
+.featured-project-container
+  position: relative
 
-.more-projects {
-  position: absolute;
-  top: calc(50% - 4rem / 2);
-  right: -2rem;
-  z-index: 2;
+.more-projects
+  position: absolute
+  top: calc(50% - 4rem / 2)
+  right: -2rem
+  z-index: 2
+  display: flex
+  align-items: center
+  justify-content: center
+  background: $white
+  border: 1px solid $white-ter
+  border-radius: 100%
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+  height: 4rem
+  width: 4rem
+  transition: transform .3s ease
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &:hover
+    transform: translateX(4px)
 
-  background: $white;
-  border: 1px solid $white-ter;
-  border-radius: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    .icon i
+      color: $link
 
-  height: 4rem;
-  width: 4rem;
+  .icon i
+    font-size: 2rem
+    color: $grey-dark
+    transition: transform .3s ease
 
-  transition: transform .3s ease;
-
-  &:hover {
-    transform: translateX(4px);
-
-    .icon i {
-      color: $link;
-    }
-  }
-
-  .icon i {
-    font-size: 2rem;
-    color: $grey-dark;
-
-    transition: transform .3s ease;
-  }
-}
-
-.post {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+.post
+  height: 100%
+  display: flex
+  flex-direction: column
 </style>

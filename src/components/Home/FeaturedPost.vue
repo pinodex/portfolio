@@ -29,8 +29,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.content {
-  padding: 1.5rem;
-}
+<style lang="sass" scoped>
+.content
+  padding: 1.5rem
 </style>

@@ -117,22 +117,19 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import '@/assets/scss/styles.scss';
-@import '@/assets/scss/fonts.scss';
+<style lang="sass">
+@import @/assets/sass/styles.sass
+@import @/assets/sass/fonts.sass
 
-.has-navbar-fixed-top {
-  margin-top: $navbar-height + 2rem;
-}
+.has-navbar-fixed-top
+  margin-top: $navbar-height + 2rem
 
-.dark-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 1;
-}
+.dark-overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(0, 0, 0, 0.75)
+  z-index: 1
 </style>

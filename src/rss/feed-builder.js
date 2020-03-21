@@ -63,7 +63,7 @@ class FeedBuilder {
   }
 
   addItems(items, slugPrefix = '/') {
-    items.forEach((item) => this.addItem(item, slugPrefix));
+    items.forEach(item => this.addItem(item, slugPrefix));
   }
 
   rss() {

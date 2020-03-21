@@ -79,68 +79,54 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.project {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+<style lang="sass" scoped>
+.project
+  height: 100%
+  display: flex
+  flex-direction: column
 
-.heading-art path {
-  transition: fill .3s ease;
-}
+.heading-art path
+  transition: fill .3s ease
 
-.heading-art:hover path {
-  fill: $white;
-}
+.heading-art:hover path
+  fill: $white
 
-.fly {
-  animation: fly 4s ease forwards;
+.fly
+  animation: fly 4s ease forwards
 
-  path {
-    fill: $white !important;
-  }
-}
+  path
+    fill: $white !important
 
-@keyframes fly {
-  10% {
-    transform: rotate(43deg);
-  }
+@keyframes fly
+  10%
+    transform: rotate(43deg)
 
   10%, 12%,
   14%, 16%,
   18%, 20%,
   22%, 24%,
-  26%, 28% {
-    transform: rotate(43deg) translate3d(-2px, 2px, 0);
-  }
+  26%, 28%
+    transform: rotate(43deg) translate3d(-2px, 2px, 0)
 
   11%, 13%,
   15%, 17%,
   19%, 21%,
   23%, 25%,
-  27%, 30% {
-    transform: rotate(43deg) translate3d(2px, -2px, 0);
-  }
+  27%, 30%
+    transform: rotate(43deg) translate3d(2px, -2px, 0)
 
-  30% {
-    transform: rotate(43deg) translate3d(0, 0, 0);
-  }
+  30%
+    transform: rotate(43deg) translate3d(0, 0, 0)
 
-  50% {
-    transform: rotate(43deg) translate3d(-100%, -100%, 0);
-  }
+  50%
+    transform: rotate(43deg) translate3d(-100%, -100%, 0)
 
-  70% {
-    transform: rotate(43deg) translate3d(-100%, -100%, 0);
-  }
+  70%
+    transform: rotate(43deg) translate3d(-100%, -100%, 0)
 
-  90% {
-    transform: rotate(43deg) translate3d(0, 0, 0);
-  }
+  90%
+    transform: rotate(43deg) translate3d(0, 0, 0)
 
-  100% {
-    transform: rotate(0) translate3d(0, 0, 0);
-  }
-}
+  100%
+    transform: rotate(0) translate3d(0, 0, 0)
 </style>

@@ -49,51 +49,42 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.card {
-  display: block;
-  position: relative;
-}
+<style lang="sass" scoped>
+.card
+  display: block
+  position: relative
 
-.card-content {
-  display: flex;
+.card-content
+  display: flex
 
-  @include bind-to-parent();
+  +bind-to-parent
 
-  z-index: 1;
+  z-index: 1
 
   &::before,
-  &::after {
-    @include bind-to-parent();
+  &::after
+    +bind-to-parent
 
-    content: '';
-    transition: all .3s ease;
-    z-index: -1;
-  }
+    content: ''
+    transition: all .3s ease
+    z-index: -1
 
-  &::before {
-    background-image: linear-gradient(45deg, rgba(0, 4, 40, 0.75), rgba(0, 78, 146, 0.5));
-    opacity: 1;
-  }
+  &::before
+    background-image: linear-gradient(45deg, rgba(0, 4, 40, 0.75), rgba(0, 78, 146, 0.5))
+    opacity: 1
 
-  &::after {
-    background-image: linear-gradient(45deg, rgba(0, 4, 40, 0.75), rgba(0, 78, 146, 0));
-    opacity: 0;
-  }
+  &::after
+    background-image: linear-gradient(45deg, rgba(0, 4, 40, 0.75), rgba(0, 78, 146, 0))
+    opacity: 0
 
-  &:hover::before {
-    opacity: 0;
-  }
+  &:hover::before
+    opacity: 0
 
-  &:hover::after {
-    opacity: 1;
-  }
+  &:hover::after
+    opacity: 1
 
-  p {
-    align-self: flex-end;
-
-    font-weight: 600;
-    color: #fff;
-  }
-}
+  p
+    align-self: flex-end
+    font-weight: 600
+    color: #fff
 </style>

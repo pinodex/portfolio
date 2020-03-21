@@ -57,14 +57,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.skillset {
-  ul {
-    font-size: 0.9rem;
-  }
-}
+<style lang="sass" scoped>
+.skillset
+  ul
+    font-size: 0.9rem
 
-.links::v-deep a {
-  color: #fff;
-}
+.links::v-deep a
+  color: #fff
 </style>

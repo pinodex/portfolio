@@ -135,115 +135,86 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.navbar {
-  @include desktop {
-    height: #{$navbar-height + 2rem};
-  }
+<style lang="sass" scoped>
+.navbar
+  +desktop
+    height: #{$navbar-height + 2rem}
 
-  transition: all .3s ease;
+  transition: all .3s ease
 
-  &.is-dark {
-    background-color: transparent;
-  }
+  &.is-dark
+    background-color: transparent
 
-  &.is-white {
-    border-bottom: 3px solid #eee;
-  }
+  &.is-white
+    border-bottom: 3px solid #eee
 
-  &.is-collapsed {
-    @include desktop {
-      height: $navbar-height;
-    }
+  &.is-collapsed
+    +desktop
+      height: $navbar-height
 
     .navbar-start,
-    .navbar-end {
-      & > a.navbar-item {
-        &:hover {
-          background-color: transparent;
-          color: $link;
-        }
+    .navbar-end
+      & > a.navbar-item
+        &:hover
+          background-color: transparent
+          color: $link
 
-        &.is-active {
-          background-color: transparent;
-          color: $link;
+        &.is-active
+          background-color: transparent
+          color: $link
 
-          @include desktop {
-            box-shadow: inset 0 -3px 0 $link;
-          }
-        }
-      }
-    }
-  }
+          +desktop
+            box-shadow: inset 0 -3px 0 $link
 
-  &.is-transparent {
+  &.is-transparent
     .navbar-start,
-    .navbar-end {
-      & > a.navbar-item:hover {
-        color: $white;
+    .navbar-end
+      & > a.navbar-item:hover
+        color: $white
 
-        @include desktop {
-          box-shadow: inset 0 -3px 0 $white;
-        }
-      }
-    }
-  }
+        +desktop
+          box-shadow: inset 0 -3px 0 $white
 
   .navbar-brand,
   .navbar-start,
-  .navbar-end {
+  .navbar-end
     & > .navbar-item,
-    & > .navbar-link {
-      font-weight: 400;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    & > .navbar-link
+      font-weight: 400
+      letter-spacing: 1px
+      text-transform: uppercase
+      transition: all .3s ease
+      text-align: center
 
-      transition: all .3s ease;
-      text-align: center;
+      &.is-external
+        &::after
+          font-family: 'icomoon'
+          font-size: 0.9rem
+          content: '\e905'
+          margin-left: 5px
 
-      &.is-external {
-        &::after {
-          font-family: 'icomoon';
-          font-size: 0.9rem;
-          content: '\e905';
+          +desktop
+            overflow: hidden
+            max-width: 0px
+            transition: max-width .3s ease
 
-          margin-left: 5px;
+        &:hover::after
+          max-width: 20px
 
-          @include desktop {
-            overflow: hidden;
-            max-width: 0px;
+  .navbar-brand > .navbar-item
+    font-weight: 600
 
-            transition: max-width .3s ease;
-          }
-        }
+    svg
+      max-height: initial
+      width: 50px
 
-        &:hover::after {
-          max-width: 20px;
-        }
-      }
-    }
-  }
-
-  .navbar-brand > .navbar-item {
-    font-weight: 600;
-
-    svg {
-      max-height: initial;
-      width: 50px;
-    }
-  }
-
-  @include desktop {
-    .navbar-brand {
-      transition: width .3s ease;
-      overflow: hidden;
-      width: 0px;
-    }
+  +desktop
+    .navbar-brand
+      transition: width .3s ease
+      overflow: hidden
+      width: 0px
 
     &:not(.is-brand-autohide) .navbar-brand,
-    &.is-collapsed .navbar-brand {
-      width: 80px;
-    }
-  }
-}
+    &.is-collapsed .navbar-brand
+      width: 80px
 </style>

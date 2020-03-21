@@ -161,21 +161,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-::v-deep .window {
-  padding: 2rem;
+<style lang="sass" scoped>
+::v-deep .window
+  padding: 2rem
 
-  @include touch {
-    padding: 2rem 0;
-  }
-}
+  +touch
+    padding: 2rem 0
 
-.project-header {
-  background-size: cover;
-  background-position: center;
+.project-header
+  background-size: cover
+  background-position: center
 
-  @include mobile {
-    text-align: center;
-  }
-}
+  +mobile
+    text-align: center
 </style>

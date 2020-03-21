@@ -61,10 +61,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.project {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+<style lang="sass" scoped>
+.project
+  height: 100%
+  display: flex
+  flex-direction: column
 </style>

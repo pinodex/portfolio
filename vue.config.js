@@ -1,5 +1,4 @@
 const path = require('path');
-const { DefinePlugin } = require('webpack');
 const { site } = require('./src/config');
 
 module.exports = {
@@ -11,8 +10,8 @@ module.exports = {
     loaderOptions: {
       sass: {
         data: `
-          @import '@/assets/scss/_variables.scss';
-          @import '@/assets/scss/_mixins.scss';
+          @import '@/assets/sass/_variables.sass'
+          @import '@/assets/sass/_mixins.sass'
         `,
       },
     },
@@ -30,11 +29,13 @@ module.exports = {
     config
       .plugin('html')
       .tap((args) => {
-        args[0].SITE_TITLE = site.title;
-        args[0].SITE_DESCRIPTION = site.description;
-        args[0].SITE_URL = site.url;
+        const newArgs = [...args];
 
-        return args;
+        newArgs[0].SITE_TITLE = site.title;
+        newArgs[0].SITE_DESCRIPTION = site.description;
+        newArgs[0].SITE_URL = site.url;
+
+        return newArgs;
       });
 
     config.module.rule('md')

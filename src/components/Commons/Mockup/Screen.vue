@@ -36,17 +36,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.frame {
-  border-radius: 6px;
-  overflow: hidden;
+<style lang="sass" scoped>
+.frame
+  border-radius: 6px
+  overflow: hidden
+  position: relative
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1)
 
-  position: relative;
-
-  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.10);
-}
-
-svg {
-  display: block;
-}
+svg
+  display: block
 </style>

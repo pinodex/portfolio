@@ -54,28 +54,23 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.hero {
-  overflow: hidden;
-}
+<style lang="sass" scoped>
+.hero
+  overflow: hidden
 
-.hero-body {
-  justify-content: center;
-}
+.hero-body
+  justify-content: center
 
-.logo {
-  height: 150px;
-}
+.logo
+  height: 150px
 
-.name {
-  text-transform: uppercase;
-  font-weight: 700;
-  color: $white-bis;
-}
+.name
+  text-transform: uppercase
+  font-weight: 700
+  color: $white-bis
 
-.name-title {
-  font-weight: 300;
-  letter-spacing: 2px;
-  color: $white-bis;
-}
+.name-title
+  font-weight: 300
+  letter-spacing: 2px
+  color: $white-bis
 </style>

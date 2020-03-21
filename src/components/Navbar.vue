@@ -113,7 +113,7 @@ export default {
     activeNavItem() {
       const name = this.$route.name || '';
 
-      return this.links.findIndex(l => name.indexOf(l.target.name) !== -1);
+      return this.links.findIndex(({ target }) => name.indexOf(target.name) !== -1);
     },
   },
 

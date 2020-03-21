@@ -10,9 +10,9 @@ const labs = require('../../data/labs/index.json');
 
 const renderer = new PostRenderer();
 
-renderer.setPathResolver(rawPath => `${root}/data${rawPath}`);
+renderer.setPathResolver((rawPath) => `${root}/data${rawPath}`);
 
-renderer.setPreprocessor(content => content.replace(/MockupMedia/mg, 'video')
+renderer.setPreprocessor((content) => content.replace(/MockupMedia/mg, 'video')
   .replace(/Browser|PreloadedImage|Screen/mg, 'img')
   .replace(/<carousel(.*)>|<slide>/mg, '<div>')
   .replace(/<\/carousel>|<\/slide>/mg, '</div>')

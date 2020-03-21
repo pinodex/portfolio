@@ -104,7 +104,7 @@ export default {
     },
 
     index() {
-      return labs.findIndex(p => p.slug === this.$route.params.slug);
+      return labs.findIndex(({ slug }) => slug === this.$route.params.slug);
     },
 
     meta() {

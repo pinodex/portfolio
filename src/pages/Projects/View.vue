@@ -125,7 +125,7 @@ export default {
     },
 
     index() {
-      return projects.findIndex(p => p.slug === this.$route.params.slug);
+      return projects.findIndex(({ slug }) => slug === this.$route.params.slug);
     },
 
     meta() {

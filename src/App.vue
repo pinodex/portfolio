@@ -3,7 +3,7 @@
     :class="{ 'has-navbar-fixed-top': !isNavbarCollapsible }"
   >
     <Navbar
-      @menu="state => navbarMenuActive = state"
+      @menu="(state) => navbarMenuActive = state"
       :collapsed="isNavbarCollapsed"
       :autohideBrand="autohideBrand"
       :links="navLinks"

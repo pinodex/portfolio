@@ -7,8 +7,8 @@ class PostRenderer {
       html: true,
     });
 
-    this.resolvePath = path => path;
-    this.preprocess = content => content;
+    this.resolvePath = (path) => path;
+    this.preprocess = (content) => content;
     this.defaultEncoding = 'utf8';
   }
 

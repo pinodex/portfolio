@@ -1,4 +1,5 @@
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 const { site } = require('./src/config');
 
 module.exports = {
@@ -23,6 +24,14 @@ module.exports = {
         '@data': path.resolve(__dirname, 'data/'),
       },
     },
+
+    plugins: [
+      new DefinePlugin({
+        'process.env': {
+          BLOG_POSTS_URL: JSON.stringify(process.env.BLOG_POSTS_URL),
+        },
+      }),
+    ],
   },
 
   chainWebpack: (config) => {

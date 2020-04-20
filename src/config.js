@@ -14,4 +14,6 @@ module.exports = {
   },
 
   simpleAnalyticsDomain: 'godseye.raphaelmarco.com',
+
+  blogPostsUrl: process.env.BLOG_POSTS_URL,
 };

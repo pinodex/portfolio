@@ -12,7 +12,6 @@ import Screen from './components/Commons/Mockup/Screen.vue';
 import { simpleAnalyticsDomain } from './config';
 
 import router from './router';
-import services from './services';
 
 Vue.config.productionTip = false;
 
@@ -39,7 +38,6 @@ Vue.mixin({
 
 export default new Vue({
   router,
-  provide: services,
   render: h => h(App),
   el: '#app',
 });

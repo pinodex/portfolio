@@ -5,22 +5,9 @@
     {
       "src": "package.json",
       "use": "@now/static-build"
-    },
-    {
-      "src": "latest-posts.js",
-      "use": "@now/node"
     }
   ],
-  "env": {
-    "BLOG_URL": "https://blog.raphaelmarco.com",
-    "BLOG_API_KEY": "@blog-api-key",
-    "CACHE_BUST_KEY": "@cache-bust-key"
-  },
   "routes": [
-    {
-      "src": "/latest-posts.json",
-      "dest": "/latest-posts.js"
-    },
     {
       "src": "^/assets/(.*)",
       "dest": "/assets/$1"

@@ -141,11 +141,9 @@ import WelcomeHero from '@/components/Home/WelcomeHero.vue';
 import FeaturedProject from '@/components/Home/FeaturedProject.vue';
 import FeaturedPost from '@/components/Home/FeaturedPost.vue';
 import Post from '@/components/Home/Post.vue';
-
+import { getPosts } from '@/api/blog';
 
 export default {
-  inject: ['$blog'],
-
   components: {
     WelcomeHero, FeaturedProject, FeaturedPost, Post,
   },
@@ -165,7 +163,7 @@ export default {
 
   methods: {
     async loadPosts() {
-      const allPosts = await this.$blog.getPosts(5);
+      const allPosts = await getPosts(5);
       const [featuredPost] = allPosts;
 
       this.featuredPost = featuredPost;

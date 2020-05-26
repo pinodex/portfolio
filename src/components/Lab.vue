@@ -15,7 +15,7 @@
     <div class="card-content">
       <p class="is-size-5 has-text-weight-semibold">{{ name }}</p>
 
-      <p>{{ description }}</p>
+      <p v-html="description"></p>
     </div>
   </router-link>
 </template>

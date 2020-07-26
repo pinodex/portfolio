@@ -20,7 +20,7 @@
       "src": "/cv.pdf",
       "status": 302,
       "headers": {
-        "Location": "https://raphaelmarco.storage.googleapis.com/cv.pdf"
+        "Location": "https://raphaelmarco.s3-ap-southeast-1.amazonaws.com/Raphael-Marco-CV.pdf"
       }
     },
     {

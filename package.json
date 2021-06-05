@@ -1,44 +1,10 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
   "scripts": {
-    "serve": "npx vue-cli-service serve",
-    "build": "node src/rss/build.js && npx vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "build-rss": "npx env-cmd node src/rss/build.js",
-    "start": "node server.js"
+    "start": "serve ."
   },
-  "dependencies": {
-    "@vue/cli-plugin-babel": "^3.12.1",
-    "@vue/cli-plugin-eslint": "^4.2.2",
-    "@vue/cli-service": "^3.12.1",
-    "@vue/eslint-config-airbnb": "^4.0.0",
-    "app-root-path": "^2.2.1",
-    "axios": "^0.18.1",
-    "babel-eslint": "^10.0.3",
-    "bulma": "^0.8.0",
-    "core-js": "^2.6.11",
-    "env-cmd": "^9.0.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "express": "^4.17.1",
-    "feed": "^3.0.0",
-    "markdown-it": "^8.4.2",
-    "sass": "^1.25.0",
-    "sass-loader": "^7.3.1",
-    "simple-analytics-vue": "^1.1.0",
-    "vue": "^2.6.11",
-    "vue-carousel": "^0.18.0",
-    "vue-loader": "^15.9.0",
-    "vue-markdown-loader": "^2.4.1",
-    "vue-router": "^3.1.5",
-    "vue-svg-inline-loader": "^1.4.5",
-    "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.42.1"
-  },
-  "devDependencies": {},
-  "engines": {
-    "node": "10.x"
+  "devDependencies": {
+    "serve": "^11.3.2"
   }
 }
